@@ -1,0 +1,15 @@
+c:\users\julia\documents\visual studio 2013\Projects\PO\PO\bin\Debug\PO.exe.config
+c:\users\julia\documents\visual studio 2013\Projects\PO\PO\obj\Debug\PO.csprojResolveAssemblyReference.cache
+c:\users\julia\documents\visual studio 2013\Projects\PO\PO\obj\Debug\PO.AdminLogin.resources
+c:\users\julia\documents\visual studio 2013\Projects\PO\PO\obj\Debug\PO.StudentSearch.resources
+c:\users\julia\documents\visual studio 2013\Projects\PO\PO\obj\Debug\PO.Properties.Resources.resources
+c:\users\julia\documents\visual studio 2013\Projects\PO\PO\obj\Debug\PO.csproj.GenerateResource.Cache
+c:\users\julia\documents\visual studio 2013\Projects\PO\PO\bin\Debug\PO.exe
+c:\users\julia\documents\visual studio 2013\Projects\PO\PO\bin\Debug\PO.pdb
+c:\users\julia\documents\visual studio 2013\Projects\PO\PO\obj\Debug\PO.exe
+c:\users\julia\documents\visual studio 2013\Projects\PO\PO\obj\Debug\PO.pdb
+c:\users\julia\documents\visual studio 2013\Projects\PO\PO\obj\Debug\PO.AdminHomePage.resources
+c:\users\julia\documents\visual studio 2013\Projects\PO\PO\obj\Debug\PO.ForgotPassword.resources
+c:\users\julia\documents\visual studio 2013\Projects\PO\PO\obj\Debug\PO.AddUser.resources
+c:\users\julia\documents\visual studio 2013\Projects\PO\PO\obj\Debug\PO.ChangePassword.resources
+c:\users\julia\documents\visual studio 2013\Projects\PO\PO\obj\Debug\PO.Print.resources
