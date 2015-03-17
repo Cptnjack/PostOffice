@@ -13,3 +13,7 @@ c:\users\julia\documents\visual studio 2013\Projects\PO\PO\obj\Debug\PO.ForgotPa
 c:\users\julia\documents\visual studio 2013\Projects\PO\PO\obj\Debug\PO.AddUser.resources
 c:\users\julia\documents\visual studio 2013\Projects\PO\PO\obj\Debug\PO.ChangePassword.resources
 c:\users\julia\documents\visual studio 2013\Projects\PO\PO\obj\Debug\PO.Print.resources
+C:\Users\Julia\Documents\Visual Studio 2013\Projects\PO\PO\obj\Debug\PO.RemoveUser.resources
+C:\Users\Michael\Dropbox\PostOffice Project\PO\PO\bin\Debug\PO.exe.config
+C:\Users\Michael\Dropbox\PostOffice Project\PO\PO\obj\Debug\PO.exe
+C:\Users\Michael\Dropbox\PostOffice Project\PO\PO\obj\Debug\PO.pdb

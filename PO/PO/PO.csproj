@@ -44,6 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddStudentAddress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddStudentAddress.Designer.cs">
+      <DependentUpon>AddStudentAddress.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +100,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UpdateStudentAddress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateStudentAddress.Designer.cs">
+      <DependentUpon>UpdateStudentAddress.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AddStudentAddress.resx">
+      <DependentUpon>AddStudentAddress.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddUser.resx">
       <DependentUpon>AddUser.cs</DependentUpon>
     </EmbeddedResource>
@@ -128,6 +143,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UpdateStudentAddress.resx">
+      <DependentUpon>UpdateStudentAddress.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

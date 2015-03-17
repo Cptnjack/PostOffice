@@ -50,8 +50,8 @@
             this.forcePrintToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.adminChangePswrd = new System.Windows.Forms.Button();
             this.adminLogOut = new System.Windows.Forms.Button();
-            this.adminPrintLabel = new System.Windows.Forms.Button();
             this.adminSearchStudent = new System.Windows.Forms.Button();
+            this.adminPrintLabel = new System.Windows.Forms.Button();
             this.SearchMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -110,9 +110,10 @@
             // 
             // userlbl
             // 
-            this.userlbl.BackColor = System.Drawing.Color.Firebrick;
+            this.userlbl.BackColor = System.Drawing.Color.Transparent;
+            this.userlbl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.userlbl.Font = new System.Drawing.Font("Adobe Heiti Std R", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.userlbl.ForeColor = System.Drawing.Color.Black;
+            this.userlbl.ForeColor = System.Drawing.Color.DarkRed;
             this.userlbl.Location = new System.Drawing.Point(561, 299);
             this.userlbl.Name = "userlbl";
             this.userlbl.Size = new System.Drawing.Size(129, 164);
@@ -122,9 +123,10 @@
             // 
             // addresslbl
             // 
-            this.addresslbl.BackColor = System.Drawing.Color.Firebrick;
+            this.addresslbl.BackColor = System.Drawing.Color.Transparent;
+            this.addresslbl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.addresslbl.Font = new System.Drawing.Font("Adobe Heiti Std R", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.addresslbl.ForeColor = System.Drawing.Color.Black;
+            this.addresslbl.ForeColor = System.Drawing.Color.DarkRed;
             this.addresslbl.Location = new System.Drawing.Point(141, 299);
             this.addresslbl.Name = "addresslbl";
             this.addresslbl.Size = new System.Drawing.Size(129, 164);
@@ -261,20 +263,6 @@
             this.adminLogOut.UseVisualStyleBackColor = false;
             this.adminLogOut.Click += new System.EventHandler(this.adminLogOut_Click);
             // 
-            // adminPrintLabel
-            // 
-            this.adminPrintLabel.BackColor = System.Drawing.Color.Firebrick;
-            this.adminPrintLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.adminPrintLabel.Font = new System.Drawing.Font("Adobe Heiti Std R", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.adminPrintLabel.ForeColor = System.Drawing.Color.White;
-            this.adminPrintLabel.Location = new System.Drawing.Point(567, 92);
-            this.adminPrintLabel.Name = "adminPrintLabel";
-            this.adminPrintLabel.Size = new System.Drawing.Size(319, 164);
-            this.adminPrintLabel.TabIndex = 20;
-            this.adminPrintLabel.Text = "Print Label";
-            this.adminPrintLabel.UseVisualStyleBackColor = false;
-            this.adminPrintLabel.Click += new System.EventHandler(this.adminPrintLabel_Click);
-            // 
             // adminSearchStudent
             // 
             this.adminSearchStudent.BackColor = System.Drawing.Color.Firebrick;
@@ -288,6 +276,20 @@
             this.adminSearchStudent.Text = "Search for Student";
             this.adminSearchStudent.UseVisualStyleBackColor = false;
             this.adminSearchStudent.Click += new System.EventHandler(this.adminSearchStudent_Click);
+            // 
+            // adminPrintLabel
+            // 
+            this.adminPrintLabel.BackColor = System.Drawing.Color.Firebrick;
+            this.adminPrintLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.adminPrintLabel.Font = new System.Drawing.Font("Adobe Heiti Std R", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.adminPrintLabel.ForeColor = System.Drawing.Color.White;
+            this.adminPrintLabel.Location = new System.Drawing.Point(567, 92);
+            this.adminPrintLabel.Name = "adminPrintLabel";
+            this.adminPrintLabel.Size = new System.Drawing.Size(319, 164);
+            this.adminPrintLabel.TabIndex = 20;
+            this.adminPrintLabel.Text = "Print Label";
+            this.adminPrintLabel.UseVisualStyleBackColor = false;
+            this.adminPrintLabel.Click += new System.EventHandler(this.adminPrintLabel_Click);
             // 
             // AdminHomePage
             // 
@@ -341,8 +343,8 @@
         private System.Windows.Forms.ToolStripMenuItem forcePrintToolStripMenuItem;
         private System.Windows.Forms.Button adminChangePswrd;
         private System.Windows.Forms.Button adminLogOut;
-        private System.Windows.Forms.Button adminPrintLabel;
-        private System.Windows.Forms.Button adminSearchStudent;
         private System.Windows.Forms.ToolStripMenuItem removeUserToolStripMenuItem;
+        private System.Windows.Forms.Button adminSearchStudent;
+        private System.Windows.Forms.Button adminPrintLabel;
     }
 }

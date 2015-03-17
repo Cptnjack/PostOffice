@@ -55,6 +55,8 @@
             this.pwdlbl = new System.Windows.Forms.Label();
             this.usernametxt = new System.Windows.Forms.TextBox();
             this.usernamelbl = new System.Windows.Forms.Label();
+            this.emaillbl = new System.Windows.Forms.Label();
+            this.emailtxt = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.HomePic)).BeginInit();
             this.SearchMenuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -182,7 +184,7 @@
             // lasttxt
             // 
             this.lasttxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lasttxt.Location = new System.Drawing.Point(165, 399);
+            this.lasttxt.Location = new System.Drawing.Point(167, 327);
             this.lasttxt.Name = "lasttxt";
             this.lasttxt.Size = new System.Drawing.Size(319, 30);
             this.lasttxt.TabIndex = 45;
@@ -192,7 +194,7 @@
             this.lastlbl.AutoSize = true;
             this.lastlbl.BackColor = System.Drawing.Color.Transparent;
             this.lastlbl.Font = new System.Drawing.Font("Adobe Heiti Std R", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lastlbl.Location = new System.Drawing.Point(160, 366);
+            this.lastlbl.Location = new System.Drawing.Point(162, 294);
             this.lastlbl.Name = "lastlbl";
             this.lastlbl.Size = new System.Drawing.Size(130, 30);
             this.lastlbl.TabIndex = 44;
@@ -201,7 +203,7 @@
             // middletxt
             // 
             this.middletxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.middletxt.Location = new System.Drawing.Point(165, 316);
+            this.middletxt.Location = new System.Drawing.Point(167, 244);
             this.middletxt.Name = "middletxt";
             this.middletxt.Size = new System.Drawing.Size(319, 30);
             this.middletxt.TabIndex = 43;
@@ -211,7 +213,7 @@
             this.middlelbl.AutoSize = true;
             this.middlelbl.BackColor = System.Drawing.Color.Transparent;
             this.middlelbl.Font = new System.Drawing.Font("Adobe Heiti Std R", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.middlelbl.Location = new System.Drawing.Point(160, 283);
+            this.middlelbl.Location = new System.Drawing.Point(162, 211);
             this.middlelbl.Name = "middlelbl";
             this.middlelbl.Size = new System.Drawing.Size(162, 30);
             this.middlelbl.TabIndex = 42;
@@ -220,7 +222,7 @@
             // firsttxt
             // 
             this.firsttxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.firsttxt.Location = new System.Drawing.Point(165, 235);
+            this.firsttxt.Location = new System.Drawing.Point(167, 163);
             this.firsttxt.Name = "firsttxt";
             this.firsttxt.Size = new System.Drawing.Size(319, 30);
             this.firsttxt.TabIndex = 41;
@@ -230,7 +232,7 @@
             this.firstlbl.AutoSize = true;
             this.firstlbl.BackColor = System.Drawing.Color.Transparent;
             this.firstlbl.Font = new System.Drawing.Font("Adobe Heiti Std R", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.firstlbl.Location = new System.Drawing.Point(160, 202);
+            this.firstlbl.Location = new System.Drawing.Point(162, 130);
             this.firstlbl.Name = "firstlbl";
             this.firstlbl.Size = new System.Drawing.Size(138, 30);
             this.firstlbl.TabIndex = 40;
@@ -239,7 +241,7 @@
             // confirmtxt
             // 
             this.confirmtxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.confirmtxt.Location = new System.Drawing.Point(558, 399);
+            this.confirmtxt.Location = new System.Drawing.Point(552, 377);
             this.confirmtxt.Name = "confirmtxt";
             this.confirmtxt.Size = new System.Drawing.Size(319, 30);
             this.confirmtxt.TabIndex = 39;
@@ -249,7 +251,7 @@
             this.confirmlbl.AutoSize = true;
             this.confirmlbl.BackColor = System.Drawing.Color.Transparent;
             this.confirmlbl.Font = new System.Drawing.Font("Adobe Heiti Std R", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.confirmlbl.Location = new System.Drawing.Point(553, 366);
+            this.confirmlbl.Location = new System.Drawing.Point(547, 344);
             this.confirmlbl.Name = "confirmlbl";
             this.confirmlbl.Size = new System.Drawing.Size(216, 30);
             this.confirmlbl.TabIndex = 38;
@@ -258,7 +260,7 @@
             // pwdtxt
             // 
             this.pwdtxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pwdtxt.Location = new System.Drawing.Point(558, 316);
+            this.pwdtxt.Location = new System.Drawing.Point(552, 294);
             this.pwdtxt.Name = "pwdtxt";
             this.pwdtxt.Size = new System.Drawing.Size(319, 30);
             this.pwdtxt.TabIndex = 37;
@@ -268,7 +270,7 @@
             this.pwdlbl.AutoSize = true;
             this.pwdlbl.BackColor = System.Drawing.Color.Transparent;
             this.pwdlbl.Font = new System.Drawing.Font("Adobe Heiti Std R", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pwdlbl.Location = new System.Drawing.Point(553, 283);
+            this.pwdlbl.Location = new System.Drawing.Point(547, 261);
             this.pwdlbl.Name = "pwdlbl";
             this.pwdlbl.Size = new System.Drawing.Size(123, 30);
             this.pwdlbl.TabIndex = 36;
@@ -277,7 +279,7 @@
             // usernametxt
             // 
             this.usernametxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usernametxt.Location = new System.Drawing.Point(558, 235);
+            this.usernametxt.Location = new System.Drawing.Point(552, 213);
             this.usernametxt.Name = "usernametxt";
             this.usernametxt.Size = new System.Drawing.Size(319, 30);
             this.usernametxt.TabIndex = 35;
@@ -287,11 +289,30 @@
             this.usernamelbl.AutoSize = true;
             this.usernamelbl.BackColor = System.Drawing.Color.Transparent;
             this.usernamelbl.Font = new System.Drawing.Font("Adobe Heiti Std R", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usernamelbl.Location = new System.Drawing.Point(553, 202);
+            this.usernamelbl.Location = new System.Drawing.Point(547, 180);
             this.usernamelbl.Name = "usernamelbl";
             this.usernamelbl.Size = new System.Drawing.Size(135, 30);
             this.usernamelbl.TabIndex = 34;
             this.usernamelbl.Text = "Username: ";
+            // 
+            // emaillbl
+            // 
+            this.emaillbl.AutoSize = true;
+            this.emaillbl.BackColor = System.Drawing.Color.Transparent;
+            this.emaillbl.Font = new System.Drawing.Font("Adobe Heiti Std R", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.emaillbl.Location = new System.Drawing.Point(162, 378);
+            this.emaillbl.Name = "emaillbl";
+            this.emaillbl.Size = new System.Drawing.Size(84, 30);
+            this.emaillbl.TabIndex = 49;
+            this.emaillbl.Text = "Email: ";
+            // 
+            // emailtxt
+            // 
+            this.emailtxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.emailtxt.Location = new System.Drawing.Point(167, 411);
+            this.emailtxt.Name = "emailtxt";
+            this.emailtxt.Size = new System.Drawing.Size(319, 30);
+            this.emailtxt.TabIndex = 50;
             // 
             // AddUser
             // 
@@ -299,6 +320,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::PO.Properties.Resources.postBG1;
             this.ClientSize = new System.Drawing.Size(1016, 733);
+            this.Controls.Add(this.emailtxt);
+            this.Controls.Add(this.emaillbl);
             this.Controls.Add(this.HomePic);
             this.Controls.Add(this.SearchMenuStrip);
             this.Controls.Add(this.adduserbtn);
@@ -356,5 +379,7 @@
         private System.Windows.Forms.Label pwdlbl;
         private System.Windows.Forms.TextBox usernametxt;
         private System.Windows.Forms.Label usernamelbl;
+        private System.Windows.Forms.Label emaillbl;
+        private System.Windows.Forms.TextBox emailtxt;
     }
 }
