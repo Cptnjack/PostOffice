@@ -17,6 +17,13 @@ namespace PO
             InitializeComponent();
         }
 
+        private void StudentSearch_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'rosterDataSet.Rosters' table. You can move, or remove it, as needed.
+            //this.studentTableTableAdapter.Fill(this.pODBDataSet.StudentTable);
+
+        }
+
         private void AdminLogin_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -49,5 +56,42 @@ namespace PO
         {
             DialogResult forceprintresult = MessageBox.Show("Are you sure you want to force print?", "Force Print", MessageBoxButtons.YesNoCancel);
         }
+
+        private void radiobuttons_CheckChanged(object sender, EventArgs e)
+        {
+            if(radioButton1.Checked)
+            {
+                panel1.Visible = true;
+                panel2.Visible = false;
+            }
+            else if (radioButton2.Checked)
+            {
+                panel2.Visible = true;
+                panel1.Visible = false;
+            }
+        }
+
+        private void studentDatabaseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SearchButton_Click(object sender, EventArgs e)
+        {
+            //figure out what I'm searching by
+            if(radioButton1.Checked)
+            {
+                //perform the query
+                studentTableTableAdapter.FillByName(this.pODBDataSet.StudentTable, FirstNametxtbox.Text, MiddleInittxtbox.Text, LastNametxtbox.Text);
+            }
+
+            else if(radioButton2.Checked)
+            {
+                //perform the query
+                studentTableTableAdapter.FillByMNum(this.pODBDataSet.StudentTable, textBox1.Text);
+            }
+        }
+
+        
     }
 }

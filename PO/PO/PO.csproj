@@ -56,6 +56,7 @@
     <Compile Include="AddUser.Designer.cs">
       <DependentUpon>AddUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Admin.cs" />
     <Compile Include="AdminHomePage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +81,13 @@
     <Compile Include="ForgotPassword.Designer.cs">
       <DependentUpon>ForgotPassword.cs</DependentUpon>
     </Compile>
+    <Compile Include="Label.cs" />
+    <Compile Include="LabelQueue.cs" />
+    <Compile Include="PODBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PODBDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Print.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +100,7 @@
     <Compile Include="RemoveUser.Designer.cs">
       <DependentUpon>RemoveUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Student.cs" />
     <Compile Include="StudentSearch.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +115,7 @@
     <Compile Include="UpdateStudentAddress.Designer.cs">
       <DependentUpon>UpdateStudentAddress.cs</DependentUpon>
     </Compile>
+    <Compile Include="User.cs" />
     <EmbeddedResource Include="AddStudentAddress.resx">
       <DependentUpon>AddStudentAddress.cs</DependentUpon>
     </EmbeddedResource>
@@ -146,6 +156,17 @@
     <EmbeddedResource Include="UpdateStudentAddress.resx">
       <DependentUpon>UpdateStudentAddress.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="PODBDataSet.xsc">
+      <DependentUpon>PODBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="PODBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PODBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PODBDataSet.xss">
+      <DependentUpon>PODBDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -173,6 +194,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\post-icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PODB.accdb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
