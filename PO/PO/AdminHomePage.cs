@@ -12,23 +12,32 @@ namespace PO
 {
     public partial class AdminHomePage : Form
     {
+        private bool loggedin;
         public AdminHomePage()
         {
             InitializeComponent();
+            loggedin = false;
+        }
+
+        public AdminHomePage(bool i)
+        {
+            InitializeComponent();
+            loggedin = i;
         }
 
         private void adminSearchStudent_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            StudentSearch search = new StudentSearch();
+            this.Close();
+            StudentSearch search = new StudentSearch(loggedin);
             search.Show();
+           
             //should change "Admin Login" button to "Log Out"..also in the menustrip..add a "Home" option under Admin?
         }
 
         private void adminLogOut_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            StudentSearch search = new StudentSearch();
+            this.Close();
+            StudentSearch search = new StudentSearch(false);
             search.Show();
         }
 

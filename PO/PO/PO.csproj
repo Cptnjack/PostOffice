@@ -83,6 +83,10 @@
     </Compile>
     <Compile Include="Label.cs" />
     <Compile Include="LabelQueue.cs" />
+    <Compile Include="PODBDataSet.cs">
+      <DependentUpon>PODBDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="PODBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

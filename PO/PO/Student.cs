@@ -21,6 +21,7 @@ namespace PO
         private String nCity;
         private String nState;
         private String nZip;
+        private String nCountry;
         private DateTime dateAdded;
 
         public Student()
@@ -28,7 +29,7 @@ namespace PO
 
         }
 
-        public Student(String mnum, String fn, String ln, String mn, String em, String mAdd, String mC, String mSt, String mZ, String nAdd, String nC, String nSt, String nZ, DateTime now)
+        public Student(String mnum, String fn, String ln, String mn, String em, String mAdd, String mC, String mSt, String mZ, String nAdd, String nC, String nSt, String nZ, String nCountry, DateTime now)
         {
             mNum = mnum;
             fName = fn;
@@ -43,6 +44,7 @@ namespace PO
             nCity = nC;
             nState = nSt; 
             nZip = nZ;
+            this.nCountry = nCountry;
             dateAdded = now;
         }
 

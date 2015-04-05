@@ -41,42 +41,46 @@
             this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.printPreviewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.forcePrintToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.emailtxt = new System.Windows.Forms.TextBox();
-            this.emaillbl = new System.Windows.Forms.Label();
-            this.lasttxt = new System.Windows.Forms.TextBox();
-            this.lastlbl = new System.Windows.Forms.Label();
-            this.middletxt = new System.Windows.Forms.TextBox();
-            this.middlelbl = new System.Windows.Forms.Label();
-            this.firsttxt = new System.Windows.Forms.TextBox();
-            this.firstlbl = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
+            this.emailTextBox = new System.Windows.Forms.TextBox();
+            this.emailLabel = new System.Windows.Forms.Label();
+            this.lastTextBox = new System.Windows.Forms.TextBox();
+            this.lastLabel = new System.Windows.Forms.Label();
+            this.middleTextBox = new System.Windows.Forms.TextBox();
+            this.middlelLabel = new System.Windows.Forms.Label();
+            this.firstTextBox = new System.Windows.Forms.TextBox();
+            this.firstLabel = new System.Windows.Forms.Label();
+            this.idTextBox = new System.Windows.Forms.TextBox();
+            this.idLabel = new System.Windows.Forms.Label();
+            this.siGroupBox = new System.Windows.Forms.GroupBox();
+            this.msuGroupBox = new System.Windows.Forms.GroupBox();
+            this.aptmailTextBox = new System.Windows.Forms.TextBox();
+            this.aptmailLabel = new System.Windows.Forms.Label();
+            this.msuaddressTextBox = new System.Windows.Forms.TextBox();
+            this.msuaddressLabel = new System.Windows.Forms.Label();
+            this.naGroupBox = new System.Windows.Forms.GroupBox();
+            this.nastateComboBox = new System.Windows.Forms.ComboBox();
+            this.nazipTextBox = new System.Windows.Forms.TextBox();
+            this.nazipLabel = new System.Windows.Forms.Label();
+            this.nastateLabel = new System.Windows.Forms.Label();
+            this.naCityTextBox = new System.Windows.Forms.TextBox();
+            this.nacityLabel = new System.Windows.Forms.Label();
+            this.address1TextBox = new System.Windows.Forms.TextBox();
+            this.address1Label = new System.Windows.Forms.Label();
             this.adduserbtn = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.HomePic = new System.Windows.Forms.PictureBox();
+            this.otherRadioButton = new System.Windows.Forms.RadioButton();
+            this.poboxRadioButton = new System.Windows.Forms.RadioButton();
+            this.sundanceRadioButton = new System.Windows.Forms.RadioButton();
+            this.SunwatcherRadioButton = new System.Windows.Forms.RadioButton();
+            this.nacountryTextBox = new System.Windows.Forms.TextBox();
+            this.nacountryLabel = new System.Windows.Forms.Label();
+            this.address2TextBox = new System.Windows.Forms.TextBox();
+            this.address2Label = new System.Windows.Forms.Label();
             this.SearchMenuStrip.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
+            this.siGroupBox.SuspendLayout();
+            this.msuGroupBox.SuspendLayout();
+            this.naGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.HomePic)).BeginInit();
             this.SuspendLayout();
             // 
@@ -88,7 +92,8 @@
             this.printToolStripMenuItem});
             this.SearchMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.SearchMenuStrip.Name = "SearchMenuStrip";
-            this.SearchMenuStrip.Size = new System.Drawing.Size(1016, 28);
+            this.SearchMenuStrip.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.SearchMenuStrip.Size = new System.Drawing.Size(764, 24);
             this.SearchMenuStrip.TabIndex = 48;
             this.SearchMenuStrip.Text = "menuStrip1";
             // 
@@ -100,31 +105,31 @@
             this.changepwdToolStripMenuItem,
             this.logOutToolStripMenuItem});
             this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
-            this.adminToolStripMenuItem.Size = new System.Drawing.Size(65, 24);
+            this.adminToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
             this.adminToolStripMenuItem.Text = "Admin";
             // 
             // addUserToolStripMenuItem
             // 
             this.addUserToolStripMenuItem.Name = "addUserToolStripMenuItem";
-            this.addUserToolStripMenuItem.Size = new System.Drawing.Size(194, 24);
+            this.addUserToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.addUserToolStripMenuItem.Text = "Add User";
             // 
             // removeUserToolStripMenuItem
             // 
             this.removeUserToolStripMenuItem.Name = "removeUserToolStripMenuItem";
-            this.removeUserToolStripMenuItem.Size = new System.Drawing.Size(194, 24);
+            this.removeUserToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.removeUserToolStripMenuItem.Text = "Remove User";
             // 
             // changepwdToolStripMenuItem
             // 
             this.changepwdToolStripMenuItem.Name = "changepwdToolStripMenuItem";
-            this.changepwdToolStripMenuItem.Size = new System.Drawing.Size(194, 24);
+            this.changepwdToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.changepwdToolStripMenuItem.Text = "Change Password";
             // 
             // logOutToolStripMenuItem
             // 
             this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
-            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(194, 24);
+            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.logOutToolStripMenuItem.Text = "Log Out";
             // 
             // searchStudentToolStripMenuItem
@@ -133,19 +138,19 @@
             this.searchToolStripMenuItem,
             this.removeToolStripMenuItem});
             this.searchStudentToolStripMenuItem.Name = "searchStudentToolStripMenuItem";
-            this.searchStudentToolStripMenuItem.Size = new System.Drawing.Size(74, 24);
+            this.searchStudentToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.searchStudentToolStripMenuItem.Text = "Address";
             // 
             // searchToolStripMenuItem
             // 
             this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
-            this.searchToolStripMenuItem.Size = new System.Drawing.Size(127, 24);
+            this.searchToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.searchToolStripMenuItem.Text = "Search";
             // 
             // removeToolStripMenuItem
             // 
             this.removeToolStripMenuItem.Name = "removeToolStripMenuItem";
-            this.removeToolStripMenuItem.Size = new System.Drawing.Size(127, 24);
+            this.removeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.removeToolStripMenuItem.Text = "Update";
             // 
             // printToolStripMenuItem
@@ -154,339 +159,333 @@
             this.printPreviewToolStripMenuItem,
             this.forcePrintToolStripMenuItem});
             this.printToolStripMenuItem.Name = "printToolStripMenuItem";
-            this.printToolStripMenuItem.Size = new System.Drawing.Size(51, 24);
+            this.printToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.printToolStripMenuItem.Text = "Print";
             // 
             // printPreviewToolStripMenuItem
             // 
             this.printPreviewToolStripMenuItem.Name = "printPreviewToolStripMenuItem";
-            this.printPreviewToolStripMenuItem.Size = new System.Drawing.Size(163, 24);
+            this.printPreviewToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.printPreviewToolStripMenuItem.Text = "Print Preview";
             // 
             // forcePrintToolStripMenuItem
             // 
             this.forcePrintToolStripMenuItem.Name = "forcePrintToolStripMenuItem";
-            this.forcePrintToolStripMenuItem.Size = new System.Drawing.Size(163, 24);
+            this.forcePrintToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.forcePrintToolStripMenuItem.Text = "Force Print";
             // 
-            // emailtxt
+            // emailTextBox
             // 
-            this.emailtxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.emailtxt.Location = new System.Drawing.Point(13, 130);
-            this.emailtxt.Name = "emailtxt";
-            this.emailtxt.Size = new System.Drawing.Size(319, 30);
-            this.emailtxt.TabIndex = 58;
+            this.emailTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.emailTextBox.Location = new System.Drawing.Point(10, 106);
+            this.emailTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.emailTextBox.Name = "emailTextBox";
+            this.emailTextBox.Size = new System.Drawing.Size(240, 26);
+            this.emailTextBox.TabIndex = 58;
             // 
-            // emaillbl
+            // emailLabel
             // 
-            this.emaillbl.AutoSize = true;
-            this.emaillbl.BackColor = System.Drawing.Color.Transparent;
-            this.emaillbl.Font = new System.Drawing.Font("Adobe Heiti Std R", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.emaillbl.Location = new System.Drawing.Point(8, 97);
-            this.emaillbl.Name = "emaillbl";
-            this.emaillbl.Size = new System.Drawing.Size(84, 30);
-            this.emaillbl.TabIndex = 57;
-            this.emaillbl.Text = "Email: ";
+            this.emailLabel.AutoSize = true;
+            this.emailLabel.BackColor = System.Drawing.Color.Transparent;
+            this.emailLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.emailLabel.Location = new System.Drawing.Point(6, 79);
+            this.emailLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.emailLabel.Name = "emailLabel";
+            this.emailLabel.Size = new System.Drawing.Size(67, 24);
+            this.emailLabel.TabIndex = 57;
+            this.emailLabel.Text = "Email: ";
             // 
-            // lasttxt
+            // lastTextBox
             // 
-            this.lasttxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lasttxt.Location = new System.Drawing.Point(663, 64);
-            this.lasttxt.Name = "lasttxt";
-            this.lasttxt.Size = new System.Drawing.Size(319, 30);
-            this.lasttxt.TabIndex = 56;
+            this.lastTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lastTextBox.Location = new System.Drawing.Point(497, 52);
+            this.lastTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lastTextBox.Name = "lastTextBox";
+            this.lastTextBox.Size = new System.Drawing.Size(240, 26);
+            this.lastTextBox.TabIndex = 56;
             // 
-            // lastlbl
+            // lastLabel
             // 
-            this.lastlbl.AutoSize = true;
-            this.lastlbl.BackColor = System.Drawing.Color.Transparent;
-            this.lastlbl.Font = new System.Drawing.Font("Adobe Heiti Std R", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lastlbl.Location = new System.Drawing.Point(658, 31);
-            this.lastlbl.Name = "lastlbl";
-            this.lastlbl.Size = new System.Drawing.Size(130, 30);
-            this.lastlbl.TabIndex = 55;
-            this.lastlbl.Text = "Last name:";
+            this.lastLabel.AutoSize = true;
+            this.lastLabel.BackColor = System.Drawing.Color.Transparent;
+            this.lastLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lastLabel.Location = new System.Drawing.Point(494, 25);
+            this.lastLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lastLabel.Name = "lastLabel";
+            this.lastLabel.Size = new System.Drawing.Size(101, 24);
+            this.lastLabel.TabIndex = 55;
+            this.lastLabel.Text = "Last name:";
             // 
-            // middletxt
+            // middleTextBox
             // 
-            this.middletxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.middletxt.Location = new System.Drawing.Point(338, 64);
-            this.middletxt.Name = "middletxt";
-            this.middletxt.Size = new System.Drawing.Size(319, 30);
-            this.middletxt.TabIndex = 54;
+            this.middleTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.middleTextBox.Location = new System.Drawing.Point(254, 52);
+            this.middleTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.middleTextBox.Name = "middleTextBox";
+            this.middleTextBox.Size = new System.Drawing.Size(240, 26);
+            this.middleTextBox.TabIndex = 54;
             // 
-            // middlelbl
+            // middlelLabel
             // 
-            this.middlelbl.AutoSize = true;
-            this.middlelbl.BackColor = System.Drawing.Color.Transparent;
-            this.middlelbl.Font = new System.Drawing.Font("Adobe Heiti Std R", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.middlelbl.Location = new System.Drawing.Point(333, 31);
-            this.middlelbl.Name = "middlelbl";
-            this.middlelbl.Size = new System.Drawing.Size(162, 30);
-            this.middlelbl.TabIndex = 53;
-            this.middlelbl.Text = "Middle name:";
+            this.middlelLabel.AutoSize = true;
+            this.middlelLabel.BackColor = System.Drawing.Color.Transparent;
+            this.middlelLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.middlelLabel.Location = new System.Drawing.Point(250, 25);
+            this.middlelLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.middlelLabel.Name = "middlelLabel";
+            this.middlelLabel.Size = new System.Drawing.Size(125, 24);
+            this.middlelLabel.TabIndex = 53;
+            this.middlelLabel.Text = "Middle name:";
             // 
-            // firsttxt
+            // firstTextBox
             // 
-            this.firsttxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.firsttxt.Location = new System.Drawing.Point(13, 64);
-            this.firsttxt.Name = "firsttxt";
-            this.firsttxt.Size = new System.Drawing.Size(319, 30);
-            this.firsttxt.TabIndex = 52;
+            this.firstTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.firstTextBox.Location = new System.Drawing.Point(10, 52);
+            this.firstTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.firstTextBox.Name = "firstTextBox";
+            this.firstTextBox.Size = new System.Drawing.Size(240, 26);
+            this.firstTextBox.TabIndex = 52;
             // 
-            // firstlbl
+            // firstLabel
             // 
-            this.firstlbl.AutoSize = true;
-            this.firstlbl.BackColor = System.Drawing.Color.Transparent;
-            this.firstlbl.Font = new System.Drawing.Font("Adobe Heiti Std R", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.firstlbl.Location = new System.Drawing.Point(8, 31);
-            this.firstlbl.Name = "firstlbl";
-            this.firstlbl.Size = new System.Drawing.Size(138, 30);
-            this.firstlbl.TabIndex = 51;
-            this.firstlbl.Text = "First name: ";
+            this.firstLabel.AutoSize = true;
+            this.firstLabel.BackColor = System.Drawing.Color.Transparent;
+            this.firstLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.firstLabel.Location = new System.Drawing.Point(6, 25);
+            this.firstLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.firstLabel.Name = "firstLabel";
+            this.firstLabel.Size = new System.Drawing.Size(108, 24);
+            this.firstLabel.TabIndex = 51;
+            this.firstLabel.Text = "First name: ";
             // 
-            // textBox1
+            // idTextBox
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(338, 130);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(319, 30);
-            this.textBox1.TabIndex = 60;
+            this.idTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.idTextBox.Location = new System.Drawing.Point(254, 106);
+            this.idTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.idTextBox.Name = "idTextBox";
+            this.idTextBox.Size = new System.Drawing.Size(240, 26);
+            this.idTextBox.TabIndex = 60;
             // 
-            // label1
+            // idLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Adobe Heiti Std R", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(333, 97);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(112, 30);
-            this.label1.TabIndex = 59;
-            this.label1.Text = "MSU ID#:";
+            this.idLabel.AutoSize = true;
+            this.idLabel.BackColor = System.Drawing.Color.Transparent;
+            this.idLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.idLabel.Location = new System.Drawing.Point(250, 79);
+            this.idLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.idLabel.Name = "idLabel";
+            this.idLabel.Size = new System.Drawing.Size(88, 24);
+            this.idLabel.TabIndex = 59;
+            this.idLabel.Text = "MSU ID#:";
             // 
-            // groupBox1
+            // siGroupBox
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox1.Controls.Add(this.firstlbl);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.firsttxt);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.middlelbl);
-            this.groupBox1.Controls.Add(this.emailtxt);
-            this.groupBox1.Controls.Add(this.middletxt);
-            this.groupBox1.Controls.Add(this.emaillbl);
-            this.groupBox1.Controls.Add(this.lastlbl);
-            this.groupBox1.Controls.Add(this.lasttxt);
-            this.groupBox1.Font = new System.Drawing.Font("Adobe Heiti Std R", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 33);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(992, 176);
-            this.groupBox1.TabIndex = 61;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Student Info:";
+            this.siGroupBox.BackColor = System.Drawing.Color.Transparent;
+            this.siGroupBox.Controls.Add(this.firstLabel);
+            this.siGroupBox.Controls.Add(this.idTextBox);
+            this.siGroupBox.Controls.Add(this.firstTextBox);
+            this.siGroupBox.Controls.Add(this.idLabel);
+            this.siGroupBox.Controls.Add(this.middlelLabel);
+            this.siGroupBox.Controls.Add(this.emailTextBox);
+            this.siGroupBox.Controls.Add(this.middleTextBox);
+            this.siGroupBox.Controls.Add(this.emailLabel);
+            this.siGroupBox.Controls.Add(this.lastLabel);
+            this.siGroupBox.Controls.Add(this.lastTextBox);
+            this.siGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.siGroupBox.Location = new System.Drawing.Point(9, 27);
+            this.siGroupBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.siGroupBox.Name = "siGroupBox";
+            this.siGroupBox.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.siGroupBox.Size = new System.Drawing.Size(744, 143);
+            this.siGroupBox.TabIndex = 61;
+            this.siGroupBox.TabStop = false;
+            this.siGroupBox.Text = "Student Info:";
             // 
-            // groupBox2
+            // msuGroupBox
             // 
-            this.groupBox2.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox2.Controls.Add(this.comboBox1);
-            this.groupBox2.Controls.Add(this.textBox5);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.textBox3);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.textBox2);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Font = new System.Drawing.Font("Adobe Heiti Std R", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(12, 224);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(992, 176);
-            this.groupBox2.TabIndex = 62;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "MSU Address:";
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            this.msuGroupBox.BackColor = System.Drawing.Color.Transparent;
+            this.msuGroupBox.Controls.Add(this.SunwatcherRadioButton);
+            this.msuGroupBox.Controls.Add(this.sundanceRadioButton);
+            this.msuGroupBox.Controls.Add(this.poboxRadioButton);
+            this.msuGroupBox.Controls.Add(this.otherRadioButton);
+            this.msuGroupBox.Controls.Add(this.aptmailTextBox);
+            this.msuGroupBox.Controls.Add(this.aptmailLabel);
+            this.msuGroupBox.Controls.Add(this.msuaddressTextBox);
+            this.msuGroupBox.Controls.Add(this.msuaddressLabel);
+            this.msuGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.msuGroupBox.Location = new System.Drawing.Point(9, 182);
+            this.msuGroupBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.msuGroupBox.Name = "msuGroupBox";
+            this.msuGroupBox.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.msuGroupBox.Size = new System.Drawing.Size(744, 105);
+            this.msuGroupBox.TabIndex = 62;
+            this.msuGroupBox.TabStop = false;
+            this.msuGroupBox.Text = "MSU Address:";
+            this.msuGroupBox.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
-            // textBox2
+            // aptmailTextBox
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(13, 66);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(969, 30);
-            this.textBox2.TabIndex = 62;
+            this.aptmailTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.aptmailTextBox.Location = new System.Drawing.Point(497, 70);
+            this.aptmailTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.aptmailTextBox.Name = "aptmailTextBox";
+            this.aptmailTextBox.Size = new System.Drawing.Size(240, 26);
+            this.aptmailTextBox.TabIndex = 64;
             // 
-            // label2
+            // aptmailLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Adobe Heiti Std R", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(8, 33);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(172, 30);
-            this.label2.TabIndex = 61;
-            this.label2.Text = "Street Address";
+            this.aptmailLabel.AutoSize = true;
+            this.aptmailLabel.BackColor = System.Drawing.Color.Transparent;
+            this.aptmailLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.aptmailLabel.Location = new System.Drawing.Point(494, 43);
+            this.aptmailLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.aptmailLabel.Name = "aptmailLabel";
+            this.aptmailLabel.Size = new System.Drawing.Size(129, 24);
+            this.aptmailLabel.TabIndex = 63;
+            this.aptmailLabel.Text = "Apt/Mailbox #:";
             // 
-            // textBox3
+            // msuaddressTextBox
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(11, 132);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(319, 30);
-            this.textBox3.TabIndex = 64;
+            this.msuaddressTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.msuaddressTextBox.Location = new System.Drawing.Point(8, 70);
+            this.msuaddressTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.msuaddressTextBox.Name = "msuaddressTextBox";
+            this.msuaddressTextBox.Size = new System.Drawing.Size(480, 26);
+            this.msuaddressTextBox.TabIndex = 62;
             // 
-            // label3
+            // msuaddressLabel
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Adobe Heiti Std R", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(6, 99);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 30);
-            this.label3.TabIndex = 63;
-            this.label3.Text = "City:";
+            this.msuaddressLabel.AutoSize = true;
+            this.msuaddressLabel.BackColor = System.Drawing.Color.Transparent;
+            this.msuaddressLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.msuaddressLabel.Location = new System.Drawing.Point(4, 43);
+            this.msuaddressLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.msuaddressLabel.Name = "msuaddressLabel";
+            this.msuaddressLabel.Size = new System.Drawing.Size(133, 24);
+            this.msuaddressLabel.TabIndex = 61;
+            this.msuaddressLabel.Text = "Street Address";
             // 
-            // label4
+            // naGroupBox
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Adobe Heiti Std R", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(333, 99);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(81, 30);
-            this.label4.TabIndex = 65;
-            this.label4.Text = "State: ";
+            this.naGroupBox.BackColor = System.Drawing.Color.Transparent;
+            this.naGroupBox.Controls.Add(this.address2TextBox);
+            this.naGroupBox.Controls.Add(this.address2Label);
+            this.naGroupBox.Controls.Add(this.nacountryTextBox);
+            this.naGroupBox.Controls.Add(this.nacountryLabel);
+            this.naGroupBox.Controls.Add(this.nastateComboBox);
+            this.naGroupBox.Controls.Add(this.nazipTextBox);
+            this.naGroupBox.Controls.Add(this.nazipLabel);
+            this.naGroupBox.Controls.Add(this.nastateLabel);
+            this.naGroupBox.Controls.Add(this.naCityTextBox);
+            this.naGroupBox.Controls.Add(this.nacityLabel);
+            this.naGroupBox.Controls.Add(this.address1TextBox);
+            this.naGroupBox.Controls.Add(this.address1Label);
+            this.naGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.naGroupBox.Location = new System.Drawing.Point(9, 291);
+            this.naGroupBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.naGroupBox.Name = "naGroupBox";
+            this.naGroupBox.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.naGroupBox.Size = new System.Drawing.Size(744, 212);
+            this.naGroupBox.TabIndex = 66;
+            this.naGroupBox.TabStop = false;
+            this.naGroupBox.Text = "New Address:";
             // 
-            // textBox5
+            // nastateComboBox
             // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(663, 132);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(319, 30);
-            this.textBox5.TabIndex = 64;
+            this.nastateComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nastateComboBox.FormattingEnabled = true;
+            this.nastateComboBox.Location = new System.Drawing.Point(11, 172);
+            this.nastateComboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nastateComboBox.Name = "nastateComboBox";
+            this.nastateComboBox.Size = new System.Drawing.Size(240, 28);
+            this.nastateComboBox.TabIndex = 63;
             // 
-            // label5
+            // nazipTextBox
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Adobe Heiti Std R", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(658, 99);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(112, 30);
-            this.label5.TabIndex = 63;
-            this.label5.Text = "Zipcode: ";
+            this.nazipTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nazipTextBox.Location = new System.Drawing.Point(501, 174);
+            this.nazipTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nazipTextBox.Name = "nazipTextBox";
+            this.nazipTextBox.Size = new System.Drawing.Size(240, 26);
+            this.nazipTextBox.TabIndex = 64;
             // 
-            // comboBox1
+            // nazipLabel
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(338, 129);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(319, 33);
-            this.comboBox1.TabIndex = 63;
+            this.nazipLabel.AutoSize = true;
+            this.nazipLabel.BackColor = System.Drawing.Color.Transparent;
+            this.nazipLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nazipLabel.Location = new System.Drawing.Point(498, 147);
+            this.nazipLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.nazipLabel.Name = "nazipLabel";
+            this.nazipLabel.Size = new System.Drawing.Size(90, 24);
+            this.nazipLabel.TabIndex = 63;
+            this.nazipLabel.Text = "Zipcode: ";
             // 
-            // groupBox3
+            // nastateLabel
             // 
-            this.groupBox3.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox3.Controls.Add(this.comboBox2);
-            this.groupBox3.Controls.Add(this.textBox4);
-            this.groupBox3.Controls.Add(this.label6);
-            this.groupBox3.Controls.Add(this.label7);
-            this.groupBox3.Controls.Add(this.textBox6);
-            this.groupBox3.Controls.Add(this.label8);
-            this.groupBox3.Controls.Add(this.textBox7);
-            this.groupBox3.Controls.Add(this.label9);
-            this.groupBox3.Font = new System.Drawing.Font("Adobe Heiti Std R", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(12, 412);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(992, 176);
-            this.groupBox3.TabIndex = 66;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "New Address:";
+            this.nastateLabel.AutoSize = true;
+            this.nastateLabel.BackColor = System.Drawing.Color.Transparent;
+            this.nastateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nastateLabel.Location = new System.Drawing.Point(7, 147);
+            this.nastateLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.nastateLabel.Name = "nastateLabel";
+            this.nastateLabel.Size = new System.Drawing.Size(61, 24);
+            this.nastateLabel.TabIndex = 65;
+            this.nastateLabel.Text = "State: ";
             // 
-            // comboBox2
+            // naCityTextBox
             // 
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(338, 129);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(319, 33);
-            this.comboBox2.TabIndex = 63;
+            this.naCityTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.naCityTextBox.Location = new System.Drawing.Point(497, 109);
+            this.naCityTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.naCityTextBox.Name = "naCityTextBox";
+            this.naCityTextBox.Size = new System.Drawing.Size(240, 26);
+            this.naCityTextBox.TabIndex = 64;
             // 
-            // textBox4
+            // nacityLabel
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(663, 132);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(319, 30);
-            this.textBox4.TabIndex = 64;
+            this.nacityLabel.AutoSize = true;
+            this.nacityLabel.BackColor = System.Drawing.Color.Transparent;
+            this.nacityLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nacityLabel.Location = new System.Drawing.Point(493, 82);
+            this.nacityLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.nacityLabel.Name = "nacityLabel";
+            this.nacityLabel.Size = new System.Drawing.Size(45, 24);
+            this.nacityLabel.TabIndex = 63;
+            this.nacityLabel.Text = "City:";
             // 
-            // label6
+            // address1TextBox
             // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Adobe Heiti Std R", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(658, 99);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(112, 30);
-            this.label6.TabIndex = 63;
-            this.label6.Text = "Zipcode: ";
+            this.address1TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.address1TextBox.Location = new System.Drawing.Point(10, 54);
+            this.address1TextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.address1TextBox.Name = "address1TextBox";
+            this.address1TextBox.Size = new System.Drawing.Size(728, 26);
+            this.address1TextBox.TabIndex = 62;
             // 
-            // label7
+            // address1Label
             // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Adobe Heiti Std R", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(333, 99);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(81, 30);
-            this.label7.TabIndex = 65;
-            this.label7.Text = "State: ";
-            // 
-            // textBox6
-            // 
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(11, 132);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(319, 30);
-            this.textBox6.TabIndex = 64;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Adobe Heiti Std R", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(6, 99);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(61, 30);
-            this.label8.TabIndex = 63;
-            this.label8.Text = "City:";
-            // 
-            // textBox7
-            // 
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(13, 66);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(969, 30);
-            this.textBox7.TabIndex = 62;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Adobe Heiti Std R", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(8, 33);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(172, 30);
-            this.label9.TabIndex = 61;
-            this.label9.Text = "Street Address";
+            this.address1Label.AutoSize = true;
+            this.address1Label.BackColor = System.Drawing.Color.Transparent;
+            this.address1Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.address1Label.Location = new System.Drawing.Point(6, 27);
+            this.address1Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.address1Label.Name = "address1Label";
+            this.address1Label.Size = new System.Drawing.Size(141, 24);
+            this.address1Label.TabIndex = 61;
+            this.address1Label.Text = "Address Line 1:";
             // 
             // adduserbtn
             // 
             this.adduserbtn.BackColor = System.Drawing.Color.DarkRed;
             this.adduserbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.adduserbtn.Font = new System.Drawing.Font("Adobe Heiti Std R", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.adduserbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.adduserbtn.ForeColor = System.Drawing.Color.White;
-            this.adduserbtn.Location = new System.Drawing.Point(115, 624);
+            this.adduserbtn.Location = new System.Drawing.Point(86, 507);
+            this.adduserbtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.adduserbtn.Name = "adduserbtn";
-            this.adduserbtn.Size = new System.Drawing.Size(319, 82);
+            this.adduserbtn.Size = new System.Drawing.Size(239, 67);
             this.adduserbtn.TabIndex = 67;
             this.adduserbtn.Text = "Save";
             this.adduserbtn.UseVisualStyleBackColor = false;
@@ -495,11 +494,12 @@
             // 
             this.button1.BackColor = System.Drawing.Color.DarkRed;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Adobe Heiti Std R", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(478, 624);
+            this.button1.Location = new System.Drawing.Point(358, 507);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(319, 82);
+            this.button1.Size = new System.Drawing.Size(239, 67);
             this.button1.TabIndex = 68;
             this.button1.Text = "Cancel";
             this.button1.UseVisualStyleBackColor = false;
@@ -508,40 +508,132 @@
             // 
             this.HomePic.BackColor = System.Drawing.Color.DarkRed;
             this.HomePic.Image = global::PO.Properties.Resources.home_icon;
-            this.HomePic.Location = new System.Drawing.Point(844, 646);
+            this.HomePic.Location = new System.Drawing.Point(633, 525);
+            this.HomePic.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.HomePic.Name = "HomePic";
-            this.HomePic.Size = new System.Drawing.Size(45, 45);
+            this.HomePic.Size = new System.Drawing.Size(34, 37);
             this.HomePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.HomePic.TabIndex = 69;
             this.HomePic.TabStop = false;
             // 
+            // otherRadioButton
+            // 
+            this.otherRadioButton.AutoSize = true;
+            this.otherRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.otherRadioButton.Location = new System.Drawing.Point(339, 24);
+            this.otherRadioButton.Name = "otherRadioButton";
+            this.otherRadioButton.Size = new System.Drawing.Size(102, 24);
+            this.otherRadioButton.TabIndex = 65;
+            this.otherRadioButton.TabStop = true;
+            this.otherRadioButton.Text = "Other/New";
+            this.otherRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // poboxRadioButton
+            // 
+            this.poboxRadioButton.AutoSize = true;
+            this.poboxRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.poboxRadioButton.Location = new System.Drawing.Point(253, 24);
+            this.poboxRadioButton.Name = "poboxRadioButton";
+            this.poboxRadioButton.Size = new System.Drawing.Size(80, 24);
+            this.poboxRadioButton.TabIndex = 66;
+            this.poboxRadioButton.TabStop = true;
+            this.poboxRadioButton.Text = "PO Box";
+            this.poboxRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // sundanceRadioButton
+            // 
+            this.sundanceRadioButton.AutoSize = true;
+            this.sundanceRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sundanceRadioButton.Location = new System.Drawing.Point(11, 24);
+            this.sundanceRadioButton.Name = "sundanceRadioButton";
+            this.sundanceRadioButton.Size = new System.Drawing.Size(100, 24);
+            this.sundanceRadioButton.TabIndex = 67;
+            this.sundanceRadioButton.TabStop = true;
+            this.sundanceRadioButton.Text = "Sundance";
+            this.sundanceRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // SunwatcherRadioButton
+            // 
+            this.SunwatcherRadioButton.AutoSize = true;
+            this.SunwatcherRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SunwatcherRadioButton.Location = new System.Drawing.Point(125, 24);
+            this.SunwatcherRadioButton.Name = "SunwatcherRadioButton";
+            this.SunwatcherRadioButton.Size = new System.Drawing.Size(112, 24);
+            this.SunwatcherRadioButton.TabIndex = 68;
+            this.SunwatcherRadioButton.TabStop = true;
+            this.SunwatcherRadioButton.Text = "Sunwatcher";
+            this.SunwatcherRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // nacountryTextBox
+            // 
+            this.nacountryTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nacountryTextBox.Location = new System.Drawing.Point(257, 174);
+            this.nacountryTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.nacountryTextBox.Name = "nacountryTextBox";
+            this.nacountryTextBox.Size = new System.Drawing.Size(240, 26);
+            this.nacountryTextBox.TabIndex = 67;
+            // 
+            // nacountryLabel
+            // 
+            this.nacountryLabel.AutoSize = true;
+            this.nacountryLabel.BackColor = System.Drawing.Color.Transparent;
+            this.nacountryLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nacountryLabel.Location = new System.Drawing.Point(253, 147);
+            this.nacountryLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.nacountryLabel.Name = "nacountryLabel";
+            this.nacountryLabel.Size = new System.Drawing.Size(80, 24);
+            this.nacountryLabel.TabIndex = 66;
+            this.nacountryLabel.Text = "Country:";
+            // 
+            // address2TextBox
+            // 
+            this.address2TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.address2TextBox.Location = new System.Drawing.Point(10, 109);
+            this.address2TextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.address2TextBox.Name = "address2TextBox";
+            this.address2TextBox.Size = new System.Drawing.Size(478, 26);
+            this.address2TextBox.TabIndex = 69;
+            // 
+            // address2Label
+            // 
+            this.address2Label.AutoSize = true;
+            this.address2Label.BackColor = System.Drawing.Color.Transparent;
+            this.address2Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.address2Label.Location = new System.Drawing.Point(6, 82);
+            this.address2Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.address2Label.Name = "address2Label";
+            this.address2Label.Size = new System.Drawing.Size(141, 24);
+            this.address2Label.TabIndex = 68;
+            this.address2Label.Text = "Address Line 2:";
+            // 
             // AddStudentAddress
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::PO.Properties.Resources.postBG1;
-            this.ClientSize = new System.Drawing.Size(1016, 733);
+            this.ClientSize = new System.Drawing.Size(764, 602);
             this.Controls.Add(this.HomePic);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.adduserbtn);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.naGroupBox);
+            this.Controls.Add(this.msuGroupBox);
+            this.Controls.Add(this.siGroupBox);
             this.Controls.Add(this.SearchMenuStrip);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(1034, 780);
-            this.MinimumSize = new System.Drawing.Size(1034, 780);
+            this.MaximumSize = new System.Drawing.Size(780, 641);
+            this.MinimumSize = new System.Drawing.Size(780, 641);
             this.Name = "AddStudentAddress";
             this.Text = "Midwestern State University - Post Office - Add Student  Address";
             this.SearchMenuStrip.ResumeLayout(false);
             this.SearchMenuStrip.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
+            this.siGroupBox.ResumeLayout(false);
+            this.siGroupBox.PerformLayout();
+            this.msuGroupBox.ResumeLayout(false);
+            this.msuGroupBox.PerformLayout();
+            this.naGroupBox.ResumeLayout(false);
+            this.naGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.HomePic)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -562,37 +654,41 @@
         private System.Windows.Forms.ToolStripMenuItem printToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem printPreviewToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem forcePrintToolStripMenuItem;
-        private System.Windows.Forms.TextBox emailtxt;
-        private System.Windows.Forms.Label emaillbl;
-        private System.Windows.Forms.TextBox lasttxt;
-        private System.Windows.Forms.Label lastlbl;
-        private System.Windows.Forms.TextBox middletxt;
-        private System.Windows.Forms.Label middlelbl;
-        private System.Windows.Forms.TextBox firsttxt;
-        private System.Windows.Forms.Label firstlbl;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox emailTextBox;
+        private System.Windows.Forms.Label emailLabel;
+        private System.Windows.Forms.TextBox lastTextBox;
+        private System.Windows.Forms.Label lastLabel;
+        private System.Windows.Forms.TextBox middleTextBox;
+        private System.Windows.Forms.Label middlelLabel;
+        private System.Windows.Forms.TextBox firstTextBox;
+        private System.Windows.Forms.Label firstLabel;
+        private System.Windows.Forms.TextBox idTextBox;
+        private System.Windows.Forms.Label idLabel;
+        private System.Windows.Forms.GroupBox siGroupBox;
+        private System.Windows.Forms.GroupBox msuGroupBox;
+        private System.Windows.Forms.TextBox aptmailTextBox;
+        private System.Windows.Forms.Label aptmailLabel;
+        private System.Windows.Forms.TextBox msuaddressTextBox;
+        private System.Windows.Forms.Label msuaddressLabel;
+        private System.Windows.Forms.GroupBox naGroupBox;
+        private System.Windows.Forms.ComboBox nastateComboBox;
+        private System.Windows.Forms.TextBox nazipTextBox;
+        private System.Windows.Forms.Label nazipLabel;
+        private System.Windows.Forms.Label nastateLabel;
+        private System.Windows.Forms.TextBox naCityTextBox;
+        private System.Windows.Forms.Label nacityLabel;
+        private System.Windows.Forms.TextBox address1TextBox;
+        private System.Windows.Forms.Label address1Label;
         private System.Windows.Forms.Button adduserbtn;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox HomePic;
+        private System.Windows.Forms.RadioButton SunwatcherRadioButton;
+        private System.Windows.Forms.RadioButton sundanceRadioButton;
+        private System.Windows.Forms.RadioButton poboxRadioButton;
+        private System.Windows.Forms.RadioButton otherRadioButton;
+        private System.Windows.Forms.TextBox address2TextBox;
+        private System.Windows.Forms.Label address2Label;
+        private System.Windows.Forms.TextBox nacountryTextBox;
+        private System.Windows.Forms.Label nacountryLabel;
     }
 }

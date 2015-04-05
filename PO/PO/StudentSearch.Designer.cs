@@ -32,43 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StudentSearch));
             this.PrintBtn = new System.Windows.Forms.Button();
             this.ResultList = new System.Windows.Forms.DataGridView();
-            this.PrintQ = new System.Windows.Forms.DataGridView();
-            this.AdminLogin = new System.Windows.Forms.Button();
-            this.RemoveQ = new System.Windows.Forms.Button();
-            this.lblResult = new System.Windows.Forms.Label();
-            this.numberofcopies = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.AddQ = new System.Windows.Forms.Button();
-            this.SearchBox = new System.Windows.Forms.GroupBox();
-            this.SearchButton = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.LastNametxtbox = new System.Windows.Forms.TextBox();
-            this.MiddleInittxtbox = new System.Windows.Forms.TextBox();
-            this.FirstNametxtbox = new System.Windows.Forms.TextBox();
-            this.LastName = new System.Windows.Forms.Label();
-            this.MiddleName = new System.Windows.Forms.Label();
-            this.FirstName = new System.Windows.Forms.Label();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.SearchMenuStrip = new System.Windows.Forms.MenuStrip();
-            this.adminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.logInToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.searchStudentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addRemoveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.printPreviewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.forcePrintToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.connectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.studentDatabaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pODBDataSet = new PO.PODBDataSet();
-            this.studentTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.studentTableTableAdapter = new PO.PODBDataSetTableAdapters.StudentTableTableAdapter();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.middleNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -83,14 +46,60 @@
             this.mSUZipDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateAddedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mustangNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.newCountryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.studentTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pODBDataSet = new PO.PODBDataSet();
+            this.studentTableBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.pODBDataSet1 = new PO.PODBDataSet();
+            this.PrintQ = new System.Windows.Forms.DataGridView();
+            this.AdminLogin = new System.Windows.Forms.Button();
+            this.RemoveQ = new System.Windows.Forms.Button();
+            this.lblResult = new System.Windows.Forms.Label();
+            this.numberofcopies = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.AddQ = new System.Windows.Forms.Button();
+            this.SearchBox = new System.Windows.Forms.GroupBox();
+            this.SearchButton = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.idTextBox = new System.Windows.Forms.TextBox();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.LastNametxtbox = new System.Windows.Forms.TextBox();
+            this.MiddleInittxtbox = new System.Windows.Forms.TextBox();
+            this.FirstNametxtbox = new System.Windows.Forms.TextBox();
+            this.LastName = new System.Windows.Forms.Label();
+            this.MiddleName = new System.Windows.Forms.Label();
+            this.FirstName = new System.Windows.Forms.Label();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.SearchMenuStrip = new System.Windows.Forms.MenuStrip();
+            this.adminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logInToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.adminHomeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.searchStudentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addRemoveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.printPreviewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.forcePrintToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.connectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.studentDatabaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.studentTableTableAdapter = new PO.PODBDataSetTableAdapters.StudentTableTableAdapter();
+            this.updateButton = new System.Windows.Forms.Button();
+            this.studentTableBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ResultList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentTableBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pODBDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentTableBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pODBDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PrintQ)).BeginInit();
             this.SearchBox.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SearchMenuStrip.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pODBDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentTableBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentTableBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // PrintBtn
@@ -126,14 +135,127 @@
             this.mSUStateDataGridViewTextBoxColumn,
             this.mSUZipDataGridViewTextBoxColumn,
             this.dateAddedDataGridViewTextBoxColumn,
-            this.mustangNumberDataGridViewTextBoxColumn});
+            this.mustangNumberDataGridViewTextBoxColumn,
+            this.newCountryDataGridViewTextBoxColumn});
             this.ResultList.DataSource = this.studentTableBindingSource;
             this.ResultList.Location = new System.Drawing.Point(13, 214);
             this.ResultList.Margin = new System.Windows.Forms.Padding(2);
             this.ResultList.Name = "ResultList";
+            this.ResultList.RowHeadersVisible = false;
             this.ResultList.RowTemplate.Height = 24;
+            this.ResultList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ResultList.Size = new System.Drawing.Size(740, 135);
             this.ResultList.TabIndex = 30;
+            // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            // 
+            // firstNameDataGridViewTextBoxColumn
+            // 
+            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "First Name";
+            this.firstNameDataGridViewTextBoxColumn.HeaderText = "First Name";
+            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
+            // 
+            // middleNameDataGridViewTextBoxColumn
+            // 
+            this.middleNameDataGridViewTextBoxColumn.DataPropertyName = "Middle Name";
+            this.middleNameDataGridViewTextBoxColumn.HeaderText = "Middle Name";
+            this.middleNameDataGridViewTextBoxColumn.Name = "middleNameDataGridViewTextBoxColumn";
+            // 
+            // lastNameDataGridViewTextBoxColumn
+            // 
+            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "Last Name";
+            this.lastNameDataGridViewTextBoxColumn.HeaderText = "Last Name";
+            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
+            // 
+            // newStreetAddressDataGridViewTextBoxColumn
+            // 
+            this.newStreetAddressDataGridViewTextBoxColumn.DataPropertyName = "New Street Address";
+            this.newStreetAddressDataGridViewTextBoxColumn.HeaderText = "New Street Address";
+            this.newStreetAddressDataGridViewTextBoxColumn.Name = "newStreetAddressDataGridViewTextBoxColumn";
+            // 
+            // newCityDataGridViewTextBoxColumn
+            // 
+            this.newCityDataGridViewTextBoxColumn.DataPropertyName = "New City";
+            this.newCityDataGridViewTextBoxColumn.HeaderText = "New City";
+            this.newCityDataGridViewTextBoxColumn.Name = "newCityDataGridViewTextBoxColumn";
+            // 
+            // newStateDataGridViewTextBoxColumn
+            // 
+            this.newStateDataGridViewTextBoxColumn.DataPropertyName = "New State";
+            this.newStateDataGridViewTextBoxColumn.HeaderText = "New State";
+            this.newStateDataGridViewTextBoxColumn.Name = "newStateDataGridViewTextBoxColumn";
+            // 
+            // newZipDataGridViewTextBoxColumn
+            // 
+            this.newZipDataGridViewTextBoxColumn.DataPropertyName = "New Zip";
+            this.newZipDataGridViewTextBoxColumn.HeaderText = "New Zip";
+            this.newZipDataGridViewTextBoxColumn.Name = "newZipDataGridViewTextBoxColumn";
+            // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            // 
+            // mSUAddressDataGridViewTextBoxColumn
+            // 
+            this.mSUAddressDataGridViewTextBoxColumn.DataPropertyName = "MSU Address";
+            this.mSUAddressDataGridViewTextBoxColumn.HeaderText = "MSU Address";
+            this.mSUAddressDataGridViewTextBoxColumn.Name = "mSUAddressDataGridViewTextBoxColumn";
+            // 
+            // mSUStateDataGridViewTextBoxColumn
+            // 
+            this.mSUStateDataGridViewTextBoxColumn.DataPropertyName = "MSU State";
+            this.mSUStateDataGridViewTextBoxColumn.HeaderText = "MSU State";
+            this.mSUStateDataGridViewTextBoxColumn.Name = "mSUStateDataGridViewTextBoxColumn";
+            // 
+            // mSUZipDataGridViewTextBoxColumn
+            // 
+            this.mSUZipDataGridViewTextBoxColumn.DataPropertyName = "MSU Zip";
+            this.mSUZipDataGridViewTextBoxColumn.HeaderText = "MSU Zip";
+            this.mSUZipDataGridViewTextBoxColumn.Name = "mSUZipDataGridViewTextBoxColumn";
+            // 
+            // dateAddedDataGridViewTextBoxColumn
+            // 
+            this.dateAddedDataGridViewTextBoxColumn.DataPropertyName = "Date Added";
+            this.dateAddedDataGridViewTextBoxColumn.HeaderText = "Date Added";
+            this.dateAddedDataGridViewTextBoxColumn.Name = "dateAddedDataGridViewTextBoxColumn";
+            // 
+            // mustangNumberDataGridViewTextBoxColumn
+            // 
+            this.mustangNumberDataGridViewTextBoxColumn.DataPropertyName = "Mustang Number";
+            this.mustangNumberDataGridViewTextBoxColumn.HeaderText = "Mustang Number";
+            this.mustangNumberDataGridViewTextBoxColumn.Name = "mustangNumberDataGridViewTextBoxColumn";
+            // 
+            // newCountryDataGridViewTextBoxColumn
+            // 
+            this.newCountryDataGridViewTextBoxColumn.DataPropertyName = "New Country";
+            this.newCountryDataGridViewTextBoxColumn.HeaderText = "New Country";
+            this.newCountryDataGridViewTextBoxColumn.Name = "newCountryDataGridViewTextBoxColumn";
+            // 
+            // studentTableBindingSource
+            // 
+            this.studentTableBindingSource.DataMember = "StudentTable";
+            this.studentTableBindingSource.DataSource = this.pODBDataSet;
+            // 
+            // pODBDataSet
+            // 
+            this.pODBDataSet.DataSetName = "PODBDataSet";
+            this.pODBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // studentTableBindingSource1
+            // 
+            this.studentTableBindingSource1.DataMember = "StudentTable";
+            this.studentTableBindingSource1.DataSource = this.pODBDataSet1;
+            // 
+            // pODBDataSet1
+            // 
+            this.pODBDataSet1.DataSetName = "PODBDataSet";
+            this.pODBDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // PrintQ
             // 
@@ -260,7 +382,7 @@
             // 
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.idTextBox);
             this.panel2.ForeColor = System.Drawing.Color.Black;
             this.panel2.Location = new System.Drawing.Point(122, 89);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
@@ -295,14 +417,14 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Student ID: ";
             // 
-            // textBox1
+            // idTextBox
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.textBox1.Location = new System.Drawing.Point(106, 12);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(128, 23);
-            this.textBox1.TabIndex = 0;
+            this.idTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.idTextBox.Location = new System.Drawing.Point(106, 12);
+            this.idTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.idTextBox.Name = "idTextBox";
+            this.idTextBox.Size = new System.Drawing.Size(128, 23);
+            this.idTextBox.TabIndex = 0;
             // 
             // radioButton1
             // 
@@ -434,7 +556,8 @@
             // adminToolStripMenuItem
             // 
             this.adminToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.logInToolStripMenuItem});
+            this.logInToolStripMenuItem,
+            this.adminHomeToolStripMenuItem});
             this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
             this.adminToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
             this.adminToolStripMenuItem.Text = "Admin";
@@ -442,9 +565,16 @@
             // logInToolStripMenuItem
             // 
             this.logInToolStripMenuItem.Name = "logInToolStripMenuItem";
-            this.logInToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.logInToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.logInToolStripMenuItem.Text = "Log In";
-            this.logInToolStripMenuItem.Click += new System.EventHandler(this.logInToolStripMenuItem_Click);
+            this.logInToolStripMenuItem.Click += new System.EventHandler(this.AdminLogin_Click);
+            // 
+            // adminHomeToolStripMenuItem
+            // 
+            this.adminHomeToolStripMenuItem.Name = "adminHomeToolStripMenuItem";
+            this.adminHomeToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.adminHomeToolStripMenuItem.Text = "Admin Home";
+            this.adminHomeToolStripMenuItem.Click += new System.EventHandler(this.adminHomeToolStripMenuItem_Click);
             // 
             // searchStudentToolStripMenuItem
             // 
@@ -513,103 +643,30 @@
             this.studentDatabaseToolStripMenuItem.Text = "Database";
             this.studentDatabaseToolStripMenuItem.Click += new System.EventHandler(this.studentDatabaseToolStripMenuItem_Click);
             // 
-            // pODBDataSet
-            // 
-            this.pODBDataSet.DataSetName = "PODBDataSet";
-            this.pODBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // studentTableBindingSource
-            // 
-            this.studentTableBindingSource.DataMember = "StudentTable";
-            this.studentTableBindingSource.DataSource = this.pODBDataSet;
-            // 
             // studentTableTableAdapter
             // 
             this.studentTableTableAdapter.ClearBeforeFill = true;
             // 
-            // iDDataGridViewTextBoxColumn
+            // updateButton
             // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            this.updateButton.BackColor = System.Drawing.Color.DarkRed;
+            this.updateButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.updateButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.updateButton.ForeColor = System.Drawing.Color.White;
+            this.updateButton.Location = new System.Drawing.Point(13, 353);
+            this.updateButton.Margin = new System.Windows.Forms.Padding(2);
+            this.updateButton.Name = "updateButton";
+            this.updateButton.Size = new System.Drawing.Size(220, 51);
+            this.updateButton.TabIndex = 34;
+            this.updateButton.Text = "Update Student Info";
+            this.updateButton.UseVisualStyleBackColor = false;
+            this.updateButton.Visible = false;
+            this.updateButton.Click += new System.EventHandler(this.updateButton_Click);
             // 
-            // firstNameDataGridViewTextBoxColumn
+            // studentTableBindingSource2
             // 
-            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "First Name";
-            this.firstNameDataGridViewTextBoxColumn.HeaderText = "First Name";
-            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
-            // 
-            // middleNameDataGridViewTextBoxColumn
-            // 
-            this.middleNameDataGridViewTextBoxColumn.DataPropertyName = "Middle Name";
-            this.middleNameDataGridViewTextBoxColumn.HeaderText = "Middle Name";
-            this.middleNameDataGridViewTextBoxColumn.Name = "middleNameDataGridViewTextBoxColumn";
-            // 
-            // lastNameDataGridViewTextBoxColumn
-            // 
-            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "Last Name";
-            this.lastNameDataGridViewTextBoxColumn.HeaderText = "Last Name";
-            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
-            // 
-            // newStreetAddressDataGridViewTextBoxColumn
-            // 
-            this.newStreetAddressDataGridViewTextBoxColumn.DataPropertyName = "New Street Address";
-            this.newStreetAddressDataGridViewTextBoxColumn.HeaderText = "New Street Address";
-            this.newStreetAddressDataGridViewTextBoxColumn.Name = "newStreetAddressDataGridViewTextBoxColumn";
-            // 
-            // newCityDataGridViewTextBoxColumn
-            // 
-            this.newCityDataGridViewTextBoxColumn.DataPropertyName = "New City";
-            this.newCityDataGridViewTextBoxColumn.HeaderText = "New City";
-            this.newCityDataGridViewTextBoxColumn.Name = "newCityDataGridViewTextBoxColumn";
-            // 
-            // newStateDataGridViewTextBoxColumn
-            // 
-            this.newStateDataGridViewTextBoxColumn.DataPropertyName = "New State";
-            this.newStateDataGridViewTextBoxColumn.HeaderText = "New State";
-            this.newStateDataGridViewTextBoxColumn.Name = "newStateDataGridViewTextBoxColumn";
-            // 
-            // newZipDataGridViewTextBoxColumn
-            // 
-            this.newZipDataGridViewTextBoxColumn.DataPropertyName = "New Zip";
-            this.newZipDataGridViewTextBoxColumn.HeaderText = "New Zip";
-            this.newZipDataGridViewTextBoxColumn.Name = "newZipDataGridViewTextBoxColumn";
-            // 
-            // emailDataGridViewTextBoxColumn
-            // 
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-            // 
-            // mSUAddressDataGridViewTextBoxColumn
-            // 
-            this.mSUAddressDataGridViewTextBoxColumn.DataPropertyName = "MSU Address";
-            this.mSUAddressDataGridViewTextBoxColumn.HeaderText = "MSU Address";
-            this.mSUAddressDataGridViewTextBoxColumn.Name = "mSUAddressDataGridViewTextBoxColumn";
-            // 
-            // mSUStateDataGridViewTextBoxColumn
-            // 
-            this.mSUStateDataGridViewTextBoxColumn.DataPropertyName = "MSU State";
-            this.mSUStateDataGridViewTextBoxColumn.HeaderText = "MSU State";
-            this.mSUStateDataGridViewTextBoxColumn.Name = "mSUStateDataGridViewTextBoxColumn";
-            // 
-            // mSUZipDataGridViewTextBoxColumn
-            // 
-            this.mSUZipDataGridViewTextBoxColumn.DataPropertyName = "MSU Zip";
-            this.mSUZipDataGridViewTextBoxColumn.HeaderText = "MSU Zip";
-            this.mSUZipDataGridViewTextBoxColumn.Name = "mSUZipDataGridViewTextBoxColumn";
-            // 
-            // dateAddedDataGridViewTextBoxColumn
-            // 
-            this.dateAddedDataGridViewTextBoxColumn.DataPropertyName = "Date Added";
-            this.dateAddedDataGridViewTextBoxColumn.HeaderText = "Date Added";
-            this.dateAddedDataGridViewTextBoxColumn.Name = "dateAddedDataGridViewTextBoxColumn";
-            // 
-            // mustangNumberDataGridViewTextBoxColumn
-            // 
-            this.mustangNumberDataGridViewTextBoxColumn.DataPropertyName = "Mustang Number";
-            this.mustangNumberDataGridViewTextBoxColumn.HeaderText = "Mustang Number";
-            this.mustangNumberDataGridViewTextBoxColumn.Name = "mustangNumberDataGridViewTextBoxColumn";
+            this.studentTableBindingSource2.DataMember = "StudentTable";
+            this.studentTableBindingSource2.DataSource = this.pODBDataSet1;
             // 
             // StudentSearch
             // 
@@ -617,6 +674,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::PO.Properties.Resources.postBG1;
             this.ClientSize = new System.Drawing.Size(764, 602);
+            this.Controls.Add(this.updateButton);
             this.Controls.Add(this.SearchMenuStrip);
             this.Controls.Add(this.PrintBtn);
             this.Controls.Add(this.ResultList);
@@ -637,6 +695,10 @@
             this.Text = "Midwestern State University - Post Office";
             this.Load += new System.EventHandler(this.StudentSearch_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ResultList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentTableBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pODBDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentTableBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pODBDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PrintQ)).EndInit();
             this.SearchBox.ResumeLayout(false);
             this.SearchBox.PerformLayout();
@@ -646,8 +708,7 @@
             this.panel1.PerformLayout();
             this.SearchMenuStrip.ResumeLayout(false);
             this.SearchMenuStrip.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pODBDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentTableBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentTableBindingSource2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -669,7 +730,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox idTextBox;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox LastNametxtbox;
@@ -694,6 +755,10 @@
         private PODBDataSet pODBDataSet;
         private System.Windows.Forms.BindingSource studentTableBindingSource;
         private PODBDataSetTableAdapters.StudentTableTableAdapter studentTableTableAdapter;
+        private System.Windows.Forms.ToolStripMenuItem adminHomeToolStripMenuItem;
+        private System.Windows.Forms.Button updateButton;
+        private PODBDataSet pODBDataSet1;
+        private System.Windows.Forms.BindingSource studentTableBindingSource1;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn middleNameDataGridViewTextBoxColumn;
@@ -708,6 +773,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn mSUZipDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateAddedDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn mustangNumberDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn newCountryDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource studentTableBindingSource2;
     }
 }
 

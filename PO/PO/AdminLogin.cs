@@ -12,30 +12,83 @@ namespace PO
 {
     public partial class AdminLogin : Form
     {
+        private String username;
+        private String pwd;
+        Form f;
         public AdminLogin()
         {
             InitializeComponent();
+        }
+        public AdminLogin(Form temp)
+        {
+            InitializeComponent();
+            f = temp;
         }
 
         //home button
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            StudentSearch search = new StudentSearch();
-            search.Show();
+            this.Close();
+            f = new StudentSearch();
+            f.Show();
         }
 
         private void LoginHelp_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            ForgotPassword childPassword = new ForgotPassword();
-            childPassword.Show();
+            f = new ForgotPassword();
+            f.Show();
         }
 
         private void adminLogInButton_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            AdminHomePage AdminHome = new AdminHomePage();
-            AdminHome.Show();
+            //first off, handle the possibility that the username/password
+            //fields could be blank. totally possible
+            if(txtUsername.Text == "")
+            {
+                MessageBox.Show("You can't leave the Username field blank! Put something in there!", "ERROR", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+            if(txtPassword.Text =="")
+            {
+                MessageBox.Show("We don't allow empty passwords! Please enter your password.", "ERROR", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+            else
+            {   
+                username = txtUsername.Text;
+                pwd = txtPassword.Text;
+                               
+                //2 possible things
+                //Login correct
+                //login incorrect
+                //handle them
+                
+                adminTableTableAdapter1.FillByUsernamePwd(podbDataSet1.AdminTable, username, pwd);
+                if (dataGridView1.Rows.Count > 1)
+                {
+                    //success
+                    //go to the adminHomePage form
+                    MessageBox.Show("Login Successful! Click OK to continue", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    f = new AdminHomePage(true);
+                    f.Show();
+                    this.Close();
+                }
+
+                else
+                {
+                    //not success
+                    MessageBox.Show("Login Failed! Click OK to continue", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    f.Show();
+                    this.Close();
+                }
+            }
+        }
+
+        private void AdminLogin_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'pODBDataSet.AdminTable' table. You can move, or remove it, as needed.
+            //this.adminTableTableAdapter1.Fill(this.pODBDataSet.AdminTable);
+
         }
     }
 }

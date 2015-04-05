@@ -12,9 +12,17 @@ namespace PO
 {
     public partial class AddUser : Form
     {
+        private bool loggedin;
         public AddUser()
         {
             InitializeComponent();
+            loggedin = false;
+        }
+
+        public AddUser(bool i)
+        {
+            InitializeComponent();
+            loggedin = i;
         }
 
         private void HomePic_Click(object sender, EventArgs e)
