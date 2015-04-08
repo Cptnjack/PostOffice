@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PO
 {
-    class Student
+    public class Student
     {
         private String mNum;
         private String fName;
@@ -46,6 +46,29 @@ namespace PO
             nZip = nZ;
             this.nCountry = nCountry;
             dateAdded = now;
+        }
+
+        public override string ToString()
+        {
+            String r ="";
+            r += "First Name: " + fName + System.Environment.NewLine;
+            r += "Middle Name: " + midName + System.Environment.NewLine;
+            r += "Last Name: " + lName + System.Environment.NewLine;
+            r += "New Address: " + nStAddress + "," + System.Environment.NewLine;
+            r += "                  " + nCity + "," + System.Environment.NewLine;
+
+            if(nZip != "")
+            {
+                r += "                  " + nZip + "," + System.Environment.NewLine;
+            }
+
+            r += "                  " + nCountry + System.Environment.NewLine;
+            r += "MSU Address: " + mStAddress + "," + System.Environment.NewLine;
+            r += "                      " + mCity + "," + System.Environment.NewLine;
+            r += "                      " + mState + "," + System.Environment.NewLine;
+            r += "                      " + mZip + "," + System.Environment.NewLine;
+            r += "Date Added: " + dateAdded.Date.ToString("d") + System.Environment.NewLine;
+            return r;
         }
 
         public String NMum
@@ -209,6 +232,32 @@ namespace PO
             set
             {
                 dateAdded = value;
+            }
+        }
+        
+        public String MNum
+        {
+            get
+            {
+                return mNum;
+            }
+
+            set
+            {
+                mNum = value;
+            }
+        }
+
+        public String NCountry
+        {
+            get
+            {
+                return nCountry;
+            }
+
+            set
+            {
+                nCountry = value;
             }
         }
     }
