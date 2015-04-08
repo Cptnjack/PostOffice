@@ -17,3 +17,6 @@ C:\Users\Julia\Documents\Visual Studio 2013\Projects\PO\PO\obj\Debug\PO.RemoveUs
 C:\Users\Michael\Dropbox\PostOffice Project\PO\PO\bin\Debug\PO.exe.config
 C:\Users\Michael\Dropbox\PostOffice Project\PO\PO\obj\Debug\PO.exe
 C:\Users\Michael\Dropbox\PostOffice Project\PO\PO\obj\Debug\PO.pdb
+C:\GitHub\PostOffice\PO\PO\bin\Debug\PO.exe.config
+C:\GitHub\PostOffice\PO\PO\obj\Debug\PO.exe
+C:\GitHub\PostOffice\PO\PO\obj\Debug\PO.pdb

@@ -80,6 +80,7 @@
     <Compile Include="ForgotPassword.Designer.cs">
       <DependentUpon>ForgotPassword.cs</DependentUpon>
     </Compile>
+    <Compile Include="Label.cs" />
     <Compile Include="Print.cs">
       <SubType>Form</SubType>
     </Compile>

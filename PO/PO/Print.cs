@@ -33,5 +33,10 @@ namespace PO
             //AdminHomePage adminhome = new AdminHomePage();
             //adminhome.Show();
         }
+
+        private void PreviewBox_OnPaint(object sender, EventArgs e)
+        {
+
+        }
     }
 }

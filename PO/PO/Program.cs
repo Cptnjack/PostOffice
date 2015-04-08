@@ -16,6 +16,9 @@ namespace PO
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            int labelNum = 30;
+            Label label[];
             Application.Run(new StudentSearch());
         }
     }
