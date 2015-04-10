@@ -169,36 +169,32 @@ namespace PO
 
         private void SearchButton_Click(object sender, EventArgs e)
         {
-            //if you don't enter anything, we can't search...
-            if (FirstNametxtbox.Text == "" && MiddleInittxtbox.Text == "" && LastNametxtbox.Text == "")
+            //if searching by name
+            if (radioButton1.Checked)
             {
-                MessageBox.Show("You have to enter a name to search!", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-            else
-            {
-
-                //if searching by name
-                if (radioButton1.Checked)
+                //if you don't enter anything, we can't search...
+                if (FirstNametxtbox.Text == "" && MiddleInittxtbox.Text == "" && LastNametxtbox.Text == "")
                 {
-                    //if searching by first name, last name, AND middle name
-                    if (MiddleInittxtbox.Text != "")
-                        //perform the query
-                        studentTableTableAdapter.FillByName(this.pODBDataSet.StudentTable, FirstNametxtbox.Text, MiddleInittxtbox.Text, LastNametxtbox.Text);
-
-                    //if only searching by first and last name
-                    else if (MiddleInittxtbox.Text == "")
-                        //perform the query
-                        studentTableTableAdapter.FillByFirstLast(this.pODBDataSet.StudentTable, FirstNametxtbox.Text, LastNametxtbox.Text);
-
+                    MessageBox.Show("You have to enter a name to search!", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
-                //if searching by MNumber
-                else if (radioButton2.Checked)
-                {
+                //if searching by first name, last name, AND middle name
+                else if (MiddleInittxtbox.Text != "")
+                    //perform the query
+                    studentTableTableAdapter.FillByName(this.pODBDataSet.StudentTable, FirstNametxtbox.Text, MiddleInittxtbox.Text, LastNametxtbox.Text);
+ 
+                //if only searching by first and last name
+                else if (MiddleInittxtbox.Text == "")
+                    //perform the query
+                    studentTableTableAdapter.FillByFirstLast(this.pODBDataSet.StudentTable, FirstNametxtbox.Text, LastNametxtbox.Text);
+            }
+ 
+            //if searching by MNumber
+            else if (radioButton2.Checked)
+            {
+                if(idTextBox.Text != "")
                     //perform the query
                     studentTableTableAdapter.FillByMNum(this.pODBDataSet.StudentTable, idTextBox.Text);
-                }
             }
         }
 
