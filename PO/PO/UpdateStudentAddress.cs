@@ -26,21 +26,7 @@ namespace PO
         {
             InitializeComponent();
             oldP = newP = s;
-            //fill the textboxes on screen
-            fnameTextBox.Text = s.FName;
-            mnameTextBox.Text = s.MidName;
-            lnameTextBox.Text = s.LName;
-            emailTextBox.Text = s.Email;
-            mnumTextBox.Text = s.MNum;
-            msuaddressTextBox.Text = s.MStAddress;
-            msucityTextBox.Text = s.MCity;
-            msustateTextBox.Text = s.MState;
-            msuzipTextBox.Text = s.MZip;
-            newaddressTextBox.Text = s.NStAddress;
-            newcityTextBox.Text = s.NCity;
-            newstateTextBox.Text = s.NState;
-            newzipTextBox.Text = s.NZip;
-            newcountryTextBox.Text = s.NCountry;
+            init(s);
         }
 
         public UpdateStudentAddress(Student s, Form f)
@@ -49,22 +35,7 @@ namespace PO
             //save the information passed in
             oldP = newP = s;
             last = f;
-
-            //fill the textboxes on screen
-            fnameTextBox.Text = s.FName;
-            mnameTextBox.Text = s.MidName;
-            lnameTextBox.Text = s.LName;
-            emailTextBox.Text = s.Email;
-            mnumTextBox.Text = s.MNum;
-            msuaddressTextBox.Text = s.MStAddress;
-            msucityTextBox.Text = s.MCity;
-            msustateTextBox.Text = s.MState;
-            msuzipTextBox.Text = s.MZip;
-            newaddressTextBox.Text = s.NStAddress;
-            newcityTextBox.Text = s.NCity;
-            newstateTextBox.Text = s.NState;
-            newzipTextBox.Text = s.NZip;
-            newcountryTextBox.Text = s.NCountry;
+            init(s);
         }
 
         private void updateButton_Click(object sender, EventArgs e)
@@ -80,9 +51,9 @@ namespace PO
                 newP.Email = emailTextBox.Text;
                 newP.MNum = mnumTextBox.Text;
                 newP.MStAddress = msuaddressTextBox.Text;
-                newP.MCity = msucityTextBox.Text;
-                newP.MState = msustateTextBox.Text;
-                newP.MZip = msuzipTextBox.Text;
+                newP.MCity = "Wichita Falls";
+                newP.MState = "TX";
+                newP.MZip = "76308";
                 newP.NStAddress = newaddressTextBox.Text;
                 newP.NCity = newcityTextBox.Text;
                 newP.NState = newstateTextBox.Text;
@@ -98,6 +69,7 @@ namespace PO
         private void HomePic_Click(object sender, EventArgs e)
         {
             last = new AdminHomePage(loggedin);
+            last.Show();
             this.Close();
 
         }
@@ -107,5 +79,58 @@ namespace PO
             last.Show();
             this.Close();
         }
+
+        private void radiobuttons_CheckedChanged(object sender, EventArgs e)
+        {
+            if(sundanceRadioButton.Checked == true)
+            {
+                msuaddressTextBox.Text = "2602 Midwestern Pkwy";
+            }
+
+            else if(SunwatcherRadioButton.Checked == true)
+            {
+                msuaddressTextBox.Text = "3704 Louis J. Rodriguez";
+            }
+            else if(poboxRadioButton.Checked == true || otherRadioButton.Checked == true)
+            {
+                msuaddressTextBox.Text = "";
+            }
+
+        }
+
+        private void init(Student s)
+        {
+            //fill the textboxes on screen
+            fnameTextBox.Text = s.FName;
+            mnameTextBox.Text = s.MidName;
+            lnameTextBox.Text = s.LName;
+            emailTextBox.Text = s.Email;
+            mnumTextBox.Text = s.MNum;
+            msuaddressTextBox.Text = s.MStAddress;
+            aptmailTextBox.Text = s.Aptmb;
+            //if they lived in sundance
+            if (s.MStAddress == "2602 Midwestern Pkwy")
+            {
+                sundanceRadioButton.Checked = true;
+            }
+
+            //if they lived in sunwatcher
+            else if (s.MStAddress == "3704 Louis J. Rodriguez")
+            {
+                SunwatcherRadioButton.Checked = true;
+            }
+
+            //if they don't live in either
+            else
+            {
+
+            }
+            newaddressTextBox.Text = s.NStAddress;
+            newcityTextBox.Text = s.NCity;
+            newstateTextBox.Text = s.NState;
+            newzipTextBox.Text = s.NZip;
+            newcountryTextBox.Text = s.NCountry;
+        }
+
     }
 }

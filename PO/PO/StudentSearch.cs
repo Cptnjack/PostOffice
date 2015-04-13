@@ -19,16 +19,7 @@ namespace PO
         {
             InitializeComponent();
             loggedin = false;
-            AdminLogin.Text = "Admin Login";
-            adminToolStripMenuItem.Text = "Login";
-            adminHomeToolStripMenuItem.Visible = false;
-            updateButton.Visible = false;
-            ResultList.Columns[0].Visible = false;
-            ResultList.Columns[10].Visible = false;
-            ResultList.Columns[11].Visible = false;
-            ResultList.Columns[15].Visible = false;
-            ResultList.Columns[14].DisplayIndex = 8;
-            ResultList.Columns[9].DisplayIndex = 4;
+            init();
         }
 
         public StudentSearch(bool i)
@@ -37,28 +28,7 @@ namespace PO
 
             loggedin = i;
 
-            ResultList.Columns[0].Visible = false;
-            ResultList.Columns[10].Visible = false;
-            ResultList.Columns[11].Visible = false;
-            ResultList.Columns[15].Visible = false;
-            ResultList.Columns[14].DisplayIndex = 8;
-            ResultList.Columns[9].DisplayIndex = 4;
-
-            if(loggedin)
-            {
-                AdminLogin.Text = "Logout";
-                logInToolStripMenuItem.Text = "Logout";
-                adminHomeToolStripMenuItem.Visible = true;
-                updateButton.Visible = true;
-            }
-
-            else if(!loggedin)
-            {
-                AdminLogin.Text = "Admin Login";
-                adminToolStripMenuItem.Text = "Login";
-                adminHomeToolStripMenuItem.Visible = false;
-                updateButton.Visible = false;
-            }
+            init();
         }
 
         public StudentSearch(bool i, Student oldP, Student newP)
@@ -67,32 +37,11 @@ namespace PO
 
             loggedin = i;
 
-            ResultList.Columns[0].Visible = false;
-            ResultList.Columns[10].Visible = false;
-            ResultList.Columns[11].Visible = false;
-            ResultList.Columns[15].Visible = false;
-            ResultList.Columns[14].DisplayIndex = 8;
-            ResultList.Columns[9].DisplayIndex = 4;
-
-            if (loggedin)
-            {
-                AdminLogin.Text = "Logout";
-                logInToolStripMenuItem.Text = "Logout";
-                adminHomeToolStripMenuItem.Visible = true;
-                updateButton.Visible = true;
-            }
-
-            else if (!loggedin)
-            {
-                AdminLogin.Text = "Admin Login";
-                adminToolStripMenuItem.Text = "Login";
-                adminHomeToolStripMenuItem.Visible = false;
-                updateButton.Visible = false;
-            }
+            init();
 
             this.studentTableTableAdapter.UpdateQuery(newP.FName, newP.MidName, newP.LName, newP.NStAddress, newP.NCity,
                 newP.NState, newP.NZip, newP.NCountry, newP.Email, newP.MStAddress, newP.MState, newP.MZip, newP.DateAdded,
-                newP.MNum, newP.MCity, oldP.FName, oldP.MidName, oldP.LName, oldP.MNum);
+                newP.MNum, newP.MCity, oldP.FName, oldP.MidName, oldP.LName, oldP.MNum, newP.Aptmb);
         }
 
         private void StudentSearch_Load(object sender, EventArgs e)
@@ -112,6 +61,10 @@ namespace PO
                 loggedin = false;
                 AdminLogin.Text = "Admin Login";
                 logInToolStripMenuItem.Text = "Login";
+                updateButton.Visible = false;
+                addressToolStripMenuItem.Visible = false;
+                homePictureBox.Visible = false;
+                deleteButton.Visible = false;
             }
 
             else
@@ -124,22 +77,15 @@ namespace PO
 
         private void PrintBtn_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Print Pform = new Print();
+            this.Close();
+            Print Pform = new Print(loggedin);
             Pform.Show();
-        }
-
-        private void logInToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            AdminLogin login = new AdminLogin();
-            login.Show();
         }
 
         private void printPreviewToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Print Pform = new Print();
+            this.Close();
+            Print Pform = new Print(loggedin);
             Pform.Show();
         }
 
@@ -160,11 +106,6 @@ namespace PO
                 panel2.Visible = true;
                 panel1.Visible = false;
             }
-        }
-
-        private void studentDatabaseToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
         }
 
         private void SearchButton_Click(object sender, EventArgs e)
@@ -200,7 +141,12 @@ namespace PO
 
         private void adminHomeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            if(loggedin)
+            {
+                this.Close();
+                AdminHomePage a = new AdminHomePage(loggedin);
+                a.Show();
+            }
         }
 
         private void updateButton_Click(object sender, EventArgs e)
@@ -214,7 +160,7 @@ namespace PO
             {
                 int selectedRowIndex = ResultList.SelectedCells[0].RowIndex;
                 DataGridViewRow selectedRow = ResultList.Rows[selectedRowIndex];
-                String fn, ln, midn, em, madd, mc, mst, mz, nadd, nc, nst, nz, ncountry, dateadded, mnum;
+                String fn, ln, midn, em, madd, mc, mst, mz, nadd, nc, nst, nz, ncountry, dateadded, mnum, amb;
                 DateTime date;
                 int day, month, year;
                 char[] delim = { '/', ' ' };
@@ -235,6 +181,7 @@ namespace PO
                 mnum = Convert.ToString(selectedRow.Cells[13].Value);
                 ncountry = Convert.ToString(selectedRow.Cells[14].Value);
                 mc = Convert.ToString(selectedRow.Cells[15].Value);
+                amb = Convert.ToString(selectedRow.Cells[16].Value);
 
                 info = dateadded.Split(delim);
                 month = Convert.ToInt32(info[0]);
@@ -242,49 +189,10 @@ namespace PO
                 year = Convert.ToInt32(info[2]);
                 date = new DateTime(year, month, day);
 
-                s = new Student(mnum, fn, ln, midn, em, madd, mc, mst, mz, nadd, nc, nst, nz, ncountry, date);
+                s = new Student(mnum, fn, ln, midn, em, madd, mc, mst, mz, nadd, nc, nst, nz, ncountry, date, amb);
                 this.Hide();
                 Form next = new UpdateStudentAddress(s, this);
                 next.Show();
-
-
-                //verification that the constructor and tostring work
-                //String a = s.ToString();
-                //MessageBox.Show(a);
-
-
-                //this helped me determine which fields were which
-                //String a = Convert.ToString(selectedRow.Cells[0].Value);
-                //a += System.Environment.NewLine;
-                //a += Convert.ToString(selectedRow.Cells[1].Value);
-                //a += System.Environment.NewLine;
-                //a += Convert.ToString(selectedRow.Cells[2].Value);
-                //a += System.Environment.NewLine;
-                //a += Convert.ToString(selectedRow.Cells[3].Value);
-                //a += System.Environment.NewLine;
-                //a += Convert.ToString(selectedRow.Cells[4].Value);
-                //a += System.Environment.NewLine;
-                //a += Convert.ToString(selectedRow.Cells[5].Value);
-                //a += System.Environment.NewLine;
-                //a += Convert.ToString(selectedRow.Cells[6].Value);
-                //a += System.Environment.NewLine;
-                //a += Convert.ToString(selectedRow.Cells[7].Value);
-                //a += System.Environment.NewLine;
-                //a += Convert.ToString(selectedRow.Cells[8].Value);
-                //a += System.Environment.NewLine;
-                //a += Convert.ToString(selectedRow.Cells[9].Value);
-                //a += System.Environment.NewLine;
-                //a += Convert.ToString(selectedRow.Cells[10].Value);
-                //a += System.Environment.NewLine;
-                //a += Convert.ToString(selectedRow.Cells[11].Value);
-                //a += System.Environment.NewLine;
-                //a += Convert.ToString(selectedRow.Cells[12].Value);
-                //a += System.Environment.NewLine;
-                //a += Convert.ToString(selectedRow.Cells[13].Value);
-                //a += System.Environment.NewLine;
-                //a += Convert.ToString(selectedRow.Cells[14].Value);
-                //a += System.Environment.NewLine;
-                //MessageBox.Show(a);
             }
 
             else if (selectedRowCount > 1)
@@ -296,6 +204,80 @@ namespace PO
             {
                 MessageBox.Show("You must select a student to update!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-        }       
+        } 
+      
+        private void init()
+        {
+            ResultList.Columns[0].Visible = false;
+            ResultList.Columns[10].Visible = false;
+            ResultList.Columns[11].Visible = false;
+            ResultList.Columns[15].Visible = false;
+            ResultList.Columns[14].DisplayIndex = 8;
+            ResultList.Columns[9].DisplayIndex = 4;
+            ResultList.Columns[16].DisplayIndex = 5;
+
+            if (loggedin)
+            {
+                AdminLogin.Text = "Logout";
+                logInToolStripMenuItem.Text = "Logout";
+                adminHomeToolStripMenuItem.Visible = true;
+                updateButton.Visible = true;
+                addressToolStripMenuItem.Visible = true;
+                homePictureBox.Visible = true;
+                deleteButton.Visible = true;
+            }
+
+            else if (!loggedin)
+            {
+                AdminLogin.Text = "Admin Login";
+                adminToolStripMenuItem.Text = "Login";
+                adminHomeToolStripMenuItem.Visible = false;
+                updateButton.Visible = false;
+                addressToolStripMenuItem.Visible = false;
+                homePictureBox.Visible = false;
+                deleteButton.Visible = false;
+            }
+        }
+
+        private void add_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form f = new AddStudentAddress(loggedin, this);
+            f.Show();
+        }
+
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+            int selectedRowCount = ResultList.Rows.GetRowCount(DataGridViewElementStates.Selected);
+
+            //if there is only one row selected
+            //do stuff
+            if (selectedRowCount == 1)
+            {
+                int selectedRowIndex = ResultList.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = ResultList.Rows[selectedRowIndex];
+                String fn, ln, midn, nadd, nc, nst, ncountry, amb;
+                
+                fn = Convert.ToString(selectedRow.Cells[1].Value);
+                midn = Convert.ToString(selectedRow.Cells[2].Value);
+                ln = Convert.ToString(selectedRow.Cells[3].Value);
+                nadd = Convert.ToString(selectedRow.Cells[4].Value);
+                nc = Convert.ToString(selectedRow.Cells[5].Value);
+                nst = Convert.ToString(selectedRow.Cells[6].Value);
+                ncountry = Convert.ToString(selectedRow.Cells[14].Value);
+                amb = Convert.ToString(selectedRow.Cells[16].Value);
+                if (midn == "")
+                    this.studentTableTableAdapter.DeleteQueryNoM(fn, ln, nadd, nc, ncountry, amb);
+                else
+                    this.studentTableTableAdapter.DeleteQueryMN(fn, midn, ln, nadd, nc, ncountry, amb);
+                this.studentTableTableAdapter.Fill(this.pODBDataSet.StudentTable);
+                
+            }
+
+            else
+            {
+                MessageBox.Show("Please select a student to remove.","Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

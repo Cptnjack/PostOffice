@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddStudentAddress));
             this.SearchMenuStrip = new System.Windows.Forms.MenuStrip();
             this.adminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,12 +54,20 @@
             this.idLabel = new System.Windows.Forms.Label();
             this.siGroupBox = new System.Windows.Forms.GroupBox();
             this.msuGroupBox = new System.Windows.Forms.GroupBox();
+            this.SunwatcherRadioButton = new System.Windows.Forms.RadioButton();
+            this.sundanceRadioButton = new System.Windows.Forms.RadioButton();
+            this.poboxRadioButton = new System.Windows.Forms.RadioButton();
+            this.otherRadioButton = new System.Windows.Forms.RadioButton();
             this.aptmailTextBox = new System.Windows.Forms.TextBox();
             this.aptmailLabel = new System.Windows.Forms.Label();
             this.msuaddressTextBox = new System.Windows.Forms.TextBox();
             this.msuaddressLabel = new System.Windows.Forms.Label();
             this.naGroupBox = new System.Windows.Forms.GroupBox();
-            this.nastateComboBox = new System.Windows.Forms.ComboBox();
+            this.nastateTextBox = new System.Windows.Forms.TextBox();
+            this.address2TextBox = new System.Windows.Forms.TextBox();
+            this.address2Label = new System.Windows.Forms.Label();
+            this.nacountryTextBox = new System.Windows.Forms.TextBox();
+            this.nacountryLabel = new System.Windows.Forms.Label();
             this.nazipTextBox = new System.Windows.Forms.TextBox();
             this.nazipLabel = new System.Windows.Forms.Label();
             this.nastateLabel = new System.Windows.Forms.Label();
@@ -69,19 +78,36 @@
             this.adduserbtn = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.HomePic = new System.Windows.Forms.PictureBox();
-            this.otherRadioButton = new System.Windows.Forms.RadioButton();
-            this.poboxRadioButton = new System.Windows.Forms.RadioButton();
-            this.sundanceRadioButton = new System.Windows.Forms.RadioButton();
-            this.SunwatcherRadioButton = new System.Windows.Forms.RadioButton();
-            this.nacountryTextBox = new System.Windows.Forms.TextBox();
-            this.nacountryLabel = new System.Windows.Forms.Label();
-            this.address2TextBox = new System.Windows.Forms.TextBox();
-            this.address2Label = new System.Windows.Forms.Label();
+            this.pODBDataSet = new PO.PODBDataSet();
+            this.studentTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.studentTableTableAdapter = new PO.PODBDataSetTableAdapters.StudentTableTableAdapter();
+            this.tableAdapterManager = new PO.PODBDataSetTableAdapters.TableAdapterManager();
+            this.studentTableDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SearchMenuStrip.SuspendLayout();
             this.siGroupBox.SuspendLayout();
             this.msuGroupBox.SuspendLayout();
             this.naGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.HomePic)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pODBDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentTableBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentTableDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // SearchMenuStrip
@@ -93,7 +119,7 @@
             this.SearchMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.SearchMenuStrip.Name = "SearchMenuStrip";
             this.SearchMenuStrip.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.SearchMenuStrip.Size = new System.Drawing.Size(764, 24);
+            this.SearchMenuStrip.Size = new System.Drawing.Size(747, 24);
             this.SearchMenuStrip.TabIndex = 48;
             this.SearchMenuStrip.Text = "menuStrip1";
             // 
@@ -144,13 +170,13 @@
             // searchToolStripMenuItem
             // 
             this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
-            this.searchToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.searchToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.searchToolStripMenuItem.Text = "Search";
             // 
             // removeToolStripMenuItem
             // 
             this.removeToolStripMenuItem.Name = "removeToolStripMenuItem";
-            this.removeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.removeToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.removeToolStripMenuItem.Text = "Update";
             // 
             // printToolStripMenuItem
@@ -165,20 +191,20 @@
             // printPreviewToolStripMenuItem
             // 
             this.printPreviewToolStripMenuItem.Name = "printPreviewToolStripMenuItem";
-            this.printPreviewToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.printPreviewToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.printPreviewToolStripMenuItem.Text = "Print Preview";
             // 
             // forcePrintToolStripMenuItem
             // 
             this.forcePrintToolStripMenuItem.Name = "forcePrintToolStripMenuItem";
-            this.forcePrintToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.forcePrintToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.forcePrintToolStripMenuItem.Text = "Force Print";
             // 
             // emailTextBox
             // 
             this.emailTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.emailTextBox.Location = new System.Drawing.Point(10, 106);
-            this.emailTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.emailTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.emailTextBox.Name = "emailTextBox";
             this.emailTextBox.Size = new System.Drawing.Size(240, 26);
             this.emailTextBox.TabIndex = 58;
@@ -199,7 +225,7 @@
             // 
             this.lastTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lastTextBox.Location = new System.Drawing.Point(497, 52);
-            this.lastTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lastTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.lastTextBox.Name = "lastTextBox";
             this.lastTextBox.Size = new System.Drawing.Size(240, 26);
             this.lastTextBox.TabIndex = 56;
@@ -212,15 +238,15 @@
             this.lastLabel.Location = new System.Drawing.Point(494, 25);
             this.lastLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lastLabel.Name = "lastLabel";
-            this.lastLabel.Size = new System.Drawing.Size(101, 24);
+            this.lastLabel.Size = new System.Drawing.Size(108, 24);
             this.lastLabel.TabIndex = 55;
-            this.lastLabel.Text = "Last name:";
+            this.lastLabel.Text = "*Last name:";
             // 
             // middleTextBox
             // 
             this.middleTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.middleTextBox.Location = new System.Drawing.Point(254, 52);
-            this.middleTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.middleTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.middleTextBox.Name = "middleTextBox";
             this.middleTextBox.Size = new System.Drawing.Size(240, 26);
             this.middleTextBox.TabIndex = 54;
@@ -241,7 +267,7 @@
             // 
             this.firstTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.firstTextBox.Location = new System.Drawing.Point(10, 52);
-            this.firstTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.firstTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.firstTextBox.Name = "firstTextBox";
             this.firstTextBox.Size = new System.Drawing.Size(240, 26);
             this.firstTextBox.TabIndex = 52;
@@ -254,15 +280,15 @@
             this.firstLabel.Location = new System.Drawing.Point(6, 25);
             this.firstLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.firstLabel.Name = "firstLabel";
-            this.firstLabel.Size = new System.Drawing.Size(108, 24);
+            this.firstLabel.Size = new System.Drawing.Size(115, 24);
             this.firstLabel.TabIndex = 51;
-            this.firstLabel.Text = "First name: ";
+            this.firstLabel.Text = "*First name: ";
             // 
             // idTextBox
             // 
             this.idTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.idTextBox.Location = new System.Drawing.Point(254, 106);
-            this.idTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.idTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.idTextBox.Name = "idTextBox";
             this.idTextBox.Size = new System.Drawing.Size(240, 26);
             this.idTextBox.TabIndex = 60;
@@ -294,9 +320,9 @@
             this.siGroupBox.Controls.Add(this.lastTextBox);
             this.siGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.siGroupBox.Location = new System.Drawing.Point(9, 27);
-            this.siGroupBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.siGroupBox.Margin = new System.Windows.Forms.Padding(2);
             this.siGroupBox.Name = "siGroupBox";
-            this.siGroupBox.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.siGroupBox.Padding = new System.Windows.Forms.Padding(2);
             this.siGroupBox.Size = new System.Drawing.Size(744, 143);
             this.siGroupBox.TabIndex = 61;
             this.siGroupBox.TabStop = false;
@@ -315,20 +341,71 @@
             this.msuGroupBox.Controls.Add(this.msuaddressLabel);
             this.msuGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.msuGroupBox.Location = new System.Drawing.Point(9, 182);
-            this.msuGroupBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.msuGroupBox.Margin = new System.Windows.Forms.Padding(2);
             this.msuGroupBox.Name = "msuGroupBox";
-            this.msuGroupBox.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.msuGroupBox.Padding = new System.Windows.Forms.Padding(2);
             this.msuGroupBox.Size = new System.Drawing.Size(744, 105);
             this.msuGroupBox.TabIndex = 62;
             this.msuGroupBox.TabStop = false;
             this.msuGroupBox.Text = "MSU Address:";
-            this.msuGroupBox.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // SunwatcherRadioButton
+            // 
+            this.SunwatcherRadioButton.AutoSize = true;
+            this.SunwatcherRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SunwatcherRadioButton.Location = new System.Drawing.Point(125, 24);
+            this.SunwatcherRadioButton.Name = "SunwatcherRadioButton";
+            this.SunwatcherRadioButton.Size = new System.Drawing.Size(112, 24);
+            this.SunwatcherRadioButton.TabIndex = 68;
+            this.SunwatcherRadioButton.TabStop = true;
+            this.SunwatcherRadioButton.Text = "Sunwatcher";
+            this.SunwatcherRadioButton.UseVisualStyleBackColor = true;
+            this.SunwatcherRadioButton.CheckedChanged += new System.EventHandler(this.radioButtons_CheckedChanged);
+            // 
+            // sundanceRadioButton
+            // 
+            this.sundanceRadioButton.AutoSize = true;
+            this.sundanceRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sundanceRadioButton.Location = new System.Drawing.Point(11, 24);
+            this.sundanceRadioButton.Name = "sundanceRadioButton";
+            this.sundanceRadioButton.Size = new System.Drawing.Size(100, 24);
+            this.sundanceRadioButton.TabIndex = 67;
+            this.sundanceRadioButton.TabStop = true;
+            this.sundanceRadioButton.Text = "Sundance";
+            this.sundanceRadioButton.UseVisualStyleBackColor = true;
+            this.sundanceRadioButton.CheckedChanged += new System.EventHandler(this.radioButtons_CheckedChanged);
+            // 
+            // poboxRadioButton
+            // 
+            this.poboxRadioButton.AutoSize = true;
+            this.poboxRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.poboxRadioButton.Location = new System.Drawing.Point(253, 24);
+            this.poboxRadioButton.Name = "poboxRadioButton";
+            this.poboxRadioButton.Size = new System.Drawing.Size(80, 24);
+            this.poboxRadioButton.TabIndex = 66;
+            this.poboxRadioButton.TabStop = true;
+            this.poboxRadioButton.Text = "PO Box";
+            this.poboxRadioButton.UseVisualStyleBackColor = true;
+            this.poboxRadioButton.CheckedChanged += new System.EventHandler(this.radioButtons_CheckedChanged);
+            // 
+            // otherRadioButton
+            // 
+            this.otherRadioButton.AutoSize = true;
+            this.otherRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.otherRadioButton.Location = new System.Drawing.Point(339, 24);
+            this.otherRadioButton.Name = "otherRadioButton";
+            this.otherRadioButton.Size = new System.Drawing.Size(102, 24);
+            this.otherRadioButton.TabIndex = 65;
+            this.otherRadioButton.TabStop = true;
+            this.otherRadioButton.Text = "Other/New";
+            this.otherRadioButton.UseVisualStyleBackColor = true;
+            this.otherRadioButton.CheckedChanged += new System.EventHandler(this.radioButtons_CheckedChanged);
             // 
             // aptmailTextBox
             // 
             this.aptmailTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.aptmailTextBox.Location = new System.Drawing.Point(497, 70);
-            this.aptmailTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.aptmailTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.aptmailTextBox.Name = "aptmailTextBox";
             this.aptmailTextBox.Size = new System.Drawing.Size(240, 26);
             this.aptmailTextBox.TabIndex = 64;
@@ -341,15 +418,15 @@
             this.aptmailLabel.Location = new System.Drawing.Point(494, 43);
             this.aptmailLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.aptmailLabel.Name = "aptmailLabel";
-            this.aptmailLabel.Size = new System.Drawing.Size(129, 24);
+            this.aptmailLabel.Size = new System.Drawing.Size(136, 24);
             this.aptmailLabel.TabIndex = 63;
-            this.aptmailLabel.Text = "Apt/Mailbox #:";
+            this.aptmailLabel.Text = "*Apt/Mailbox #:";
             // 
             // msuaddressTextBox
             // 
             this.msuaddressTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.msuaddressTextBox.Location = new System.Drawing.Point(8, 70);
-            this.msuaddressTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.msuaddressTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.msuaddressTextBox.Name = "msuaddressTextBox";
             this.msuaddressTextBox.Size = new System.Drawing.Size(480, 26);
             this.msuaddressTextBox.TabIndex = 62;
@@ -362,18 +439,18 @@
             this.msuaddressLabel.Location = new System.Drawing.Point(4, 43);
             this.msuaddressLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.msuaddressLabel.Name = "msuaddressLabel";
-            this.msuaddressLabel.Size = new System.Drawing.Size(133, 24);
+            this.msuaddressLabel.Size = new System.Drawing.Size(140, 24);
             this.msuaddressLabel.TabIndex = 61;
-            this.msuaddressLabel.Text = "Street Address";
+            this.msuaddressLabel.Text = "*Street Address";
             // 
             // naGroupBox
             // 
             this.naGroupBox.BackColor = System.Drawing.Color.Transparent;
+            this.naGroupBox.Controls.Add(this.nastateTextBox);
             this.naGroupBox.Controls.Add(this.address2TextBox);
             this.naGroupBox.Controls.Add(this.address2Label);
             this.naGroupBox.Controls.Add(this.nacountryTextBox);
             this.naGroupBox.Controls.Add(this.nacountryLabel);
-            this.naGroupBox.Controls.Add(this.nastateComboBox);
             this.naGroupBox.Controls.Add(this.nazipTextBox);
             this.naGroupBox.Controls.Add(this.nazipLabel);
             this.naGroupBox.Controls.Add(this.nastateLabel);
@@ -383,29 +460,68 @@
             this.naGroupBox.Controls.Add(this.address1Label);
             this.naGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.naGroupBox.Location = new System.Drawing.Point(9, 291);
-            this.naGroupBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.naGroupBox.Margin = new System.Windows.Forms.Padding(2);
             this.naGroupBox.Name = "naGroupBox";
-            this.naGroupBox.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.naGroupBox.Padding = new System.Windows.Forms.Padding(2);
             this.naGroupBox.Size = new System.Drawing.Size(744, 212);
             this.naGroupBox.TabIndex = 66;
             this.naGroupBox.TabStop = false;
             this.naGroupBox.Text = "New Address:";
             // 
-            // nastateComboBox
+            // nastateTextBox
             // 
-            this.nastateComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nastateComboBox.FormattingEnabled = true;
-            this.nastateComboBox.Location = new System.Drawing.Point(11, 172);
-            this.nastateComboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.nastateComboBox.Name = "nastateComboBox";
-            this.nastateComboBox.Size = new System.Drawing.Size(240, 28);
-            this.nastateComboBox.TabIndex = 63;
+            this.nastateTextBox.Location = new System.Drawing.Point(8, 174);
+            this.nastateTextBox.Name = "nastateTextBox";
+            this.nastateTextBox.Size = new System.Drawing.Size(242, 26);
+            this.nastateTextBox.TabIndex = 70;
+            // 
+            // address2TextBox
+            // 
+            this.address2TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.address2TextBox.Location = new System.Drawing.Point(10, 109);
+            this.address2TextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.address2TextBox.Name = "address2TextBox";
+            this.address2TextBox.Size = new System.Drawing.Size(478, 26);
+            this.address2TextBox.TabIndex = 69;
+            // 
+            // address2Label
+            // 
+            this.address2Label.AutoSize = true;
+            this.address2Label.BackColor = System.Drawing.Color.Transparent;
+            this.address2Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.address2Label.Location = new System.Drawing.Point(6, 82);
+            this.address2Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.address2Label.Name = "address2Label";
+            this.address2Label.Size = new System.Drawing.Size(141, 24);
+            this.address2Label.TabIndex = 68;
+            this.address2Label.Text = "Address Line 2:";
+            // 
+            // nacountryTextBox
+            // 
+            this.nacountryTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nacountryTextBox.Location = new System.Drawing.Point(257, 174);
+            this.nacountryTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.nacountryTextBox.Name = "nacountryTextBox";
+            this.nacountryTextBox.Size = new System.Drawing.Size(240, 26);
+            this.nacountryTextBox.TabIndex = 67;
+            // 
+            // nacountryLabel
+            // 
+            this.nacountryLabel.AutoSize = true;
+            this.nacountryLabel.BackColor = System.Drawing.Color.Transparent;
+            this.nacountryLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nacountryLabel.Location = new System.Drawing.Point(253, 147);
+            this.nacountryLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.nacountryLabel.Name = "nacountryLabel";
+            this.nacountryLabel.Size = new System.Drawing.Size(87, 24);
+            this.nacountryLabel.TabIndex = 66;
+            this.nacountryLabel.Text = "*Country:";
             // 
             // nazipTextBox
             // 
             this.nazipTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nazipTextBox.Location = new System.Drawing.Point(501, 174);
-            this.nazipTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nazipTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.nazipTextBox.Name = "nazipTextBox";
             this.nazipTextBox.Size = new System.Drawing.Size(240, 26);
             this.nazipTextBox.TabIndex = 64;
@@ -438,7 +554,7 @@
             // 
             this.naCityTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.naCityTextBox.Location = new System.Drawing.Point(497, 109);
-            this.naCityTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.naCityTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.naCityTextBox.Name = "naCityTextBox";
             this.naCityTextBox.Size = new System.Drawing.Size(240, 26);
             this.naCityTextBox.TabIndex = 64;
@@ -451,15 +567,15 @@
             this.nacityLabel.Location = new System.Drawing.Point(493, 82);
             this.nacityLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.nacityLabel.Name = "nacityLabel";
-            this.nacityLabel.Size = new System.Drawing.Size(45, 24);
+            this.nacityLabel.Size = new System.Drawing.Size(52, 24);
             this.nacityLabel.TabIndex = 63;
-            this.nacityLabel.Text = "City:";
+            this.nacityLabel.Text = "*City:";
             // 
             // address1TextBox
             // 
             this.address1TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.address1TextBox.Location = new System.Drawing.Point(10, 54);
-            this.address1TextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.address1TextBox.Margin = new System.Windows.Forms.Padding(2);
             this.address1TextBox.Name = "address1TextBox";
             this.address1TextBox.Size = new System.Drawing.Size(728, 26);
             this.address1TextBox.TabIndex = 62;
@@ -472,9 +588,9 @@
             this.address1Label.Location = new System.Drawing.Point(6, 27);
             this.address1Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.address1Label.Name = "address1Label";
-            this.address1Label.Size = new System.Drawing.Size(141, 24);
+            this.address1Label.Size = new System.Drawing.Size(148, 24);
             this.address1Label.TabIndex = 61;
-            this.address1Label.Text = "Address Line 1:";
+            this.address1Label.Text = "*Address Line 1:";
             // 
             // adduserbtn
             // 
@@ -483,12 +599,13 @@
             this.adduserbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.adduserbtn.ForeColor = System.Drawing.Color.White;
             this.adduserbtn.Location = new System.Drawing.Point(86, 507);
-            this.adduserbtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.adduserbtn.Margin = new System.Windows.Forms.Padding(2);
             this.adduserbtn.Name = "adduserbtn";
             this.adduserbtn.Size = new System.Drawing.Size(239, 67);
             this.adduserbtn.TabIndex = 67;
             this.adduserbtn.Text = "Save";
             this.adduserbtn.UseVisualStyleBackColor = false;
+            this.adduserbtn.Click += new System.EventHandler(this.adduserbtn_Click);
             // 
             // button1
             // 
@@ -497,7 +614,7 @@
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(358, 507);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(239, 67);
             this.button1.TabIndex = 68;
@@ -509,109 +626,173 @@
             this.HomePic.BackColor = System.Drawing.Color.DarkRed;
             this.HomePic.Image = global::PO.Properties.Resources.home_icon;
             this.HomePic.Location = new System.Drawing.Point(633, 525);
-            this.HomePic.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.HomePic.Margin = new System.Windows.Forms.Padding(2);
             this.HomePic.Name = "HomePic";
             this.HomePic.Size = new System.Drawing.Size(34, 37);
             this.HomePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.HomePic.TabIndex = 69;
             this.HomePic.TabStop = false;
             // 
-            // otherRadioButton
+            // pODBDataSet
             // 
-            this.otherRadioButton.AutoSize = true;
-            this.otherRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.otherRadioButton.Location = new System.Drawing.Point(339, 24);
-            this.otherRadioButton.Name = "otherRadioButton";
-            this.otherRadioButton.Size = new System.Drawing.Size(102, 24);
-            this.otherRadioButton.TabIndex = 65;
-            this.otherRadioButton.TabStop = true;
-            this.otherRadioButton.Text = "Other/New";
-            this.otherRadioButton.UseVisualStyleBackColor = true;
+            this.pODBDataSet.DataSetName = "PODBDataSet";
+            this.pODBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // poboxRadioButton
+            // studentTableBindingSource
             // 
-            this.poboxRadioButton.AutoSize = true;
-            this.poboxRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.poboxRadioButton.Location = new System.Drawing.Point(253, 24);
-            this.poboxRadioButton.Name = "poboxRadioButton";
-            this.poboxRadioButton.Size = new System.Drawing.Size(80, 24);
-            this.poboxRadioButton.TabIndex = 66;
-            this.poboxRadioButton.TabStop = true;
-            this.poboxRadioButton.Text = "PO Box";
-            this.poboxRadioButton.UseVisualStyleBackColor = true;
+            this.studentTableBindingSource.DataMember = "StudentTable";
+            this.studentTableBindingSource.DataSource = this.pODBDataSet;
             // 
-            // sundanceRadioButton
+            // studentTableTableAdapter
             // 
-            this.sundanceRadioButton.AutoSize = true;
-            this.sundanceRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sundanceRadioButton.Location = new System.Drawing.Point(11, 24);
-            this.sundanceRadioButton.Name = "sundanceRadioButton";
-            this.sundanceRadioButton.Size = new System.Drawing.Size(100, 24);
-            this.sundanceRadioButton.TabIndex = 67;
-            this.sundanceRadioButton.TabStop = true;
-            this.sundanceRadioButton.Text = "Sundance";
-            this.sundanceRadioButton.UseVisualStyleBackColor = true;
+            this.studentTableTableAdapter.ClearBeforeFill = true;
             // 
-            // SunwatcherRadioButton
+            // tableAdapterManager
             // 
-            this.SunwatcherRadioButton.AutoSize = true;
-            this.SunwatcherRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SunwatcherRadioButton.Location = new System.Drawing.Point(125, 24);
-            this.SunwatcherRadioButton.Name = "SunwatcherRadioButton";
-            this.SunwatcherRadioButton.Size = new System.Drawing.Size(112, 24);
-            this.SunwatcherRadioButton.TabIndex = 68;
-            this.SunwatcherRadioButton.TabStop = true;
-            this.SunwatcherRadioButton.Text = "Sunwatcher";
-            this.SunwatcherRadioButton.UseVisualStyleBackColor = true;
+            this.tableAdapterManager.AdminTableTableAdapter = null;
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.StudentTableTableAdapter = this.studentTableTableAdapter;
+            this.tableAdapterManager.UpdateOrder = PO.PODBDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // nacountryTextBox
+            // studentTableDataGridView
             // 
-            this.nacountryTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nacountryTextBox.Location = new System.Drawing.Point(257, 174);
-            this.nacountryTextBox.Margin = new System.Windows.Forms.Padding(2);
-            this.nacountryTextBox.Name = "nacountryTextBox";
-            this.nacountryTextBox.Size = new System.Drawing.Size(240, 26);
-            this.nacountryTextBox.TabIndex = 67;
+            this.studentTableDataGridView.AutoGenerateColumns = false;
+            this.studentTableDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.studentTableDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn10,
+            this.dataGridViewTextBoxColumn11,
+            this.dataGridViewTextBoxColumn12,
+            this.dataGridViewTextBoxColumn13,
+            this.dataGridViewTextBoxColumn14,
+            this.dataGridViewTextBoxColumn15,
+            this.dataGridViewTextBoxColumn16,
+            this.dataGridViewTextBoxColumn17});
+            this.studentTableDataGridView.DataSource = this.studentTableBindingSource;
+            this.studentTableDataGridView.Location = new System.Drawing.Point(19, 555);
+            this.studentTableDataGridView.Name = "studentTableDataGridView";
+            this.studentTableDataGridView.Size = new System.Drawing.Size(706, 220);
+            this.studentTableDataGridView.TabIndex = 70;
+            this.studentTableDataGridView.Visible = false;
             // 
-            // nacountryLabel
+            // dataGridViewTextBoxColumn1
             // 
-            this.nacountryLabel.AutoSize = true;
-            this.nacountryLabel.BackColor = System.Drawing.Color.Transparent;
-            this.nacountryLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nacountryLabel.Location = new System.Drawing.Point(253, 147);
-            this.nacountryLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.nacountryLabel.Name = "nacountryLabel";
-            this.nacountryLabel.Size = new System.Drawing.Size(80, 24);
-            this.nacountryLabel.TabIndex = 66;
-            this.nacountryLabel.Text = "Country:";
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "ID";
+            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             // 
-            // address2TextBox
+            // dataGridViewTextBoxColumn2
             // 
-            this.address2TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.address2TextBox.Location = new System.Drawing.Point(10, 109);
-            this.address2TextBox.Margin = new System.Windows.Forms.Padding(2);
-            this.address2TextBox.Name = "address2TextBox";
-            this.address2TextBox.Size = new System.Drawing.Size(478, 26);
-            this.address2TextBox.TabIndex = 69;
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "First Name";
+            this.dataGridViewTextBoxColumn2.HeaderText = "First Name";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             // 
-            // address2Label
+            // dataGridViewTextBoxColumn3
             // 
-            this.address2Label.AutoSize = true;
-            this.address2Label.BackColor = System.Drawing.Color.Transparent;
-            this.address2Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.address2Label.Location = new System.Drawing.Point(6, 82);
-            this.address2Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.address2Label.Name = "address2Label";
-            this.address2Label.Size = new System.Drawing.Size(141, 24);
-            this.address2Label.TabIndex = 68;
-            this.address2Label.Text = "Address Line 2:";
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Middle Name";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Middle Name";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Last Name";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Last Name";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "New Street Address";
+            this.dataGridViewTextBoxColumn5.HeaderText = "New Street Address";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "New City";
+            this.dataGridViewTextBoxColumn6.HeaderText = "New City";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "New State";
+            this.dataGridViewTextBoxColumn7.HeaderText = "New State";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "New Zip";
+            this.dataGridViewTextBoxColumn8.HeaderText = "New Zip";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "Email";
+            this.dataGridViewTextBoxColumn9.HeaderText = "Email";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "MSU Address";
+            this.dataGridViewTextBoxColumn10.HeaderText = "MSU Address";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "MSU State";
+            this.dataGridViewTextBoxColumn11.HeaderText = "MSU State";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.DataPropertyName = "MSU Zip";
+            this.dataGridViewTextBoxColumn12.HeaderText = "MSU Zip";
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            // 
+            // dataGridViewTextBoxColumn13
+            // 
+            this.dataGridViewTextBoxColumn13.DataPropertyName = "Date Added";
+            this.dataGridViewTextBoxColumn13.HeaderText = "Date Added";
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            // 
+            // dataGridViewTextBoxColumn14
+            // 
+            this.dataGridViewTextBoxColumn14.DataPropertyName = "Mustang Number";
+            this.dataGridViewTextBoxColumn14.HeaderText = "Mustang Number";
+            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            // 
+            // dataGridViewTextBoxColumn15
+            // 
+            this.dataGridViewTextBoxColumn15.DataPropertyName = "New Country";
+            this.dataGridViewTextBoxColumn15.HeaderText = "New Country";
+            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
+            // 
+            // dataGridViewTextBoxColumn16
+            // 
+            this.dataGridViewTextBoxColumn16.DataPropertyName = "MSU City";
+            this.dataGridViewTextBoxColumn16.HeaderText = "MSU City";
+            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
+            // 
+            // dataGridViewTextBoxColumn17
+            // 
+            this.dataGridViewTextBoxColumn17.DataPropertyName = "AptMBNo";
+            this.dataGridViewTextBoxColumn17.HeaderText = "AptMBNo";
+            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
             // 
             // AddStudentAddress
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackgroundImage = global::PO.Properties.Resources.postBG1;
             this.ClientSize = new System.Drawing.Size(764, 602);
+            this.Controls.Add(this.studentTableDataGridView);
             this.Controls.Add(this.HomePic);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.adduserbtn);
@@ -620,12 +801,13 @@
             this.Controls.Add(this.siGroupBox);
             this.Controls.Add(this.SearchMenuStrip);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(780, 641);
             this.MinimumSize = new System.Drawing.Size(780, 641);
             this.Name = "AddStudentAddress";
             this.Text = "Midwestern State University - Post Office - Add Student  Address";
+            this.Load += new System.EventHandler(this.AddStudentAddress_Load);
             this.SearchMenuStrip.ResumeLayout(false);
             this.SearchMenuStrip.PerformLayout();
             this.siGroupBox.ResumeLayout(false);
@@ -635,6 +817,9 @@
             this.naGroupBox.ResumeLayout(false);
             this.naGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.HomePic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pODBDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentTableBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentTableDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -671,7 +856,6 @@
         private System.Windows.Forms.TextBox msuaddressTextBox;
         private System.Windows.Forms.Label msuaddressLabel;
         private System.Windows.Forms.GroupBox naGroupBox;
-        private System.Windows.Forms.ComboBox nastateComboBox;
         private System.Windows.Forms.TextBox nazipTextBox;
         private System.Windows.Forms.Label nazipLabel;
         private System.Windows.Forms.Label nastateLabel;
@@ -690,5 +874,28 @@
         private System.Windows.Forms.Label address2Label;
         private System.Windows.Forms.TextBox nacountryTextBox;
         private System.Windows.Forms.Label nacountryLabel;
+        private PODBDataSet pODBDataSet;
+        private System.Windows.Forms.BindingSource studentTableBindingSource;
+        private PODBDataSetTableAdapters.StudentTableTableAdapter studentTableTableAdapter;
+        private PODBDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.DataGridView studentTableDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
+        private System.Windows.Forms.TextBox nastateTextBox;
     }
 }

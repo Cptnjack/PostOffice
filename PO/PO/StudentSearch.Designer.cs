@@ -32,8 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StudentSearch));
             this.PrintBtn = new System.Windows.Forms.Button();
             this.ResultList = new System.Windows.Forms.DataGridView();
-            this.studentTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pODBDataSet = new PO.PODBDataSet();
             this.PrintQ = new System.Windows.Forms.DataGridView();
             this.AdminLogin = new System.Windows.Forms.Button();
             this.RemoveQ = new System.Windows.Forms.Button();
@@ -56,21 +54,22 @@
             this.MiddleName = new System.Windows.Forms.Label();
             this.FirstName = new System.Windows.Forms.Label();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.SearchMenuStrip = new System.Windows.Forms.MenuStrip();
+            this.updateButton = new System.Windows.Forms.Button();
             this.adminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logInToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.adminHomeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.searchStudentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addRemoveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addressToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.printPreviewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.forcePrintToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.connectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.studentDatabaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.SearchMenuStrip = new System.Windows.Forms.MenuStrip();
+            this.homePictureBox = new System.Windows.Forms.PictureBox();
+            this.deleteButton = new System.Windows.Forms.Button();
+            this.studentTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pODBDataSet = new PO.PODBDataSet();
             this.studentTableTableAdapter = new PO.PODBDataSetTableAdapters.StudentTableTableAdapter();
-            this.updateButton = new System.Windows.Forms.Button();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.middleNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -87,14 +86,16 @@
             this.mustangNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.newCountryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mSUCityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aptMBNoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ResultList)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentTableBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pODBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PrintQ)).BeginInit();
             this.SearchBox.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SearchMenuStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.homePictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentTableBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pODBDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // PrintBtn
@@ -132,8 +133,10 @@
             this.dateAddedDataGridViewTextBoxColumn,
             this.mustangNumberDataGridViewTextBoxColumn,
             this.newCountryDataGridViewTextBoxColumn,
-            this.mSUCityDataGridViewTextBoxColumn});
+            this.mSUCityDataGridViewTextBoxColumn,
+            this.aptMBNoDataGridViewTextBoxColumn});
             this.ResultList.DataSource = this.studentTableBindingSource;
+            this.ResultList.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.ResultList.Location = new System.Drawing.Point(13, 214);
             this.ResultList.Margin = new System.Windows.Forms.Padding(2);
             this.ResultList.Name = "ResultList";
@@ -142,16 +145,6 @@
             this.ResultList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ResultList.Size = new System.Drawing.Size(740, 135);
             this.ResultList.TabIndex = 30;
-            // 
-            // studentTableBindingSource
-            // 
-            this.studentTableBindingSource.DataMember = "StudentTable";
-            this.studentTableBindingSource.DataSource = this.pODBDataSet;
-            // 
-            // pODBDataSet
-            // 
-            this.pODBDataSet.DataSetName = "PODBDataSet";
-            this.pODBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // PrintQ
             // 
@@ -435,19 +428,21 @@
             this.radioButton2.UseVisualStyleBackColor = false;
             this.radioButton2.CheckedChanged += new System.EventHandler(this.radiobuttons_CheckChanged);
             // 
-            // SearchMenuStrip
+            // updateButton
             // 
-            this.SearchMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.adminToolStripMenuItem,
-            this.searchStudentToolStripMenuItem,
-            this.printToolStripMenuItem,
-            this.connectToolStripMenuItem});
-            this.SearchMenuStrip.Location = new System.Drawing.Point(0, 0);
-            this.SearchMenuStrip.Name = "SearchMenuStrip";
-            this.SearchMenuStrip.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.SearchMenuStrip.Size = new System.Drawing.Size(764, 24);
-            this.SearchMenuStrip.TabIndex = 33;
-            this.SearchMenuStrip.Text = "menuStrip1";
+            this.updateButton.BackColor = System.Drawing.Color.DarkRed;
+            this.updateButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.updateButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.updateButton.ForeColor = System.Drawing.Color.White;
+            this.updateButton.Location = new System.Drawing.Point(13, 353);
+            this.updateButton.Margin = new System.Windows.Forms.Padding(2);
+            this.updateButton.Name = "updateButton";
+            this.updateButton.Size = new System.Drawing.Size(94, 51);
+            this.updateButton.TabIndex = 34;
+            this.updateButton.Text = "Update";
+            this.updateButton.UseVisualStyleBackColor = false;
+            this.updateButton.Visible = false;
+            this.updateButton.Click += new System.EventHandler(this.updateButton_Click);
             // 
             // adminToolStripMenuItem
             // 
@@ -472,34 +467,28 @@
             this.adminHomeToolStripMenuItem.Text = "Admin Home";
             this.adminHomeToolStripMenuItem.Click += new System.EventHandler(this.adminHomeToolStripMenuItem_Click);
             // 
-            // searchStudentToolStripMenuItem
+            // addressToolStripMenuItem
             // 
-            this.searchStudentToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.searchToolStripMenuItem,
-            this.addRemoveToolStripMenuItem,
-            this.removeToolStripMenuItem});
-            this.searchStudentToolStripMenuItem.Enabled = false;
-            this.searchStudentToolStripMenuItem.Name = "searchStudentToolStripMenuItem";
-            this.searchStudentToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
-            this.searchStudentToolStripMenuItem.Text = "Address";
+            this.addressToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addToolStripMenuItem,
+            this.updateToolStripMenuItem});
+            this.addressToolStripMenuItem.Name = "addressToolStripMenuItem";
+            this.addressToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.addressToolStripMenuItem.Text = "Address";
             // 
-            // searchToolStripMenuItem
+            // addToolStripMenuItem
             // 
-            this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
-            this.searchToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
-            this.searchToolStripMenuItem.Text = "Search";
+            this.addToolStripMenuItem.Name = "addToolStripMenuItem";
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.addToolStripMenuItem.Text = "Add";
+            this.addToolStripMenuItem.Click += new System.EventHandler(this.add_Click);
             // 
-            // addRemoveToolStripMenuItem
+            // updateToolStripMenuItem
             // 
-            this.addRemoveToolStripMenuItem.Name = "addRemoveToolStripMenuItem";
-            this.addRemoveToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
-            this.addRemoveToolStripMenuItem.Text = "Add";
-            // 
-            // removeToolStripMenuItem
-            // 
-            this.removeToolStripMenuItem.Name = "removeToolStripMenuItem";
-            this.removeToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
-            this.removeToolStripMenuItem.Text = "Update";
+            this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
+            this.updateToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.updateToolStripMenuItem.Text = "Update";
+            this.updateToolStripMenuItem.Click += new System.EventHandler(this.updateButton_Click);
             // 
             // printToolStripMenuItem
             // 
@@ -524,40 +513,61 @@
             this.forcePrintToolStripMenuItem.Text = "Force Print";
             this.forcePrintToolStripMenuItem.Click += new System.EventHandler(this.forcePrintToolStripMenuItem_Click);
             // 
-            // connectToolStripMenuItem
+            // SearchMenuStrip
             // 
-            this.connectToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.studentDatabaseToolStripMenuItem});
-            this.connectToolStripMenuItem.Name = "connectToolStripMenuItem";
-            this.connectToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
-            this.connectToolStripMenuItem.Text = "Connect";
+            this.SearchMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.adminToolStripMenuItem,
+            this.addressToolStripMenuItem,
+            this.printToolStripMenuItem});
+            this.SearchMenuStrip.Location = new System.Drawing.Point(0, 0);
+            this.SearchMenuStrip.Name = "SearchMenuStrip";
+            this.SearchMenuStrip.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.SearchMenuStrip.Size = new System.Drawing.Size(764, 24);
+            this.SearchMenuStrip.TabIndex = 33;
+            this.SearchMenuStrip.Text = "menuStrip1";
             // 
-            // studentDatabaseToolStripMenuItem
+            // homePictureBox
             // 
-            this.studentDatabaseToolStripMenuItem.Name = "studentDatabaseToolStripMenuItem";
-            this.studentDatabaseToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
-            this.studentDatabaseToolStripMenuItem.Text = "Database";
-            this.studentDatabaseToolStripMenuItem.Click += new System.EventHandler(this.studentDatabaseToolStripMenuItem_Click);
+            this.homePictureBox.BackColor = System.Drawing.Color.DarkRed;
+            this.homePictureBox.Image = global::PO.Properties.Resources.home_icon;
+            this.homePictureBox.Location = new System.Drawing.Point(127, 544);
+            this.homePictureBox.Margin = new System.Windows.Forms.Padding(2);
+            this.homePictureBox.Name = "homePictureBox";
+            this.homePictureBox.Size = new System.Drawing.Size(36, 41);
+            this.homePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.homePictureBox.TabIndex = 35;
+            this.homePictureBox.TabStop = false;
+            this.homePictureBox.Click += new System.EventHandler(this.adminHomeToolStripMenuItem_Click);
+            // 
+            // deleteButton
+            // 
+            this.deleteButton.BackColor = System.Drawing.Color.DarkRed;
+            this.deleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.deleteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.deleteButton.ForeColor = System.Drawing.Color.White;
+            this.deleteButton.Location = new System.Drawing.Point(127, 353);
+            this.deleteButton.Margin = new System.Windows.Forms.Padding(2);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(94, 51);
+            this.deleteButton.TabIndex = 36;
+            this.deleteButton.Text = "Delete";
+            this.deleteButton.UseVisualStyleBackColor = false;
+            this.deleteButton.Visible = false;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
+            // 
+            // studentTableBindingSource
+            // 
+            this.studentTableBindingSource.DataMember = "StudentTable";
+            this.studentTableBindingSource.DataSource = this.pODBDataSet;
+            // 
+            // pODBDataSet
+            // 
+            this.pODBDataSet.DataSetName = "PODBDataSet";
+            this.pODBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // studentTableTableAdapter
             // 
             this.studentTableTableAdapter.ClearBeforeFill = true;
-            // 
-            // updateButton
-            // 
-            this.updateButton.BackColor = System.Drawing.Color.DarkRed;
-            this.updateButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.updateButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.updateButton.ForeColor = System.Drawing.Color.White;
-            this.updateButton.Location = new System.Drawing.Point(13, 353);
-            this.updateButton.Margin = new System.Windows.Forms.Padding(2);
-            this.updateButton.Name = "updateButton";
-            this.updateButton.Size = new System.Drawing.Size(220, 51);
-            this.updateButton.TabIndex = 34;
-            this.updateButton.Text = "Update Student Info";
-            this.updateButton.UseVisualStyleBackColor = false;
-            this.updateButton.Visible = false;
-            this.updateButton.Click += new System.EventHandler(this.updateButton_Click);
             // 
             // iDDataGridViewTextBoxColumn
             // 
@@ -655,12 +665,20 @@
             this.mSUCityDataGridViewTextBoxColumn.HeaderText = "MSU City";
             this.mSUCityDataGridViewTextBoxColumn.Name = "mSUCityDataGridViewTextBoxColumn";
             // 
+            // aptMBNoDataGridViewTextBoxColumn
+            // 
+            this.aptMBNoDataGridViewTextBoxColumn.DataPropertyName = "AptMBNo";
+            this.aptMBNoDataGridViewTextBoxColumn.HeaderText = "AptMBNo";
+            this.aptMBNoDataGridViewTextBoxColumn.Name = "aptMBNoDataGridViewTextBoxColumn";
+            // 
             // StudentSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::PO.Properties.Resources.postBG1;
             this.ClientSize = new System.Drawing.Size(764, 602);
+            this.Controls.Add(this.deleteButton);
+            this.Controls.Add(this.homePictureBox);
             this.Controls.Add(this.updateButton);
             this.Controls.Add(this.SearchMenuStrip);
             this.Controls.Add(this.PrintBtn);
@@ -682,8 +700,6 @@
             this.Text = "Midwestern State University - Post Office";
             this.Load += new System.EventHandler(this.StudentSearch_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ResultList)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentTableBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pODBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PrintQ)).EndInit();
             this.SearchBox.ResumeLayout(false);
             this.SearchBox.PerformLayout();
@@ -693,6 +709,9 @@
             this.panel1.PerformLayout();
             this.SearchMenuStrip.ResumeLayout(false);
             this.SearchMenuStrip.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.homePictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentTableBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pODBDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -724,23 +743,22 @@
         private System.Windows.Forms.Label MiddleName;
         private System.Windows.Forms.Label FirstName;
         private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.MenuStrip SearchMenuStrip;
-        private System.Windows.Forms.ToolStripMenuItem adminToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem logInToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem searchStudentToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem searchToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem addRemoveToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem removeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem printToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem printPreviewToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem forcePrintToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem connectToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem studentDatabaseToolStripMenuItem;
         private PODBDataSet pODBDataSet;
         private System.Windows.Forms.BindingSource studentTableBindingSource;
         private PODBDataSetTableAdapters.StudentTableTableAdapter studentTableTableAdapter;
-        private System.Windows.Forms.ToolStripMenuItem adminHomeToolStripMenuItem;
         private System.Windows.Forms.Button updateButton;
+        private System.Windows.Forms.ToolStripMenuItem adminToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem logInToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem adminHomeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addressToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem printToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem printPreviewToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem forcePrintToolStripMenuItem;
+        private System.Windows.Forms.MenuStrip SearchMenuStrip;
+        private System.Windows.Forms.PictureBox homePictureBox;
+        private System.Windows.Forms.Button deleteButton;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn middleNameDataGridViewTextBoxColumn;
@@ -757,6 +775,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn mustangNumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn newCountryDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn mSUCityDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn aptMBNoDataGridViewTextBoxColumn;
     }
 }
 

@@ -12,9 +12,16 @@ namespace PO
 {
     public partial class Print : Form
     {
+        private bool loggedin;
         public Print()
         {
             InitializeComponent();
+        }
+
+        public Print(bool i)
+        {
+            InitializeComponent();
+            loggedin = i;
         }
 
         private void PrintButton_Click(object sender, EventArgs e)
@@ -25,13 +32,17 @@ namespace PO
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            StudentSearch search = new StudentSearch();
-            search.Show();
-            //if(admin logged in){
-            //this.Hide();
-            //AdminHomePage adminhome = new AdminHomePage();
-            //adminhome.Show();
+            if(loggedin)
+            {
+                this.Close();
+                Form f = new AdminHomePage(loggedin);
+            }
+
+            else
+            {
+                this.Close();
+                Form f = new StudentSearch(loggedin);
+            }
         }
     }
 }

@@ -14,6 +14,7 @@ namespace PO
         private String midName;
         private String email;
         private String mStAddress;
+        private String aptmb;
         private String mCity;
         private String mState;
         private String mZip;
@@ -24,12 +25,7 @@ namespace PO
         private String nCountry;
         private DateTime dateAdded;
 
-        public Student()
-        {
-
-        }
-
-        public Student(String mnum, String fn, String ln, String mn, String em, String mAdd, String mC, String mSt, String mZ, String nAdd, String nC, String nSt, String nZ, String nCountry, DateTime now)
+        public Student(String mnum, String fn, String ln, String mn, String em, String mAdd, String mC, String mSt, String mZ, String nAdd, String nC, String nSt, String nZ, String nCountry, DateTime now, String amb)
         {
             mNum = mnum;
             fName = fn;
@@ -46,6 +42,7 @@ namespace PO
             nZip = nZ;
             this.nCountry = nCountry;
             dateAdded = now;
+            aptmb = amb;
         }
 
         public override string ToString()
@@ -63,7 +60,7 @@ namespace PO
             }
 
             r += "                  " + nCountry + System.Environment.NewLine;
-            r += "MSU Address: " + mStAddress + "," + System.Environment.NewLine;
+            r += "MSU Address: " + mStAddress + aptmb + "," + System.Environment.NewLine;
             r += "                      " + mCity + "," + System.Environment.NewLine;
             r += "                      " + mState + "," + System.Environment.NewLine;
             r += "                      " + mZip + "," + System.Environment.NewLine;
@@ -258,6 +255,19 @@ namespace PO
             set
             {
                 nCountry = value;
+            }
+        }
+
+        public String Aptmb
+        {
+            get
+            {
+                return aptmb;
+            }
+
+            set
+            {
+                aptmb = value;
             }
         }
     }

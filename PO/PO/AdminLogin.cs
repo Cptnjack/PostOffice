@@ -14,7 +14,7 @@ namespace PO
     {
         private String username;
         private String pwd;
-        Form f;
+        private Form f;
         public AdminLogin()
         {
             InitializeComponent();
@@ -29,7 +29,7 @@ namespace PO
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             this.Close();
-            f = new StudentSearch();
+            f = new StudentSearch(false);
             f.Show();
         }
 
@@ -48,11 +48,13 @@ namespace PO
                 MessageBox.Show("You can't leave the Username field blank! Put something in there!", "ERROR", MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
+
             if(txtPassword.Text =="")
             {
                 MessageBox.Show("We don't allow empty passwords! Please enter your password.", "ERROR", MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
+
             else
             {   
                 username = txtUsername.Text;
@@ -68,7 +70,7 @@ namespace PO
                 {
                     //success
                     //go to the adminHomePage form
-                    MessageBox.Show("Login Successful! Click OK to continue", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //MessageBox.Show("Login Successful! Click OK to continue", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     f = new AdminHomePage(true);
                     f.Show();
                     this.Close();
@@ -78,8 +80,6 @@ namespace PO
                 {
                     //not success
                     MessageBox.Show("Login Failed! Click OK to continue", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    f.Show();
-                    this.Close();
                 }
             }
         }
@@ -90,5 +90,6 @@ namespace PO
             //this.adminTableTableAdapter1.Fill(this.pODBDataSet.AdminTable);
 
         }
+
     }
 }

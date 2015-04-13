@@ -29,15 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UpdateStudentAddress));
-            this.msuaddressGroupBox = new System.Windows.Forms.GroupBox();
-            this.msustateTextBox = new System.Windows.Forms.TextBox();
-            this.msuzipTextBox = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.msucityTextBox = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.msuaddressTextBox = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.firstlbl = new System.Windows.Forms.Label();
             this.mnumTextBox = new System.Windows.Forms.TextBox();
             this.fnameTextBox = new System.Windows.Forms.TextBox();
@@ -75,117 +66,21 @@
             this.lnameTextBox = new System.Windows.Forms.TextBox();
             this.cancelButton = new System.Windows.Forms.Button();
             this.studentInfoGroupBox = new System.Windows.Forms.GroupBox();
-            this.msuaddressGroupBox.SuspendLayout();
+            this.msuGroupBox = new System.Windows.Forms.GroupBox();
+            this.SunwatcherRadioButton = new System.Windows.Forms.RadioButton();
+            this.sundanceRadioButton = new System.Windows.Forms.RadioButton();
+            this.poboxRadioButton = new System.Windows.Forms.RadioButton();
+            this.otherRadioButton = new System.Windows.Forms.RadioButton();
+            this.aptmailTextBox = new System.Windows.Forms.TextBox();
+            this.aptmailLabel = new System.Windows.Forms.Label();
+            this.msuaddressTextBox = new System.Windows.Forms.TextBox();
+            this.msuaddressLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.HomePic)).BeginInit();
             this.newaddressGroupBox.SuspendLayout();
             this.SearchMenuStrip.SuspendLayout();
             this.studentInfoGroupBox.SuspendLayout();
+            this.msuGroupBox.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // msuaddressGroupBox
-            // 
-            this.msuaddressGroupBox.BackColor = System.Drawing.Color.Transparent;
-            this.msuaddressGroupBox.Controls.Add(this.msustateTextBox);
-            this.msuaddressGroupBox.Controls.Add(this.msuzipTextBox);
-            this.msuaddressGroupBox.Controls.Add(this.label5);
-            this.msuaddressGroupBox.Controls.Add(this.label4);
-            this.msuaddressGroupBox.Controls.Add(this.msucityTextBox);
-            this.msuaddressGroupBox.Controls.Add(this.label3);
-            this.msuaddressGroupBox.Controls.Add(this.msuaddressTextBox);
-            this.msuaddressGroupBox.Controls.Add(this.label2);
-            this.msuaddressGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.msuaddressGroupBox.Location = new System.Drawing.Point(11, 172);
-            this.msuaddressGroupBox.Margin = new System.Windows.Forms.Padding(2);
-            this.msuaddressGroupBox.Name = "msuaddressGroupBox";
-            this.msuaddressGroupBox.Padding = new System.Windows.Forms.Padding(2);
-            this.msuaddressGroupBox.Size = new System.Drawing.Size(744, 131);
-            this.msuaddressGroupBox.TabIndex = 72;
-            this.msuaddressGroupBox.TabStop = false;
-            this.msuaddressGroupBox.Text = "MSU Address:";
-            // 
-            // msustateTextBox
-            // 
-            this.msustateTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.msustateTextBox.Location = new System.Drawing.Point(252, 99);
-            this.msustateTextBox.Margin = new System.Windows.Forms.Padding(2);
-            this.msustateTextBox.Name = "msustateTextBox";
-            this.msustateTextBox.Size = new System.Drawing.Size(240, 26);
-            this.msustateTextBox.TabIndex = 66;
-            // 
-            // msuzipTextBox
-            // 
-            this.msuzipTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.msuzipTextBox.Location = new System.Drawing.Point(497, 100);
-            this.msuzipTextBox.Margin = new System.Windows.Forms.Padding(2);
-            this.msuzipTextBox.Name = "msuzipTextBox";
-            this.msuzipTextBox.Size = new System.Drawing.Size(240, 26);
-            this.msuzipTextBox.TabIndex = 64;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(494, 73);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(90, 24);
-            this.label5.TabIndex = 63;
-            this.label5.Text = "Zipcode: ";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(250, 73);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(61, 24);
-            this.label4.TabIndex = 65;
-            this.label4.Text = "State: ";
-            // 
-            // msucityTextBox
-            // 
-            this.msucityTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.msucityTextBox.Location = new System.Drawing.Point(8, 100);
-            this.msucityTextBox.Margin = new System.Windows.Forms.Padding(2);
-            this.msucityTextBox.Name = "msucityTextBox";
-            this.msucityTextBox.Size = new System.Drawing.Size(240, 26);
-            this.msucityTextBox.TabIndex = 64;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(4, 73);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(45, 24);
-            this.label3.TabIndex = 63;
-            this.label3.Text = "City:";
-            // 
-            // msuaddressTextBox
-            // 
-            this.msuaddressTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.msuaddressTextBox.Location = new System.Drawing.Point(10, 46);
-            this.msuaddressTextBox.Margin = new System.Windows.Forms.Padding(2);
-            this.msuaddressTextBox.Name = "msuaddressTextBox";
-            this.msuaddressTextBox.Size = new System.Drawing.Size(728, 26);
-            this.msuaddressTextBox.TabIndex = 62;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(6, 20);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(133, 24);
-            this.label2.TabIndex = 61;
-            this.label2.Text = "Street Address";
             // 
             // firstlbl
             // 
@@ -296,7 +191,7 @@
             // 
             this.HomePic.BackColor = System.Drawing.Color.DarkRed;
             this.HomePic.Image = global::PO.Properties.Resources.home_icon;
-            this.HomePic.Location = new System.Drawing.Point(633, 539);
+            this.HomePic.Location = new System.Drawing.Point(647, 522);
             this.HomePic.Margin = new System.Windows.Forms.Padding(2);
             this.HomePic.Name = "HomePic";
             this.HomePic.Size = new System.Drawing.Size(34, 37);
@@ -311,7 +206,7 @@
             this.updateButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.updateButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.updateButton.ForeColor = System.Drawing.Color.White;
-            this.updateButton.Location = new System.Drawing.Point(86, 521);
+            this.updateButton.Location = new System.Drawing.Point(83, 509);
             this.updateButton.Margin = new System.Windows.Forms.Padding(2);
             this.updateButton.Name = "updateButton";
             this.updateButton.Size = new System.Drawing.Size(239, 67);
@@ -334,7 +229,7 @@
             this.newaddressGroupBox.Controls.Add(this.newaddressTextBox);
             this.newaddressGroupBox.Controls.Add(this.label9);
             this.newaddressGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.newaddressGroupBox.Location = new System.Drawing.Point(9, 307);
+            this.newaddressGroupBox.Location = new System.Drawing.Point(11, 289);
             this.newaddressGroupBox.Margin = new System.Windows.Forms.Padding(2);
             this.newaddressGroupBox.Name = "newaddressGroupBox";
             this.newaddressGroupBox.Padding = new System.Windows.Forms.Padding(2);
@@ -544,7 +439,7 @@
             this.cancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cancelButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cancelButton.ForeColor = System.Drawing.Color.White;
-            this.cancelButton.Location = new System.Drawing.Point(358, 521);
+            this.cancelButton.Location = new System.Drawing.Point(356, 509);
             this.cancelButton.Margin = new System.Windows.Forms.Padding(2);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(239, 67);
@@ -576,12 +471,127 @@
             this.studentInfoGroupBox.TabStop = false;
             this.studentInfoGroupBox.Text = "Student Info:";
             // 
+            // msuGroupBox
+            // 
+            this.msuGroupBox.BackColor = System.Drawing.Color.Transparent;
+            this.msuGroupBox.Controls.Add(this.SunwatcherRadioButton);
+            this.msuGroupBox.Controls.Add(this.sundanceRadioButton);
+            this.msuGroupBox.Controls.Add(this.poboxRadioButton);
+            this.msuGroupBox.Controls.Add(this.otherRadioButton);
+            this.msuGroupBox.Controls.Add(this.aptmailTextBox);
+            this.msuGroupBox.Controls.Add(this.aptmailLabel);
+            this.msuGroupBox.Controls.Add(this.msuaddressTextBox);
+            this.msuGroupBox.Controls.Add(this.msuaddressLabel);
+            this.msuGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.msuGroupBox.Location = new System.Drawing.Point(11, 172);
+            this.msuGroupBox.Margin = new System.Windows.Forms.Padding(2);
+            this.msuGroupBox.Name = "msuGroupBox";
+            this.msuGroupBox.Padding = new System.Windows.Forms.Padding(2);
+            this.msuGroupBox.Size = new System.Drawing.Size(744, 113);
+            this.msuGroupBox.TabIndex = 77;
+            this.msuGroupBox.TabStop = false;
+            this.msuGroupBox.Text = "MSU Address:";
+            // 
+            // SunwatcherRadioButton
+            // 
+            this.SunwatcherRadioButton.AutoSize = true;
+            this.SunwatcherRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SunwatcherRadioButton.Location = new System.Drawing.Point(125, 24);
+            this.SunwatcherRadioButton.Name = "SunwatcherRadioButton";
+            this.SunwatcherRadioButton.Size = new System.Drawing.Size(112, 24);
+            this.SunwatcherRadioButton.TabIndex = 68;
+            this.SunwatcherRadioButton.TabStop = true;
+            this.SunwatcherRadioButton.Text = "Sunwatcher";
+            this.SunwatcherRadioButton.UseVisualStyleBackColor = true;
+            this.SunwatcherRadioButton.CheckedChanged += new System.EventHandler(this.radiobuttons_CheckedChanged);
+            // 
+            // sundanceRadioButton
+            // 
+            this.sundanceRadioButton.AutoSize = true;
+            this.sundanceRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sundanceRadioButton.Location = new System.Drawing.Point(11, 24);
+            this.sundanceRadioButton.Name = "sundanceRadioButton";
+            this.sundanceRadioButton.Size = new System.Drawing.Size(100, 24);
+            this.sundanceRadioButton.TabIndex = 67;
+            this.sundanceRadioButton.TabStop = true;
+            this.sundanceRadioButton.Text = "Sundance";
+            this.sundanceRadioButton.UseVisualStyleBackColor = true;
+            this.sundanceRadioButton.CheckedChanged += new System.EventHandler(this.radiobuttons_CheckedChanged);
+            // 
+            // poboxRadioButton
+            // 
+            this.poboxRadioButton.AutoSize = true;
+            this.poboxRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.poboxRadioButton.Location = new System.Drawing.Point(253, 24);
+            this.poboxRadioButton.Name = "poboxRadioButton";
+            this.poboxRadioButton.Size = new System.Drawing.Size(80, 24);
+            this.poboxRadioButton.TabIndex = 66;
+            this.poboxRadioButton.TabStop = true;
+            this.poboxRadioButton.Text = "PO Box";
+            this.poboxRadioButton.UseVisualStyleBackColor = true;
+            this.poboxRadioButton.CheckedChanged += new System.EventHandler(this.radiobuttons_CheckedChanged);
+            // 
+            // otherRadioButton
+            // 
+            this.otherRadioButton.AutoSize = true;
+            this.otherRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.otherRadioButton.Location = new System.Drawing.Point(339, 24);
+            this.otherRadioButton.Name = "otherRadioButton";
+            this.otherRadioButton.Size = new System.Drawing.Size(102, 24);
+            this.otherRadioButton.TabIndex = 65;
+            this.otherRadioButton.TabStop = true;
+            this.otherRadioButton.Text = "Other/New";
+            this.otherRadioButton.UseVisualStyleBackColor = true;
+            this.otherRadioButton.CheckedChanged += new System.EventHandler(this.radiobuttons_CheckedChanged);
+            // 
+            // aptmailTextBox
+            // 
+            this.aptmailTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.aptmailTextBox.Location = new System.Drawing.Point(497, 70);
+            this.aptmailTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.aptmailTextBox.Name = "aptmailTextBox";
+            this.aptmailTextBox.Size = new System.Drawing.Size(240, 26);
+            this.aptmailTextBox.TabIndex = 64;
+            // 
+            // aptmailLabel
+            // 
+            this.aptmailLabel.AutoSize = true;
+            this.aptmailLabel.BackColor = System.Drawing.Color.Transparent;
+            this.aptmailLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.aptmailLabel.Location = new System.Drawing.Point(494, 43);
+            this.aptmailLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.aptmailLabel.Name = "aptmailLabel";
+            this.aptmailLabel.Size = new System.Drawing.Size(129, 24);
+            this.aptmailLabel.TabIndex = 63;
+            this.aptmailLabel.Text = "Apt/Mailbox #:";
+            // 
+            // msuaddressTextBox
+            // 
+            this.msuaddressTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.msuaddressTextBox.Location = new System.Drawing.Point(10, 70);
+            this.msuaddressTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.msuaddressTextBox.Name = "msuaddressTextBox";
+            this.msuaddressTextBox.Size = new System.Drawing.Size(480, 26);
+            this.msuaddressTextBox.TabIndex = 62;
+            // 
+            // msuaddressLabel
+            // 
+            this.msuaddressLabel.AutoSize = true;
+            this.msuaddressLabel.BackColor = System.Drawing.Color.Transparent;
+            this.msuaddressLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.msuaddressLabel.Location = new System.Drawing.Point(4, 43);
+            this.msuaddressLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.msuaddressLabel.Name = "msuaddressLabel";
+            this.msuaddressLabel.Size = new System.Drawing.Size(133, 24);
+            this.msuaddressLabel.TabIndex = 61;
+            this.msuaddressLabel.Text = "Street Address";
+            // 
             // UpdateStudentAddress
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(764, 602);
-            this.Controls.Add(this.msuaddressGroupBox);
+            this.Controls.Add(this.msuGroupBox);
             this.Controls.Add(this.HomePic);
             this.Controls.Add(this.updateButton);
             this.Controls.Add(this.newaddressGroupBox);
@@ -595,8 +605,6 @@
             this.MinimumSize = new System.Drawing.Size(780, 641);
             this.Name = "UpdateStudentAddress";
             this.Text = "Midwestern State University - Post Office - Update Student Address";
-            this.msuaddressGroupBox.ResumeLayout(false);
-            this.msuaddressGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.HomePic)).EndInit();
             this.newaddressGroupBox.ResumeLayout(false);
             this.newaddressGroupBox.PerformLayout();
@@ -604,6 +612,8 @@
             this.SearchMenuStrip.PerformLayout();
             this.studentInfoGroupBox.ResumeLayout(false);
             this.studentInfoGroupBox.PerformLayout();
+            this.msuGroupBox.ResumeLayout(false);
+            this.msuGroupBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -611,14 +621,6 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox msuaddressGroupBox;
-        private System.Windows.Forms.TextBox msuzipTextBox;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox msucityTextBox;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox msuaddressTextBox;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label firstlbl;
         private System.Windows.Forms.TextBox mnumTextBox;
         private System.Windows.Forms.TextBox fnameTextBox;
@@ -653,9 +655,17 @@
         private System.Windows.Forms.TextBox lnameTextBox;
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.GroupBox studentInfoGroupBox;
-        private System.Windows.Forms.TextBox msustateTextBox;
         private System.Windows.Forms.TextBox newstateTextBox;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox newcountryTextBox;
+        private System.Windows.Forms.GroupBox msuGroupBox;
+        private System.Windows.Forms.RadioButton SunwatcherRadioButton;
+        private System.Windows.Forms.RadioButton sundanceRadioButton;
+        private System.Windows.Forms.RadioButton poboxRadioButton;
+        private System.Windows.Forms.RadioButton otherRadioButton;
+        private System.Windows.Forms.TextBox aptmailTextBox;
+        private System.Windows.Forms.Label aptmailLabel;
+        private System.Windows.Forms.TextBox msuaddressTextBox;
+        private System.Windows.Forms.Label msuaddressLabel;
     }
 }

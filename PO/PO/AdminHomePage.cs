@@ -41,59 +41,25 @@ namespace PO
             search.Show();
         }
 
-        private void adminPrintLabel_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Print Pform = new Print();
-            Pform.Show();
-        }
 
         private void adduserbtn_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            AddUser addform = new AddUser();
+            this.Close();
+            AddUser addform = new AddUser(loggedin);
             addform.Show();
         }
 
         private void adminChangePswrd_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            ChangePassword changepwd = new ChangePassword();
+            this.Close();
+            ChangePassword changepwd = new ChangePassword(loggedin);
             changepwd.Show();
         }
 
-        private void hhToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            AddUser addform = new AddUser();
-            addform.Show();
-        }
-
-        private void ChangePwdToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            ChangePassword changepwd = new ChangePassword();
-            changepwd.Show();
-        }
-
-        private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            StudentSearch search = new StudentSearch();
-            search.Show();
-        }
-
-        private void searchToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            StudentSearch search = new StudentSearch();
-            search.Show();
-            //should change "Admin Login" button to "Log Out"..also in the menustrip..add a "Home" option under Admin?
-        }
 
         private void printPreviewToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
             Print Pform = new Print();
             Pform.Show();
         }
@@ -103,11 +69,20 @@ namespace PO
             DialogResult forceprintresult = MessageBox.Show("Are you sure you want to force print?", "Force Print", MessageBoxButtons.YesNoCancel);
         }
 
-        private void adminChangePswrd_Click_1(object sender, EventArgs e)
+
+        private void removeuserbtn_Click(object sender, EventArgs e)
+        {
+            RemoveUser remove = new RemoveUser(loggedin);
+            remove.Show();
+            this.Close();
+            
+        }
+
+        private void addstudentButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            ChangePassword changepwd = new ChangePassword();
-            changepwd.Show();
-        }
+            Form f = new AddStudentAddress(loggedin, this);
+            f.Show();
+        } 
     }
 }
