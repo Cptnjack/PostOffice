@@ -29,19 +29,19 @@ namespace PO
 
         private void radioButtons_CheckedChanged(object sender, EventArgs e)
         {
-            if(sundanceRadioButton.Checked == true)
+            if (sundanceRadioButton.Checked == true)
             {
                 msuaddressTextBox.Text = "2602 Midwestern Pkwy";
                 aptmailTextBox.Text = "";
             }
 
-            else if(SunwatcherRadioButton.Checked == true)
+            else if (SunwatcherRadioButton.Checked == true)
             {
                 msuaddressTextBox.Text = "3704 Louis J. Rodriguez";
                 aptmailTextBox.Text = "";
             }
 
-            else if(poboxRadioButton.Checked == true || otherRadioButton.Checked == true)
+            else if (poboxRadioButton.Checked == true || otherRadioButton.Checked == true)
             {
                 msuaddressTextBox.Text = "";
                 aptmailTextBox.Text = "";
@@ -61,9 +61,9 @@ namespace PO
             //otherwise put it in the database
             else
             {
-                this.studentTableTableAdapter.Insert(firstTextBox.Text, middleTextBox.Text, lastTextBox.Text, address1TextBox.Text,
-                    naCityTextBox.Text, nastateTextBox.Text, nazipTextBox.Text, nacountryTextBox.Text, emailTextBox.Text,
-                    msuaddressTextBox.Text, "TX", "76308", DateTime.Now, idTextBox.Text, "Wichita Falls", aptmailTextBox.Text);
+                this.studentTableTableAdapter.Insert(firstTextBox.Text, middleTextBox.Text, lastTextBox.Text, address1TextBox.Text+address2TextBox,
+                    naCityTextBox.Text, nastateTextBox.Text, nazipTextBox.Text,  emailTextBox.Text,
+                    msuaddressTextBox.Text, "TX", "76308", DateTime.Now, idTextBox.Text, nacountryTextBox.Text, "Wichita Falls", aptmailTextBox.Text);
                 this.Close();
                 last.Show();
             }
@@ -73,6 +73,13 @@ namespace PO
         {
             // TODO: This line of code loads data into the 'pODBDataSet.StudentTable' table. You can move, or remove it, as needed.
             //this.studentTableTableAdapter.Fill(this.pODBDataSet.StudentTable);
+        }
+
+        private void AddStudentAddress_Load_1(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'pODBDataSet.StudentTable' table. You can move, or remove it, as needed.
+            this.studentTableTableAdapter.Fill(this.pODBDataSet.StudentTable);
+
         }
 
     }

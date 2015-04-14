@@ -2,22 +2,11 @@
     
     
     public partial class PODBDataSet {
-        partial class AdminTableDataTable
-        {
-        }
-    
-        partial class StudentTableDataTable
-        {
-        }
     }
 }
-
-namespace PO.PODBDataSetTableAdapters {
-    partial class AdminTableTableAdapter
-    {
-    }
+namespace PO {
     
     
-    public partial class StudentTableTableAdapter {
+    public partial class PODBDataSet {
     }
 }

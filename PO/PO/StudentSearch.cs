@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace PO
 {
-    
+
     public partial class StudentSearch : Form
     {
         private bool loggedin;
@@ -40,8 +40,8 @@ namespace PO
             init();
 
             this.studentTableTableAdapter.UpdateQuery(newP.FName, newP.MidName, newP.LName, newP.NStAddress, newP.NCity,
-                newP.NState, newP.NZip, newP.NCountry, newP.Email, newP.MStAddress, newP.MState, newP.MZip, newP.DateAdded,
-                newP.MNum, newP.MCity, oldP.FName, oldP.MidName, oldP.LName, oldP.MNum, newP.Aptmb);
+                newP.NState, newP.NZip, newP.Email, newP.MStAddress, newP.MState, newP.MZip, newP.DateAdded,
+                newP.MNum, newP.NCountry, newP.MCity, newP.Aptmb, oldP.FName, oldP.LName, oldP.NStAddress, oldP.NCity, oldP.NCountry);
         }
 
         private void StudentSearch_Load(object sender, EventArgs e)
@@ -56,7 +56,7 @@ namespace PO
         private void AdminLogin_Click(object sender, EventArgs e)
         {
             if (loggedin)
-            {   
+            {
                 MessageBox.Show("You have successfully been logged out. Click OK to return.", "Logged out", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 loggedin = false;
                 AdminLogin.Text = "Admin Login";
@@ -96,7 +96,7 @@ namespace PO
 
         private void radiobuttons_CheckChanged(object sender, EventArgs e)
         {
-            if(radioButton1.Checked)
+            if (radioButton1.Checked)
             {
                 panel1.Visible = true;
                 panel2.Visible = false;
@@ -123,17 +123,17 @@ namespace PO
                 else if (MiddleInittxtbox.Text != "")
                     //perform the query
                     studentTableTableAdapter.FillByName(this.pODBDataSet.StudentTable, FirstNametxtbox.Text, MiddleInittxtbox.Text, LastNametxtbox.Text);
- 
+
                 //if only searching by first and last name
                 else if (MiddleInittxtbox.Text == "")
                     //perform the query
                     studentTableTableAdapter.FillByFirstLast(this.pODBDataSet.StudentTable, FirstNametxtbox.Text, LastNametxtbox.Text);
             }
- 
+
             //if searching by MNumber
             else if (radioButton2.Checked)
             {
-                if(idTextBox.Text != "")
+                if (idTextBox.Text != "")
                     //perform the query
                     studentTableTableAdapter.FillByMNum(this.pODBDataSet.StudentTable, idTextBox.Text);
             }
@@ -141,7 +141,7 @@ namespace PO
 
         private void adminHomeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if(loggedin)
+            if (loggedin)
             {
                 this.Close();
                 AdminHomePage a = new AdminHomePage(loggedin);
@@ -156,7 +156,7 @@ namespace PO
 
             //if there is only one row selected
             //do stuff
-            if(selectedRowCount == 1)
+            if (selectedRowCount == 1)
             {
                 int selectedRowIndex = ResultList.SelectedCells[0].RowIndex;
                 DataGridViewRow selectedRow = ResultList.Rows[selectedRowIndex];
@@ -204,8 +204,8 @@ namespace PO
             {
                 MessageBox.Show("You must select a student to update!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-        } 
-      
+        }
+
         private void init()
         {
             ResultList.Columns[0].Visible = false;
@@ -257,7 +257,7 @@ namespace PO
                 int selectedRowIndex = ResultList.SelectedCells[0].RowIndex;
                 DataGridViewRow selectedRow = ResultList.Rows[selectedRowIndex];
                 String fn, ln, midn, nadd, nc, nst, ncountry, amb;
-                
+
                 fn = Convert.ToString(selectedRow.Cells[1].Value);
                 midn = Convert.ToString(selectedRow.Cells[2].Value);
                 ln = Convert.ToString(selectedRow.Cells[3].Value);
@@ -271,13 +271,20 @@ namespace PO
                 else
                     this.studentTableTableAdapter.DeleteQueryMN(fn, midn, ln, nadd, nc, ncountry, amb);
                 this.studentTableTableAdapter.Fill(this.pODBDataSet.StudentTable);
-                
+
             }
 
             else
             {
-                MessageBox.Show("Please select a student to remove.","Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please select a student to remove.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void StudentSearch_Load_1(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'pODBDataSet.StudentTable' table. You can move, or remove it, as needed.
+            this.studentTableTableAdapter.Fill(this.pODBDataSet.StudentTable);
+
         }
     }
 }

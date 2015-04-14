@@ -32,7 +32,7 @@ namespace PO
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            if(loggedin)
+            if (loggedin)
             {
                 this.Close();
                 Form f = new AdminHomePage(loggedin);

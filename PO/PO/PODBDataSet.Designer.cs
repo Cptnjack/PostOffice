@@ -314,8 +314,6 @@ namespace PO {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class AdminTableDataTable : global::System.Data.TypedTableBase<AdminTableRow> {
             
-            private global::System.Data.DataColumn columnID;
-            
             private global::System.Data.DataColumn columnFirst_Name;
             
             private global::System.Data.DataColumn columnLast_Name;
@@ -325,8 +323,6 @@ namespace PO {
             private global::System.Data.DataColumn columnPassword;
             
             private global::System.Data.DataColumn columnUsername;
-            
-            private global::System.Data.DataColumn columnID1;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -359,14 +355,6 @@ namespace PO {
             protected AdminTableDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn IDColumn {
-                get {
-                    return this.columnID;
-                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -411,14 +399,6 @@ namespace PO {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ID1Column {
-                get {
-                    return this.columnID1;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -454,16 +434,14 @@ namespace PO {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public AdminTableRow AddAdminTableRow(string First_Name, string Last_Name, string Email, string Password, string Username, string ID1) {
+            public AdminTableRow AddAdminTableRow(string First_Name, string Last_Name, string Email, string Password, string Username) {
                 AdminTableRow rowAdminTableRow = ((AdminTableRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        null,
                         First_Name,
                         Last_Name,
                         Email,
                         Password,
-                        Username,
-                        ID1};
+                        Username};
                 rowAdminTableRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowAdminTableRow);
                 return rowAdminTableRow;
@@ -471,9 +449,9 @@ namespace PO {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public AdminTableRow FindByID(int ID) {
+            public AdminTableRow FindByUsername(string Username) {
                 return ((AdminTableRow)(this.Rows.Find(new object[] {
-                            ID})));
+                            Username})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -493,20 +471,16 @@ namespace PO {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
-                this.columnID = base.Columns["ID"];
                 this.columnFirst_Name = base.Columns["First Name"];
                 this.columnLast_Name = base.Columns["Last Name"];
                 this.columnEmail = base.Columns["Email"];
                 this.columnPassword = base.Columns["Password"];
                 this.columnUsername = base.Columns["Username"];
-                this.columnID1 = base.Columns["ID1"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columnID = new global::System.Data.DataColumn("ID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnID);
                 this.columnFirst_Name = new global::System.Data.DataColumn("First Name", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnFirst_Name);
                 this.columnLast_Name = new global::System.Data.DataColumn("Last Name", typeof(string), null, global::System.Data.MappingType.Element);
@@ -517,23 +491,15 @@ namespace PO {
                 base.Columns.Add(this.columnPassword);
                 this.columnUsername = new global::System.Data.DataColumn("Username", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnUsername);
-                this.columnID1 = new global::System.Data.DataColumn("ID1", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnID1);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnID}, true));
-                this.columnID.AutoIncrement = true;
-                this.columnID.AutoIncrementSeed = -1;
-                this.columnID.AutoIncrementStep = -1;
-                this.columnID.AllowDBNull = false;
-                this.columnID.Unique = true;
+                                this.columnUsername}, true));
                 this.columnFirst_Name.MaxLength = 255;
                 this.columnLast_Name.MaxLength = 255;
                 this.columnEmail.MaxLength = 255;
                 this.columnPassword.MaxLength = 255;
                 this.columnUsername.AllowDBNull = false;
+                this.columnUsername.Unique = true;
                 this.columnUsername.MaxLength = 255;
-                this.columnID1.ReadOnly = true;
-                this.columnID1.Caption = "ID";
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1192,17 +1158,6 @@ namespace PO {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int ID {
-                get {
-                    return ((int)(this[this.tableAdminTable.IDColumn]));
-                }
-                set {
-                    this[this.tableAdminTable.IDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string First_Name {
                 get {
                     try {
@@ -1278,22 +1233,6 @@ namespace PO {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string ID1 {
-                get {
-                    if (this.IsID1Null()) {
-                        return null;
-                    }
-                    else {
-                        return ((string)(this[this.tableAdminTable.ID1Column]));
-                    }
-                }
-                set {
-                    this[this.tableAdminTable.ID1Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsFirst_NameNull() {
                 return this.IsNull(this.tableAdminTable.First_NameColumn);
             }
@@ -1338,18 +1277,6 @@ namespace PO {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetPasswordNull() {
                 this[this.tableAdminTable.PasswordColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsID1Null() {
-                return this.IsNull(this.tableAdminTable.ID1Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetID1Null() {
-                this[this.tableAdminTable.ID1Column] = global::System.Convert.DBNull;
             }
         }
         
@@ -2025,7 +1952,6 @@ namespace PO.PODBDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("Email", "Email");
             tableMapping.ColumnMappings.Add("Password", "Password");
             tableMapping.ColumnMappings.Add("Username", "Username");
-            tableMapping.ColumnMappings.Add("ID", "ID1");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -2074,59 +2000,56 @@ namespace PO.PODBDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::PO.Properties.Settings.Default.PODBConnectionString;
+            this._connection.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\\PODB.accdb;Persist " +
+                "Security Info=True";
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[8];
+            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[7];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID, [First Name], [Last Name], Email, [Password], [Username] \r\nFROM AdminT" +
-                "able";
+            this._commandCollection[0].CommandText = "SELECT [First Name], [Last Name], Email, [Password], Username FROM AdminTable";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "DELETE FROM `AdminTable` \r\nWHERE [Username] = @UN";
+            this._commandCollection[1].CommandText = "DELETE FROM `AdminTable` \r\nWHERE [Username] = @Username";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("UN", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Username", global::System.Data.DataRowVersion.Original, false, null));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Username", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[2] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT *\r\nFROM AdminTable";
+            this._commandCollection[2].CommandText = "SELECT [First Name], [Last Name], Email, [Password], Username \r\nFROM AdminTable\r\n" +
+                "WHERE Email = @Email";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Email", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[3] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "SELECT Email, [Password] FROM AdminTable\r\nWHERE Email = @em\r\n";
+            this._commandCollection[3].CommandText = "SELECT *\r\nFROM AdminTable";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[3].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("em", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[4] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = "SELECT [Username]\r\nFROM AdminTable";
+            this._commandCollection[4].CommandText = "SELECT [First Name], [Last Name], Email, [Password], Username \r\nFROM AdminTable\r\n" +
+                "WHERE Username = @Username AND [Password] = @Password";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[4].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Username", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Password", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[5] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = "SELECT [First Name], [Last Name], Email, [Password], [Username] FROM AdminTable\r\n" +
-                "WHERE [Username] = @em AND [Password] = @pwd";
+            this._commandCollection[5].CommandText = "INSERT INTO `AdminTable` (`First Name`, `Last Name`, `Email`, `Password`, `Userna" +
+                "me`) VALUES (@First_Name, @Last_Name, @Email, @Password, @Username)";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[5].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("em", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[5].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("pwd", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("First_Name", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "First Name", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Last_Name", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Last Name", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Email", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Email", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Password", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Password", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Username", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Username", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[6] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[6].Connection = this.Connection;
-            this._commandCollection[6].CommandText = "INSERT INTO `AdminTable` (`First Name`, `Last Name`, `Email`, `Password`, `Userna" +
-                "me`) \r\nVALUES (@FN,@LN,@EM,@PWD,@UN)";
+            this._commandCollection[6].CommandText = "UPDATE `AdminTable` \r\nSET `Password` = @Password\r\nWHERE `Username` = @Username";
             this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[6].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("First_Name", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "First Name", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[6].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Last_Name", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Last Name", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[6].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Email", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Email", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[6].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Password", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Password", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[6].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Username", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Username", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[7] = new global::System.Data.OleDb.OleDbCommand();
-            this._commandCollection[7].Connection = this.Connection;
-            this._commandCollection[7].CommandText = "UPDATE `AdminTable` \r\nSET  `Password` = @PWD\r\nWHERE  `Username` = @UN";
-            this._commandCollection[7].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[7].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("PWD", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[7].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("UN", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Password", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Username", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2157,37 +2080,13 @@ namespace PO.PODBDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByAll(PODBDataSet.AdminTableDataTable dataTable) {
+        public virtual int FillByEmail(PODBDataSet.AdminTableDataTable dataTable, string Email) {
             this.Adapter.SelectCommand = this.CommandCollection[2];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual PODBDataSet.AdminTableDataTable GetDataBy3() {
-            this.Adapter.SelectCommand = this.CommandCollection[2];
-            PODBDataSet.AdminTableDataTable dataTable = new PODBDataSet.AdminTableDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByEmail(PODBDataSet.AdminTableDataTable dataTable, string em) {
-            this.Adapter.SelectCommand = this.CommandCollection[3];
-            if ((em == null)) {
-                throw new global::System.ArgumentNullException("em");
+            if ((Email == null)) {
+                throw new global::System.ArgumentNullException("Email");
             }
             else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(em));
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Email));
             }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -2200,13 +2099,13 @@ namespace PO.PODBDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual PODBDataSet.AdminTableDataTable GetDataBy1(string em) {
-            this.Adapter.SelectCommand = this.CommandCollection[3];
-            if ((em == null)) {
-                throw new global::System.ArgumentNullException("em");
+        public virtual PODBDataSet.AdminTableDataTable GetDataByEmail(string Email) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((Email == null)) {
+                throw new global::System.ArgumentNullException("Email");
             }
             else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(em));
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Email));
             }
             PODBDataSet.AdminTableDataTable dataTable = new PODBDataSet.AdminTableDataTable();
             this.Adapter.Fill(dataTable);
@@ -2218,7 +2117,7 @@ namespace PO.PODBDataSetTableAdapters {
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int FillByUsernameAll(PODBDataSet.AdminTableDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[4];
+            this.Adapter.SelectCommand = this.CommandCollection[3];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -2230,8 +2129,8 @@ namespace PO.PODBDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual PODBDataSet.AdminTableDataTable GetDataByAll() {
-            this.Adapter.SelectCommand = this.CommandCollection[4];
+        public virtual PODBDataSet.AdminTableDataTable GetDataByUsernameAll() {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
             PODBDataSet.AdminTableDataTable dataTable = new PODBDataSet.AdminTableDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -2241,19 +2140,19 @@ namespace PO.PODBDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByUsernamePwd(PODBDataSet.AdminTableDataTable dataTable, string em, string pwd) {
-            this.Adapter.SelectCommand = this.CommandCollection[5];
-            if ((em == null)) {
-                throw new global::System.ArgumentNullException("em");
+        public virtual int FillByUsernamePwd(PODBDataSet.AdminTableDataTable dataTable, string Username, string Password) {
+            this.Adapter.SelectCommand = this.CommandCollection[4];
+            if ((Username == null)) {
+                throw new global::System.ArgumentNullException("Username");
             }
             else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(em));
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Username));
             }
-            if ((pwd == null)) {
-                throw new global::System.ArgumentNullException("pwd");
+            if ((Password == null)) {
+                throw new global::System.ArgumentNullException("Password");
             }
             else {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(pwd));
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(Password));
             }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -2266,19 +2165,19 @@ namespace PO.PODBDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual PODBDataSet.AdminTableDataTable GetDataByUsernamePwd(string em, string pwd) {
-            this.Adapter.SelectCommand = this.CommandCollection[5];
-            if ((em == null)) {
-                throw new global::System.ArgumentNullException("em");
+        public virtual PODBDataSet.AdminTableDataTable GetDataByUsernamePwd(string Username, string Password) {
+            this.Adapter.SelectCommand = this.CommandCollection[4];
+            if ((Username == null)) {
+                throw new global::System.ArgumentNullException("Username");
             }
             else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(em));
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Username));
             }
-            if ((pwd == null)) {
-                throw new global::System.ArgumentNullException("pwd");
+            if ((Password == null)) {
+                throw new global::System.ArgumentNullException("Password");
             }
             else {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(pwd));
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(Password));
             }
             PODBDataSet.AdminTableDataTable dataTable = new PODBDataSet.AdminTableDataTable();
             this.Adapter.Fill(dataTable);
@@ -2516,14 +2415,22 @@ namespace PO.PODBDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(string First_Name, string Last_Name, string Email, string Password, string Original_First_Name, string Original_Last_Name, string Original_Email, string Original_Password, string Original_Username) {
+            return this.Update(First_Name, Last_Name, Email, Password, Original_Username, Original_First_Name, Original_Last_Name, Original_Email, Original_Password, Original_Username);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
-        public virtual int DeleteQueryByUsername(string UN) {
+        public virtual int DeleteQueryByUsername(string Username) {
             global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[1];
-            if ((UN == null)) {
-                throw new global::System.ArgumentNullException("UN");
+            if ((Username == null)) {
+                throw new global::System.ArgumentNullException("Username");
             }
             else {
-                command.Parameters[0].Value = ((string)(UN));
+                command.Parameters[0].Value = ((string)(Username));
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -2547,7 +2454,7 @@ namespace PO.PODBDataSetTableAdapters {
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
         public virtual int InsertQuery(string First_Name, string Last_Name, string Email, string Password, string Username) {
-            global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[6];
+            global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[5];
             if ((First_Name == null)) {
                 command.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -2599,19 +2506,19 @@ namespace PO.PODBDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
-        public virtual int UpdateQuery(string PWD, string UN) {
-            global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[7];
-            if ((PWD == null)) {
-                throw new global::System.ArgumentNullException("PWD");
+        public virtual int UpdateQuery(string Password, string Username) {
+            global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[6];
+            if ((Password == null)) {
+                throw new global::System.ArgumentNullException("Password");
             }
             else {
-                command.Parameters[0].Value = ((string)(PWD));
+                command.Parameters[0].Value = ((string)(Password));
             }
-            if ((UN == null)) {
-                throw new global::System.ArgumentNullException("UN");
+            if ((Username == null)) {
+                throw new global::System.ArgumentNullException("Username");
             }
             else {
-                command.Parameters[1].Value = ((string)(UN));
+                command.Parameters[1].Value = ((string)(Username));
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -2772,7 +2679,7 @@ namespace PO.PODBDataSetTableAdapters {
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `StudentTable` WHERE ((`ID` = ?) AND ((? = 1 AND `First Name` IS NULL) OR (`First Name` = ?)) AND ((? = 1 AND `Middle Name` IS NULL) OR (`Middle Name` = ?)) AND ((? = 1 AND `Last Name` IS NULL) OR (`Last Name` = ?)) AND ((? = 1 AND `New Street Address` IS NULL) OR (`New Street Address` = ?)) AND ((? = 1 AND `New City` IS NULL) OR (`New City` = ?)) AND ((? = 1 AND `New State` IS NULL) OR (`New State` = ?)) AND ((? = 1 AND `New Zip` IS NULL) OR (`New Zip` = ?)) AND ((? = 1 AND `New Country` IS NULL) OR (`New Country` = ?)) AND ((? = 1 AND `Email` IS NULL) OR (`Email` = ?)) AND ((? = 1 AND `MSU Address` IS NULL) OR (`MSU Address` = ?)) AND ((? = 1 AND `MSU State` IS NULL) OR (`MSU State` = ?)) AND ((? = 1 AND `MSU Zip` IS NULL) OR (`MSU Zip` = ?)) AND ((? = 1 AND `Date Added` IS NULL) OR (`Date Added` = ?)) AND ((? = 1 AND `Mustang Number` IS NULL) OR (`Mustang Number` = ?)) AND ((? = 1 AND `MSU City` IS NULL) OR (`MSU City` = ?)) AND ((? = 1 AND `AptMBNo` IS NULL) OR (`AptMBNo` = ?)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `StudentTable` WHERE ((`ID` = ?) AND ((? = 1 AND `First Name` IS NULL) OR (`First Name` = ?)) AND ((? = 1 AND `Middle Name` IS NULL) OR (`Middle Name` = ?)) AND ((? = 1 AND `Last Name` IS NULL) OR (`Last Name` = ?)) AND ((? = 1 AND `New Street Address` IS NULL) OR (`New Street Address` = ?)) AND ((? = 1 AND `New City` IS NULL) OR (`New City` = ?)) AND ((? = 1 AND `New State` IS NULL) OR (`New State` = ?)) AND ((? = 1 AND `New Zip` IS NULL) OR (`New Zip` = ?)) AND ((? = 1 AND `Email` IS NULL) OR (`Email` = ?)) AND ((? = 1 AND `MSU Address` IS NULL) OR (`MSU Address` = ?)) AND ((? = 1 AND `MSU State` IS NULL) OR (`MSU State` = ?)) AND ((? = 1 AND `MSU Zip` IS NULL) OR (`MSU Zip` = ?)) AND ((? = 1 AND `Date Added` IS NULL) OR (`Date Added` = ?)) AND ((? = 1 AND `Mustang Number` IS NULL) OR (`Mustang Number` = ?)) AND ((? = 1 AND `New Country` IS NULL) OR (`New Country` = ?)) AND ((? = 1 AND `MSU City` IS NULL) OR (`MSU City` = ?)) AND ((? = 1 AND `AptMBNo` IS NULL) OR (`AptMBNo` = ?)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ID", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_First_Name", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "First Name", global::System.Data.DataRowVersion.Original, true, null));
@@ -2789,8 +2696,6 @@ namespace PO.PODBDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_New_State", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "New State", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_New_Zip", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "New Zip", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_New_Zip", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "New Zip", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_New_Country", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "New Country", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_New_Country", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "New Country", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Email", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Email", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Email", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Email", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_MSU_Address", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "MSU Address", global::System.Data.DataRowVersion.Original, true, null));
@@ -2803,13 +2708,15 @@ namespace PO.PODBDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Date_Added", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Date Added", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Mustang_Number", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Mustang Number", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Mustang_Number", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Mustang Number", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_New_Country", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "New Country", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_New_Country", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "New Country", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_MSU_City", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "MSU City", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_MSU_City", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "MSU City", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_AptMBNo", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "AptMBNo", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_AptMBNo", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "AptMBNo", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO `StudentTable` (`First Name`, `Middle Name`, `Last Name`, `New Street Address`, `New City`, `New State`, `New Zip`, `New Country`, `Email`, `MSU Address`, `MSU State`, `MSU Zip`, `Date Added`, `Mustang Number`, `MSU City`, `AptMBNo`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO `StudentTable` (`First Name`, `Middle Name`, `Last Name`, `New Street Address`, `New City`, `New State`, `New Zip`, `Email`, `MSU Address`, `MSU State`, `MSU Zip`, `Date Added`, `Mustang Number`, `New Country`, `MSU City`, `AptMBNo`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("First_Name", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "First Name", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Middle_Name", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Middle Name", global::System.Data.DataRowVersion.Current, false, null));
@@ -2818,18 +2725,18 @@ namespace PO.PODBDataSetTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("New_City", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "New City", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("New_State", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "New State", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("New_Zip", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "New Zip", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("New_Country", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "New Country", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Email", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Email", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("MSU_Address", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "MSU Address", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("MSU_State", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "MSU State", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("MSU_Zip", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "MSU Zip", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Date_Added", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Date Added", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Mustang_Number", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Mustang Number", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("New_Country", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "New Country", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("MSU_City", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "MSU City", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("AptMBNo", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "AptMBNo", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE `StudentTable` SET `First Name` = ?, `Middle Name` = ?, `Last Name` = ?, `New Street Address` = ?, `New City` = ?, `New State` = ?, `New Zip` = ?, `New Country` = ?, `Email` = ?, `MSU Address` = ?, `MSU State` = ?, `MSU Zip` = ?, `Date Added` = ?, `Mustang Number` = ?, `MSU City` = ?, `AptMBNo` = ? WHERE ((`ID` = ?) AND ((? = 1 AND `First Name` IS NULL) OR (`First Name` = ?)) AND ((? = 1 AND `Middle Name` IS NULL) OR (`Middle Name` = ?)) AND ((? = 1 AND `Last Name` IS NULL) OR (`Last Name` = ?)) AND ((? = 1 AND `New Street Address` IS NULL) OR (`New Street Address` = ?)) AND ((? = 1 AND `New City` IS NULL) OR (`New City` = ?)) AND ((? = 1 AND `New State` IS NULL) OR (`New State` = ?)) AND ((? = 1 AND `New Zip` IS NULL) OR (`New Zip` = ?)) AND ((? = 1 AND `New Country` IS NULL) OR (`New Country` = ?)) AND ((? = 1 AND `Email` IS NULL) OR (`Email` = ?)) AND ((? = 1 AND `MSU Address` IS NULL) OR (`MSU Address` = ?)) AND ((? = 1 AND `MSU State` IS NULL) OR (`MSU State` = ?)) AND ((? = 1 AND `MSU Zip` IS NULL) OR (`MSU Zip` = ?)) AND ((? = 1 AND `Date Added` IS NULL) OR (`Date Added` = ?)) AND ((? = 1 AND `Mustang Number` IS NULL) OR (`Mustang Number` = ?)) AND ((? = 1 AND `MSU City` IS NULL) OR (`MSU City` = ?)) AND ((? = 1 AND `AptMBNo` IS NULL) OR (`AptMBNo` = ?)))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE `StudentTable` SET `First Name` = ?, `Middle Name` = ?, `Last Name` = ?, `New Street Address` = ?, `New City` = ?, `New State` = ?, `New Zip` = ?, `Email` = ?, `MSU Address` = ?, `MSU State` = ?, `MSU Zip` = ?, `Date Added` = ?, `Mustang Number` = ?, `New Country` = ?, `MSU City` = ?, `AptMBNo` = ? WHERE ((`ID` = ?) AND ((? = 1 AND `First Name` IS NULL) OR (`First Name` = ?)) AND ((? = 1 AND `Middle Name` IS NULL) OR (`Middle Name` = ?)) AND ((? = 1 AND `Last Name` IS NULL) OR (`Last Name` = ?)) AND ((? = 1 AND `New Street Address` IS NULL) OR (`New Street Address` = ?)) AND ((? = 1 AND `New City` IS NULL) OR (`New City` = ?)) AND ((? = 1 AND `New State` IS NULL) OR (`New State` = ?)) AND ((? = 1 AND `New Zip` IS NULL) OR (`New Zip` = ?)) AND ((? = 1 AND `Email` IS NULL) OR (`Email` = ?)) AND ((? = 1 AND `MSU Address` IS NULL) OR (`MSU Address` = ?)) AND ((? = 1 AND `MSU State` IS NULL) OR (`MSU State` = ?)) AND ((? = 1 AND `MSU Zip` IS NULL) OR (`MSU Zip` = ?)) AND ((? = 1 AND `Date Added` IS NULL) OR (`Date Added` = ?)) AND ((? = 1 AND `Mustang Number` IS NULL) OR (`Mustang Number` = ?)) AND ((? = 1 AND `New Country` IS NULL) OR (`New Country` = ?)) AND ((? = 1 AND `MSU City` IS NULL) OR (`MSU City` = ?)) AND ((? = 1 AND `AptMBNo` IS NULL) OR (`AptMBNo` = ?)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("First_Name", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "First Name", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Middle_Name", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Middle Name", global::System.Data.DataRowVersion.Current, false, null));
@@ -2838,13 +2745,13 @@ namespace PO.PODBDataSetTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("New_City", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "New City", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("New_State", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "New State", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("New_Zip", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "New Zip", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("New_Country", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "New Country", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Email", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Email", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("MSU_Address", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "MSU Address", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("MSU_State", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "MSU State", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("MSU_Zip", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "MSU Zip", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Date_Added", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Date Added", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Mustang_Number", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Mustang Number", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("New_Country", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "New Country", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("MSU_City", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "MSU City", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("AptMBNo", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "AptMBNo", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ID", global::System.Data.DataRowVersion.Original, false, null));
@@ -2862,8 +2769,6 @@ namespace PO.PODBDataSetTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_New_State", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "New State", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_New_Zip", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "New Zip", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_New_Zip", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "New Zip", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_New_Country", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "New Country", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_New_Country", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "New Country", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Email", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Email", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Email", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Email", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_MSU_Address", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "MSU Address", global::System.Data.DataRowVersion.Original, true, null));
@@ -2876,6 +2781,8 @@ namespace PO.PODBDataSetTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Date_Added", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Date Added", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Mustang_Number", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Mustang Number", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Mustang_Number", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Mustang Number", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_New_Country", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "New Country", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_New_Country", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "New Country", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_MSU_City", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "MSU City", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_MSU_City", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "MSU City", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_AptMBNo", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "AptMBNo", global::System.Data.DataRowVersion.Original, true, null));
@@ -2886,7 +2793,8 @@ namespace PO.PODBDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::PO.Properties.Settings.Default.PODBConnectionString;
+            this._connection.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\\PODB.accdb;Persist " +
+                "Security Info=True";
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2896,105 +2804,107 @@ namespace PO.PODBDataSetTableAdapters {
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT ID, [First Name], [Middle Name], [Last Name], [New Street Address], [New C" +
-                "ity], [New State], [New Zip], [New Country], Email, [MSU Address], [MSU State], " +
-                "[MSU Zip], [Date Added], [Mustang Number], [MSU City], [AptMBNo]\r\n FROM StudentT" +
-                "able";
+                "ity], [New State], [New Zip], Email, [MSU Address], [MSU State], [MSU Zip], [Dat" +
+                "e Added], [Mustang Number], [New Country], [MSU City], AptMBNo FROM StudentTable" +
+                "";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "DELETE FROM `StudentTable` \r\nWHERE [First Name] = @FN AND [Middle Name] = @MN AND" +
-                " [Last Name] = @LN AND [New Street Address] = @NSA AND [New City] = @NCI AND [Ne" +
-                "w Country] = @NC AND [AptMBNo] = @AMB";
+            this._commandCollection[1].CommandText = "DELETE FROM `StudentTable` \r\nWHERE `First Name` =@First_Name  AND `Middle Name` =" +
+                " @Middle_Name AND `Last Name` = @Last_Name AND `New Street Address` = @New_Stree" +
+                "t_Address AND `New City` = @New_City AND `New Country` = @New_Country AND `AptMB" +
+                "No` = @AMBNo";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("FN", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("MN", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("LN", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("NSA", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("NCI", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("NC", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("AMB", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("First_Name", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Middle_Name", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Last_Name", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("New_Street_Address", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("New_City", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("New_Country", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("AMBNo", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[2] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "DELETE FROM `StudentTable` \r\nWHERE [First Name] = @FN AND [Last Name] = @LN AND [" +
-                "New Street Address] = @NSA AND [New City] = @NCI AND [New Country] = @NC AND [Ap" +
-                "tMBNo] = @AMB";
+            this._commandCollection[2].CommandText = "DELETE FROM `StudentTable` \r\nWHERE `First Name` =@First_Name  AND `Last Name` = @" +
+                "Last_Name AND `New Street Address` = @New_Street_Address AND `New City` = @New_C" +
+                "ity AND `New Country` = @New_Country AND `AptMBNo` = @AMBNo";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("FN", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Date Added", global::System.Data.DataRowVersion.Original, false, null));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("LN", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Mustang Number", global::System.Data.DataRowVersion.Original, true, null));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("NSA", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Mustang Number", global::System.Data.DataRowVersion.Original, false, null));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("NCI", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "MSU City", global::System.Data.DataRowVersion.Original, true, null));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("NCO", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "MSU City", global::System.Data.DataRowVersion.Original, false, null));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("AMB", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "AptMBNo", global::System.Data.DataRowVersion.Original, true, null));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("First_Name", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Last_Name", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("New_Street_Address", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("New_City", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("New_Country", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("AMBNo", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[3] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = @"SELECT ID, [First Name], [Middle Name], [Last Name], [New Street Address], [New City], [New State], [New Zip], [New Country], Email, [MSU Address], [MSU State], [MSU Zip], [Date Added], [Mustang Number], [MSU City], [AptMBNo]
-FROM StudentTable WHERE [First Name] = @FN AND [Last Name] = @LN";
+            this._commandCollection[3].CommandText = @"SELECT ID, [First Name], [Middle Name], [Last Name], [New Street Address], [New City], [New State], [New Zip], Email, [MSU Address], [MSU State], [MSU Zip], [Date Added], [Mustang Number], [New Country], [MSU City], AptMBNo 
+FROM StudentTable
+WHERE [First Name] = @First_Name AND [Last Name] = @Last_Name";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[3].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("FN", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("LN", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("First_Name", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Last_Name", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[4] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = @"SELECT ID, [First Name], [Middle Name], [Last Name], [New Street Address], [New City], [New State], [New Zip],[New Country], Email, [MSU Address], [MSU State], [MSU Zip], [Date Added], [Mustang Number], [MSU City], [AptMBNo]
- FROM StudentTable
-WHERE [Mustang Number] = @NUM";
+            this._commandCollection[4].CommandText = @"SELECT ID, [First Name], [Middle Name], [Last Name], [New Street Address], [New City], [New State], [New Zip], Email, [MSU Address], [MSU State], [MSU Zip], [Date Added], [Mustang Number], [New Country], [MSU City], AptMBNo 
+FROM StudentTable
+WHERE [Mustang Number] = @Mustang_Number";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[4].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("num", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Mustang_Number", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[5] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = @"SELECT ID, [First Name], [Middle Name], [Last Name], [New Street Address], [New City], [New State], [New Zip], [New Country], Email, [MSU Address], [MSU State], [MSU Zip], [Date Added], [Mustang Number], [MSU City], [AptMBNo]
-FROM StudentTable 
-WHERE [First Name] = @FN AND [MIddle Name] = @MN AND [Last Name] = @LN";
+            this._commandCollection[5].CommandText = @"SELECT ID, [First Name], [Middle Name], [Last Name], [New Street Address], [New City], [New State], [New Zip], Email, [MSU Address], [MSU State], [MSU Zip], [Date Added], [Mustang Number], [New Country], [MSU City], AptMBNo 
+FROM StudentTable
+WHERE [First Name] = @First_Name AND [Middle Name] = @Middle_Name AND [Last Name] = @Last_Name";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[5].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("FN", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[5].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("MN", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[5].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("LN", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("First_Name", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Middle_Name", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Last_Name", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[6] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[6].Connection = this.Connection;
-            this._commandCollection[6].CommandText = @"INSERT INTO `StudentTable` (`First Name`, `Middle Name`, `Last Name`, `New Street Address`, `New City`, `New State`, `New Zip`, `New Country`, `Email`, `MSU Address`, `MSU State`, `MSU Zip`, `Date Added`, `Mustang Number`, `MSU City`, `AptMBNo`) VALUES (@FN,@MN, @LN, @NSA, @NCI, @NS, @NZ, @NCO, @EM, @MA,@MS,@MZ, @D, @MNUM,@MC, @AMB)";
+            this._commandCollection[6].CommandText = @"INSERT INTO `StudentTable` (`First Name`, `Middle Name`, `Last Name`, `New Street Address`, `New City`, `New State`, `New Zip`, `Email`, `MSU Address`, `MSU State`, `MSU Zip`, `Date Added`, `Mustang Number`, `New Country`, `MSU City`, `AptMBNo`) VALUES (@First_Name, @Middle_Name, @Last_Name, @New_Street_Address, @New_City, @New_State, @New_Zip, @Email, @MSU_Address, @MSU_State, @MSU_Zip, @Date_Added, @Mustang_Number, @New_Country, @MSU_City, @AptMBNo)";
             this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[6].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("FN", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[6].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("MN", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[6].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("LN", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[6].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("NSA", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[6].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("NCI", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[6].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("NS", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[6].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("NZ", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[6].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("NCO", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[6].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("EM", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[6].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("MA", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[6].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("MS", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[6].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("MZ", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[6].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("D", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[6].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("MNUM", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[6].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("MC", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[6].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("AMB", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("First_Name", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "First Name", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Middle_Name", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Middle Name", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Last_Name", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Last Name", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("New_Street_Address", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "New Street Address", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("New_City", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "New City", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("New_State", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "New State", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("New_Zip", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "New Zip", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Email", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Email", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("MSU_Address", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "MSU Address", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("MSU_State", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "MSU State", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("MSU_Zip", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "MSU Zip", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Date_Added", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Date Added", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Mustang_Number", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Mustang Number", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("New_Country", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "New Country", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("MSU_City", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "MSU City", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("AptMBNo", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "AptMBNo", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[7] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[7].Connection = this.Connection;
             this._commandCollection[7].CommandText = @"UPDATE `StudentTable` 
-SET `First Name` = @FN, `Middle Name` = @MN, `Last Name` = @LN, `New Street Address` = @NSA, `New City` = @NCity, `New State` = @NS, `New Zip` = @NZ, `New Country` =@NCountry, `Email` =@EM , `MSU Address` = @MA, `MSU State` = @MS, `MSU Zip` = @MZ, `Date Added` = @D, `Mustang Number` = @MNUM, `MSU City` = @MCity, [AptMBNo] = @APT 
-WHERE `First Name` = @OFN AND `Middle Name` = @OMN AND `Last Name` = @OLN AND `Mustang Number` = @OMNUM
-";
+SET `First Name` = @New_First_Name, `Middle Name` = @New_Middle_Name, `Last Name` = @New_Last_Name, `New Street Address` = @New_New_Street_Address, `New City` = @New_New_City, `New State` = @New_New_State, `New Zip` = @New_New_Zip, `Email` = @New_Email, `MSU Address` = @New_MSU_Address, `MSU State` = @New_MSU_State, `MSU Zip` = @New_MSU_Zip, `Date Added` = @New_Date_Added, `Mustang Number` = @New_Mustang_Number, `New Country` = @New_New_Country, `MSU City` = @New_MSU_City, `AptMBNo` = @New_AptMBNo 
+WHERE `First Name` = @Old_First_Name AND  `Last Name` = @Old_Last_Name AND `New Street Address` = @Old_New_Street_Address AND `New City` = @Old_New_City AND `New Country` = @Old_New_Country";
             this._commandCollection[7].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[7].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("First_Name", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "First Name", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[7].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Middle_Name", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Middle Name", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[7].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Last_Name", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Last Name", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[7].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("New_Street_Address", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "New Street Address", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[7].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("New_City", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "New City", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[7].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("New_State", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "New State", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[7].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("New_Zip", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "New Zip", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[7].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("New_Country", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "New Country", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[7].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Email", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Email", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[7].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("MSU_Address", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "MSU Address", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[7].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("MSU_State", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "MSU State", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[7].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("MSU_Zip", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "MSU Zip", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[7].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Date_Added", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Date Added", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[7].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Mustang_Number", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Mustang Number", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[7].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("MSU_City", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "MSU City", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[7].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_First_Name", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "First Name", global::System.Data.DataRowVersion.Original, false, null));
-            this._commandCollection[7].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Middle_Name", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Middle Name", global::System.Data.DataRowVersion.Original, false, null));
-            this._commandCollection[7].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Last_Name", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Last Name", global::System.Data.DataRowVersion.Original, false, null));
-            this._commandCollection[7].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Mustang_Number", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Mustang Number", global::System.Data.DataRowVersion.Original, false, null));
-            this._commandCollection[7].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("APT", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("New_First_Name", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("New_Middle_Name", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("New_Last_Name", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("New_New_Street_Address", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("New_New_City", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("New_New_State", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("New_New_Zip", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("New_Email", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("New_MSU_Address", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("New_MSU_State", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("New_MSU_Zip", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("New_Date_Added", global::System.Data.OleDb.OleDbType.DBTimeStamp, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("New_Mustang_Number", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("New_New_Country", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("New_MSU_City", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("New_AptMBNo", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Old_First_Name", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Old_Last_Name", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Old_New_Street_Address", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Old_New_City", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Old_New_Country", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3025,19 +2935,19 @@ WHERE `First Name` = @OFN AND `Middle Name` = @OMN AND `Last Name` = @OLN AND `M
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByFirstLast(PODBDataSet.StudentTableDataTable dataTable, string FN, string LN) {
+        public virtual int FillByFirstLast(PODBDataSet.StudentTableDataTable dataTable, string First_Name, string Last_Name) {
             this.Adapter.SelectCommand = this.CommandCollection[3];
-            if ((FN == null)) {
-                throw new global::System.ArgumentNullException("FN");
+            if ((First_Name == null)) {
+                throw new global::System.ArgumentNullException("First_Name");
             }
             else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(FN));
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(First_Name));
             }
-            if ((LN == null)) {
-                throw new global::System.ArgumentNullException("LN");
+            if ((Last_Name == null)) {
+                throw new global::System.ArgumentNullException("Last_Name");
             }
             else {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(LN));
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(Last_Name));
             }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -3050,19 +2960,19 @@ WHERE `First Name` = @OFN AND `Middle Name` = @OMN AND `Last Name` = @OLN AND `M
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual PODBDataSet.StudentTableDataTable GetDataByFirstLast(string FN, string LN) {
+        public virtual PODBDataSet.StudentTableDataTable GetDataByFirstLast(string First_Name, string Last_Name) {
             this.Adapter.SelectCommand = this.CommandCollection[3];
-            if ((FN == null)) {
-                throw new global::System.ArgumentNullException("FN");
+            if ((First_Name == null)) {
+                throw new global::System.ArgumentNullException("First_Name");
             }
             else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(FN));
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(First_Name));
             }
-            if ((LN == null)) {
-                throw new global::System.ArgumentNullException("LN");
+            if ((Last_Name == null)) {
+                throw new global::System.ArgumentNullException("Last_Name");
             }
             else {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(LN));
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(Last_Name));
             }
             PODBDataSet.StudentTableDataTable dataTable = new PODBDataSet.StudentTableDataTable();
             this.Adapter.Fill(dataTable);
@@ -3073,13 +2983,13 @@ WHERE `First Name` = @OFN AND `Middle Name` = @OMN AND `Last Name` = @OLN AND `M
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByMNum(PODBDataSet.StudentTableDataTable dataTable, string num) {
+        public virtual int FillByMNum(PODBDataSet.StudentTableDataTable dataTable, string Mustang_Number) {
             this.Adapter.SelectCommand = this.CommandCollection[4];
-            if ((num == null)) {
-                throw new global::System.ArgumentNullException("num");
+            if ((Mustang_Number == null)) {
+                throw new global::System.ArgumentNullException("Mustang_Number");
             }
             else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(num));
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Mustang_Number));
             }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -3092,13 +3002,13 @@ WHERE `First Name` = @OFN AND `Middle Name` = @OMN AND `Last Name` = @OLN AND `M
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual PODBDataSet.StudentTableDataTable GetDataBy1(string num) {
+        public virtual PODBDataSet.StudentTableDataTable GetDataByMNum(string Mustang_Number) {
             this.Adapter.SelectCommand = this.CommandCollection[4];
-            if ((num == null)) {
-                throw new global::System.ArgumentNullException("num");
+            if ((Mustang_Number == null)) {
+                throw new global::System.ArgumentNullException("Mustang_Number");
             }
             else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(num));
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Mustang_Number));
             }
             PODBDataSet.StudentTableDataTable dataTable = new PODBDataSet.StudentTableDataTable();
             this.Adapter.Fill(dataTable);
@@ -3109,25 +3019,25 @@ WHERE `First Name` = @OFN AND `Middle Name` = @OMN AND `Last Name` = @OLN AND `M
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByName(PODBDataSet.StudentTableDataTable dataTable, string FN, string MN, string LN) {
+        public virtual int FillByName(PODBDataSet.StudentTableDataTable dataTable, string First_Name, string Middle_Name, string Last_Name) {
             this.Adapter.SelectCommand = this.CommandCollection[5];
-            if ((FN == null)) {
-                throw new global::System.ArgumentNullException("FN");
+            if ((First_Name == null)) {
+                throw new global::System.ArgumentNullException("First_Name");
             }
             else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(FN));
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(First_Name));
             }
-            if ((MN == null)) {
-                throw new global::System.ArgumentNullException("MN");
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(MN));
-            }
-            if ((LN == null)) {
-                throw new global::System.ArgumentNullException("LN");
+            if ((Middle_Name == null)) {
+                throw new global::System.ArgumentNullException("Middle_Name");
             }
             else {
-                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(LN));
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(Middle_Name));
+            }
+            if ((Last_Name == null)) {
+                throw new global::System.ArgumentNullException("Last_Name");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(Last_Name));
             }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -3140,25 +3050,25 @@ WHERE `First Name` = @OFN AND `Middle Name` = @OMN AND `Last Name` = @OLN AND `M
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual PODBDataSet.StudentTableDataTable GetDataBy(string FN, string MN, string LN) {
+        public virtual PODBDataSet.StudentTableDataTable GetDataByName(string First_Name, string Middle_Name, string Last_Name) {
             this.Adapter.SelectCommand = this.CommandCollection[5];
-            if ((FN == null)) {
-                throw new global::System.ArgumentNullException("FN");
+            if ((First_Name == null)) {
+                throw new global::System.ArgumentNullException("First_Name");
             }
             else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(FN));
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(First_Name));
             }
-            if ((MN == null)) {
-                throw new global::System.ArgumentNullException("MN");
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(MN));
-            }
-            if ((LN == null)) {
-                throw new global::System.ArgumentNullException("LN");
+            if ((Middle_Name == null)) {
+                throw new global::System.ArgumentNullException("Middle_Name");
             }
             else {
-                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(LN));
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(Middle_Name));
+            }
+            if ((Last_Name == null)) {
+                throw new global::System.ArgumentNullException("Last_Name");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(Last_Name));
             }
             PODBDataSet.StudentTableDataTable dataTable = new PODBDataSet.StudentTableDataTable();
             this.Adapter.Fill(dataTable);
@@ -3207,13 +3117,13 @@ WHERE `First Name` = @OFN AND `Middle Name` = @OMN AND `Last Name` = @OLN AND `M
                     string Original_New_City, 
                     string Original_New_State, 
                     string Original_New_Zip, 
-                    string Original_New_Country, 
                     string Original_Email, 
                     string Original_MSU_Address, 
                     string Original_MSU_State, 
                     string Original_MSU_Zip, 
                     global::System.Nullable<global::System.DateTime> Original_Date_Added, 
                     string Original_Mustang_Number, 
+                    string Original_New_Country, 
                     string Original_MSU_City, 
                     string Original_AptMBNo) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID));
@@ -3273,61 +3183,61 @@ WHERE `First Name` = @OFN AND `Middle Name` = @OMN AND `Last Name` = @OLN AND `M
                 this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[14].Value = ((string)(Original_New_Zip));
             }
-            if ((Original_New_Country == null)) {
+            if ((Original_Email == null)) {
                 this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[16].Value = ((string)(Original_New_Country));
+                this.Adapter.DeleteCommand.Parameters[16].Value = ((string)(Original_Email));
             }
-            if ((Original_Email == null)) {
+            if ((Original_MSU_Address == null)) {
                 this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[18].Value = ((string)(Original_Email));
+                this.Adapter.DeleteCommand.Parameters[18].Value = ((string)(Original_MSU_Address));
             }
-            if ((Original_MSU_Address == null)) {
+            if ((Original_MSU_State == null)) {
                 this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[20].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[20].Value = ((string)(Original_MSU_Address));
+                this.Adapter.DeleteCommand.Parameters[20].Value = ((string)(Original_MSU_State));
             }
-            if ((Original_MSU_State == null)) {
+            if ((Original_MSU_Zip == null)) {
                 this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[22].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[22].Value = ((string)(Original_MSU_State));
+                this.Adapter.DeleteCommand.Parameters[22].Value = ((string)(Original_MSU_Zip));
             }
-            if ((Original_MSU_Zip == null)) {
+            if ((Original_Date_Added.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[23].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[24].Value = ((System.DateTime)(Original_Date_Added.Value));
+            }
+            else {
                 this.Adapter.DeleteCommand.Parameters[23].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[24].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.DeleteCommand.Parameters[23].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[24].Value = ((string)(Original_MSU_Zip));
-            }
-            if ((Original_Date_Added.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[25].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[26].Value = ((System.DateTime)(Original_Date_Added.Value));
-            }
-            else {
+            if ((Original_Mustang_Number == null)) {
                 this.Adapter.DeleteCommand.Parameters[25].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[26].Value = global::System.DBNull.Value;
             }
-            if ((Original_Mustang_Number == null)) {
+            else {
+                this.Adapter.DeleteCommand.Parameters[25].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[26].Value = ((string)(Original_Mustang_Number));
+            }
+            if ((Original_New_Country == null)) {
                 this.Adapter.DeleteCommand.Parameters[27].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[28].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[27].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[28].Value = ((string)(Original_Mustang_Number));
+                this.Adapter.DeleteCommand.Parameters[28].Value = ((string)(Original_New_Country));
             }
             if ((Original_MSU_City == null)) {
                 this.Adapter.DeleteCommand.Parameters[29].Value = ((object)(1));
@@ -3373,13 +3283,13 @@ WHERE `First Name` = @OFN AND `Middle Name` = @OMN AND `Last Name` = @OLN AND `M
                     string New_City, 
                     string New_State, 
                     string New_Zip, 
-                    string New_Country, 
                     string Email, 
                     string MSU_Address, 
                     string MSU_State, 
                     string MSU_Zip, 
                     global::System.Nullable<global::System.DateTime> Date_Added, 
                     string Mustang_Number, 
+                    string New_Country, 
                     string MSU_City, 
                     string AptMBNo) {
             if ((First_Name == null)) {
@@ -3424,47 +3334,47 @@ WHERE `First Name` = @OFN AND `Middle Name` = @OMN AND `Last Name` = @OLN AND `M
             else {
                 this.Adapter.InsertCommand.Parameters[6].Value = ((string)(New_Zip));
             }
-            if ((New_Country == null)) {
+            if ((Email == null)) {
                 this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(New_Country));
+                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(Email));
             }
-            if ((Email == null)) {
+            if ((MSU_Address == null)) {
                 this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(Email));
+                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(MSU_Address));
             }
-            if ((MSU_Address == null)) {
+            if ((MSU_State == null)) {
                 this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(MSU_Address));
+                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(MSU_State));
             }
-            if ((MSU_State == null)) {
+            if ((MSU_Zip == null)) {
                 this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(MSU_State));
-            }
-            if ((MSU_Zip == null)) {
-                this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[11].Value = ((string)(MSU_Zip));
+                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(MSU_Zip));
             }
             if ((Date_Added.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[12].Value = ((System.DateTime)(Date_Added.Value));
+                this.Adapter.InsertCommand.Parameters[11].Value = ((System.DateTime)(Date_Added.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[12].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
             if ((Mustang_Number == null)) {
+                this.Adapter.InsertCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[12].Value = ((string)(Mustang_Number));
+            }
+            if ((New_Country == null)) {
                 this.Adapter.InsertCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[13].Value = ((string)(Mustang_Number));
+                this.Adapter.InsertCommand.Parameters[13].Value = ((string)(New_Country));
             }
             if ((MSU_City == null)) {
                 this.Adapter.InsertCommand.Parameters[14].Value = global::System.DBNull.Value;
@@ -3506,13 +3416,13 @@ WHERE `First Name` = @OFN AND `Middle Name` = @OMN AND `Last Name` = @OLN AND `M
                     string New_City, 
                     string New_State, 
                     string New_Zip, 
-                    string New_Country, 
                     string Email, 
                     string MSU_Address, 
                     string MSU_State, 
                     string MSU_Zip, 
                     global::System.Nullable<global::System.DateTime> Date_Added, 
                     string Mustang_Number, 
+                    string New_Country, 
                     string MSU_City, 
                     string AptMBNo, 
                     int Original_ID, 
@@ -3523,13 +3433,13 @@ WHERE `First Name` = @OFN AND `Middle Name` = @OMN AND `Last Name` = @OLN AND `M
                     string Original_New_City, 
                     string Original_New_State, 
                     string Original_New_Zip, 
-                    string Original_New_Country, 
                     string Original_Email, 
                     string Original_MSU_Address, 
                     string Original_MSU_State, 
                     string Original_MSU_Zip, 
                     global::System.Nullable<global::System.DateTime> Original_Date_Added, 
                     string Original_Mustang_Number, 
+                    string Original_New_Country, 
                     string Original_MSU_City, 
                     string Original_AptMBNo) {
             if ((First_Name == null)) {
@@ -3574,47 +3484,47 @@ WHERE `First Name` = @OFN AND `Middle Name` = @OMN AND `Last Name` = @OLN AND `M
             else {
                 this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(New_Zip));
             }
-            if ((New_Country == null)) {
+            if ((Email == null)) {
                 this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(New_Country));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Email));
             }
-            if ((Email == null)) {
+            if ((MSU_Address == null)) {
                 this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Email));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(MSU_Address));
             }
-            if ((MSU_Address == null)) {
+            if ((MSU_State == null)) {
                 this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(MSU_Address));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(MSU_State));
             }
-            if ((MSU_State == null)) {
+            if ((MSU_Zip == null)) {
                 this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(MSU_State));
-            }
-            if ((MSU_Zip == null)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(MSU_Zip));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(MSU_Zip));
             }
             if ((Date_Added.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((System.DateTime)(Date_Added.Value));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((System.DateTime)(Date_Added.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
             if ((Mustang_Number == null)) {
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Mustang_Number));
+            }
+            if ((New_Country == null)) {
                 this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Mustang_Number));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(New_Country));
             }
             if ((MSU_City == null)) {
                 this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
@@ -3685,61 +3595,61 @@ WHERE `First Name` = @OFN AND `Middle Name` = @OMN AND `Last Name` = @OLN AND `M
                 this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(0));
                 this.Adapter.UpdateCommand.Parameters[30].Value = ((string)(Original_New_Zip));
             }
-            if ((Original_New_Country == null)) {
+            if ((Original_Email == null)) {
                 this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[32].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[32].Value = ((string)(Original_New_Country));
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((string)(Original_Email));
             }
-            if ((Original_Email == null)) {
+            if ((Original_MSU_Address == null)) {
                 this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[34].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[34].Value = ((string)(Original_Email));
+                this.Adapter.UpdateCommand.Parameters[34].Value = ((string)(Original_MSU_Address));
             }
-            if ((Original_MSU_Address == null)) {
+            if ((Original_MSU_State == null)) {
                 this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[36].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[36].Value = ((string)(Original_MSU_Address));
+                this.Adapter.UpdateCommand.Parameters[36].Value = ((string)(Original_MSU_State));
             }
-            if ((Original_MSU_State == null)) {
+            if ((Original_MSU_Zip == null)) {
                 this.Adapter.UpdateCommand.Parameters[37].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[38].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[37].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[38].Value = ((string)(Original_MSU_State));
+                this.Adapter.UpdateCommand.Parameters[38].Value = ((string)(Original_MSU_Zip));
             }
-            if ((Original_MSU_Zip == null)) {
+            if ((Original_Date_Added.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[39].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[40].Value = ((System.DateTime)(Original_Date_Added.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[39].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[40].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[39].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[40].Value = ((string)(Original_MSU_Zip));
-            }
-            if ((Original_Date_Added.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[41].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[42].Value = ((System.DateTime)(Original_Date_Added.Value));
-            }
-            else {
+            if ((Original_Mustang_Number == null)) {
                 this.Adapter.UpdateCommand.Parameters[41].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[42].Value = global::System.DBNull.Value;
             }
-            if ((Original_Mustang_Number == null)) {
+            else {
+                this.Adapter.UpdateCommand.Parameters[41].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[42].Value = ((string)(Original_Mustang_Number));
+            }
+            if ((Original_New_Country == null)) {
                 this.Adapter.UpdateCommand.Parameters[43].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[44].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[43].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[44].Value = ((string)(Original_Mustang_Number));
+                this.Adapter.UpdateCommand.Parameters[44].Value = ((string)(Original_New_Country));
             }
             if ((Original_MSU_City == null)) {
                 this.Adapter.UpdateCommand.Parameters[45].Value = ((object)(1));
@@ -3777,49 +3687,49 @@ WHERE `First Name` = @OFN AND `Middle Name` = @OMN AND `Last Name` = @OLN AND `M
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
-        public virtual int DeleteQueryMN(string FN, string MN, string LN, string NSA, string NCI, string NC, string AMB) {
+        public virtual int DeleteQueryMN(string First_Name, string Middle_Name, string Last_Name, string New_Street_Address, string New_City, string New_Country, string AMBNo) {
             global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[1];
-            if ((FN == null)) {
-                throw new global::System.ArgumentNullException("FN");
+            if ((First_Name == null)) {
+                throw new global::System.ArgumentNullException("First_Name");
             }
             else {
-                command.Parameters[0].Value = ((string)(FN));
+                command.Parameters[0].Value = ((string)(First_Name));
             }
-            if ((MN == null)) {
-                throw new global::System.ArgumentNullException("MN");
-            }
-            else {
-                command.Parameters[1].Value = ((string)(MN));
-            }
-            if ((LN == null)) {
-                throw new global::System.ArgumentNullException("LN");
+            if ((Middle_Name == null)) {
+                throw new global::System.ArgumentNullException("Middle_Name");
             }
             else {
-                command.Parameters[2].Value = ((string)(LN));
+                command.Parameters[1].Value = ((string)(Middle_Name));
             }
-            if ((NSA == null)) {
-                throw new global::System.ArgumentNullException("NSA");
-            }
-            else {
-                command.Parameters[3].Value = ((string)(NSA));
-            }
-            if ((NCI == null)) {
-                throw new global::System.ArgumentNullException("NCI");
+            if ((Last_Name == null)) {
+                throw new global::System.ArgumentNullException("Last_Name");
             }
             else {
-                command.Parameters[4].Value = ((string)(NCI));
+                command.Parameters[2].Value = ((string)(Last_Name));
             }
-            if ((NC == null)) {
-                throw new global::System.ArgumentNullException("NC");
-            }
-            else {
-                command.Parameters[5].Value = ((string)(NC));
-            }
-            if ((AMB == null)) {
-                throw new global::System.ArgumentNullException("AMB");
+            if ((New_Street_Address == null)) {
+                throw new global::System.ArgumentNullException("New_Street_Address");
             }
             else {
-                command.Parameters[6].Value = ((string)(AMB));
+                command.Parameters[3].Value = ((string)(New_Street_Address));
+            }
+            if ((New_City == null)) {
+                throw new global::System.ArgumentNullException("New_City");
+            }
+            else {
+                command.Parameters[4].Value = ((string)(New_City));
+            }
+            if ((New_Country == null)) {
+                throw new global::System.ArgumentNullException("New_Country");
+            }
+            else {
+                command.Parameters[5].Value = ((string)(New_Country));
+            }
+            if ((AMBNo == null)) {
+                throw new global::System.ArgumentNullException("AMBNo");
+            }
+            else {
+                command.Parameters[6].Value = ((string)(AMBNo));
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -3842,43 +3752,43 @@ WHERE `First Name` = @OFN AND `Middle Name` = @OMN AND `Last Name` = @OLN AND `M
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
-        public virtual int DeleteQueryNoM(string FN, string LN, string NSA, string NCI, string NCO, string AMB) {
+        public virtual int DeleteQueryNoM(string First_Name, string Last_Name, string New_Street_Address, string New_City, string New_Country, string AMBNo) {
             global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[2];
-            if ((FN == null)) {
-                command.Parameters[0].Value = global::System.DBNull.Value;
+            if ((First_Name == null)) {
+                throw new global::System.ArgumentNullException("First_Name");
             }
             else {
-                command.Parameters[0].Value = ((string)(FN));
+                command.Parameters[0].Value = ((string)(First_Name));
             }
-            if ((LN == null)) {
-                command.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[1].Value = ((string)(LN));
-            }
-            if ((NSA == null)) {
-                command.Parameters[2].Value = global::System.DBNull.Value;
+            if ((Last_Name == null)) {
+                throw new global::System.ArgumentNullException("Last_Name");
             }
             else {
-                command.Parameters[2].Value = ((string)(NSA));
+                command.Parameters[1].Value = ((string)(Last_Name));
             }
-            if ((NCI == null)) {
-                command.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[3].Value = ((string)(NCI));
-            }
-            if ((NCO == null)) {
-                command.Parameters[4].Value = global::System.DBNull.Value;
+            if ((New_Street_Address == null)) {
+                throw new global::System.ArgumentNullException("New_Street_Address");
             }
             else {
-                command.Parameters[4].Value = ((string)(NCO));
+                command.Parameters[2].Value = ((string)(New_Street_Address));
             }
-            if ((AMB == null)) {
-                command.Parameters[5].Value = global::System.DBNull.Value;
+            if ((New_City == null)) {
+                throw new global::System.ArgumentNullException("New_City");
             }
             else {
-                command.Parameters[5].Value = ((string)(AMB));
+                command.Parameters[3].Value = ((string)(New_City));
+            }
+            if ((New_Country == null)) {
+                throw new global::System.ArgumentNullException("New_Country");
+            }
+            else {
+                command.Parameters[4].Value = ((string)(New_Country));
+            }
+            if ((AMBNo == null)) {
+                throw new global::System.ArgumentNullException("AMBNo");
+            }
+            else {
+                command.Parameters[5].Value = ((string)(AMBNo));
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -3902,141 +3812,6 @@ WHERE `First Name` = @OFN AND `Middle Name` = @OMN AND `Last Name` = @OLN AND `M
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
         public virtual int InsertQuery(
-                    string FN, 
-                    string MN, 
-                    string LN, 
-                    string NSA, 
-                    string NCI, 
-                    string NS, 
-                    string NZ, 
-                    string NCO, 
-                    string EM, 
-                    string MA, 
-                    string MS, 
-                    string MZ, 
-                    string D, 
-                    string MNUM, 
-                    string MC, 
-                    string AMB) {
-            global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[6];
-            if ((FN == null)) {
-                throw new global::System.ArgumentNullException("FN");
-            }
-            else {
-                command.Parameters[0].Value = ((string)(FN));
-            }
-            if ((MN == null)) {
-                throw new global::System.ArgumentNullException("MN");
-            }
-            else {
-                command.Parameters[1].Value = ((string)(MN));
-            }
-            if ((LN == null)) {
-                throw new global::System.ArgumentNullException("LN");
-            }
-            else {
-                command.Parameters[2].Value = ((string)(LN));
-            }
-            if ((NSA == null)) {
-                throw new global::System.ArgumentNullException("NSA");
-            }
-            else {
-                command.Parameters[3].Value = ((string)(NSA));
-            }
-            if ((NCI == null)) {
-                throw new global::System.ArgumentNullException("NCI");
-            }
-            else {
-                command.Parameters[4].Value = ((string)(NCI));
-            }
-            if ((NS == null)) {
-                throw new global::System.ArgumentNullException("NS");
-            }
-            else {
-                command.Parameters[5].Value = ((string)(NS));
-            }
-            if ((NZ == null)) {
-                throw new global::System.ArgumentNullException("NZ");
-            }
-            else {
-                command.Parameters[6].Value = ((string)(NZ));
-            }
-            if ((NCO == null)) {
-                throw new global::System.ArgumentNullException("NCO");
-            }
-            else {
-                command.Parameters[7].Value = ((string)(NCO));
-            }
-            if ((EM == null)) {
-                throw new global::System.ArgumentNullException("EM");
-            }
-            else {
-                command.Parameters[8].Value = ((string)(EM));
-            }
-            if ((MA == null)) {
-                throw new global::System.ArgumentNullException("MA");
-            }
-            else {
-                command.Parameters[9].Value = ((string)(MA));
-            }
-            if ((MS == null)) {
-                throw new global::System.ArgumentNullException("MS");
-            }
-            else {
-                command.Parameters[10].Value = ((string)(MS));
-            }
-            if ((MZ == null)) {
-                throw new global::System.ArgumentNullException("MZ");
-            }
-            else {
-                command.Parameters[11].Value = ((string)(MZ));
-            }
-            if ((D == null)) {
-                throw new global::System.ArgumentNullException("D");
-            }
-            else {
-                command.Parameters[12].Value = ((string)(D));
-            }
-            if ((MNUM == null)) {
-                throw new global::System.ArgumentNullException("MNUM");
-            }
-            else {
-                command.Parameters[13].Value = ((string)(MNUM));
-            }
-            if ((MC == null)) {
-                throw new global::System.ArgumentNullException("MC");
-            }
-            else {
-                command.Parameters[14].Value = ((string)(MC));
-            }
-            if ((AMB == null)) {
-                throw new global::System.ArgumentNullException("AMB");
-            }
-            else {
-                command.Parameters[15].Value = ((string)(AMB));
-            }
-            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
-            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                command.Connection.Open();
-            }
-            int returnValue;
-            try {
-                returnValue = command.ExecuteNonQuery();
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    command.Connection.Close();
-                }
-            }
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
-        public virtual int UpdateQuery(
                     string First_Name, 
                     string Middle_Name, 
                     string Last_Name, 
@@ -4044,20 +3819,16 @@ WHERE `First Name` = @OFN AND `Middle Name` = @OMN AND `Last Name` = @OLN AND `M
                     string New_City, 
                     string New_State, 
                     string New_Zip, 
-                    string New_Country, 
                     string Email, 
                     string MSU_Address, 
                     string MSU_State, 
                     string MSU_Zip, 
                     global::System.Nullable<global::System.DateTime> Date_Added, 
                     string Mustang_Number, 
+                    string New_Country, 
                     string MSU_City, 
-                    string Original_First_Name, 
-                    string Original_Middle_Name, 
-                    string Original_Last_Name, 
-                    string Original_Mustang_Number, 
-                    string APT) {
-            global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[7];
+                    string AptMBNo) {
+            global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[6];
             if ((First_Name == null)) {
                 command.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -4100,47 +3871,47 @@ WHERE `First Name` = @OFN AND `Middle Name` = @OMN AND `Last Name` = @OLN AND `M
             else {
                 command.Parameters[6].Value = ((string)(New_Zip));
             }
-            if ((New_Country == null)) {
+            if ((Email == null)) {
                 command.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
-                command.Parameters[7].Value = ((string)(New_Country));
+                command.Parameters[7].Value = ((string)(Email));
             }
-            if ((Email == null)) {
+            if ((MSU_Address == null)) {
                 command.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
-                command.Parameters[8].Value = ((string)(Email));
+                command.Parameters[8].Value = ((string)(MSU_Address));
             }
-            if ((MSU_Address == null)) {
+            if ((MSU_State == null)) {
                 command.Parameters[9].Value = global::System.DBNull.Value;
             }
             else {
-                command.Parameters[9].Value = ((string)(MSU_Address));
+                command.Parameters[9].Value = ((string)(MSU_State));
             }
-            if ((MSU_State == null)) {
+            if ((MSU_Zip == null)) {
                 command.Parameters[10].Value = global::System.DBNull.Value;
             }
             else {
-                command.Parameters[10].Value = ((string)(MSU_State));
-            }
-            if ((MSU_Zip == null)) {
-                command.Parameters[11].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[11].Value = ((string)(MSU_Zip));
+                command.Parameters[10].Value = ((string)(MSU_Zip));
             }
             if ((Date_Added.HasValue == true)) {
-                command.Parameters[12].Value = ((System.DateTime)(Date_Added.Value));
+                command.Parameters[11].Value = ((System.DateTime)(Date_Added.Value));
             }
             else {
-                command.Parameters[12].Value = global::System.DBNull.Value;
+                command.Parameters[11].Value = global::System.DBNull.Value;
             }
             if ((Mustang_Number == null)) {
+                command.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[12].Value = ((string)(Mustang_Number));
+            }
+            if ((New_Country == null)) {
                 command.Parameters[13].Value = global::System.DBNull.Value;
             }
             else {
-                command.Parameters[13].Value = ((string)(Mustang_Number));
+                command.Parameters[13].Value = ((string)(New_Country));
             }
             if ((MSU_City == null)) {
                 command.Parameters[14].Value = global::System.DBNull.Value;
@@ -4148,35 +3919,176 @@ WHERE `First Name` = @OFN AND `Middle Name` = @OMN AND `Last Name` = @OLN AND `M
             else {
                 command.Parameters[14].Value = ((string)(MSU_City));
             }
-            if ((Original_First_Name == null)) {
+            if ((AptMBNo == null)) {
                 command.Parameters[15].Value = global::System.DBNull.Value;
             }
             else {
-                command.Parameters[15].Value = ((string)(Original_First_Name));
+                command.Parameters[15].Value = ((string)(AptMBNo));
             }
-            if ((Original_Middle_Name == null)) {
-                command.Parameters[16].Value = global::System.DBNull.Value;
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int UpdateQuery(
+                    string New_First_Name, 
+                    string New_Middle_Name, 
+                    string New_Last_Name, 
+                    string New_New_Street_Address, 
+                    string New_New_City, 
+                    string New_New_State, 
+                    string New_New_Zip, 
+                    string New_Email, 
+                    string New_MSU_Address, 
+                    string New_MSU_State, 
+                    string New_MSU_Zip, 
+                    System.DateTime New_Date_Added, 
+                    string New_Mustang_Number, 
+                    string New_New_Country, 
+                    string New_MSU_City, 
+                    string New_AptMBNo, 
+                    string Old_First_Name, 
+                    string Old_Last_Name, 
+                    string Old_New_Street_Address, 
+                    string Old_New_City, 
+                    string Old_New_Country) {
+            global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[7];
+            if ((New_First_Name == null)) {
+                throw new global::System.ArgumentNullException("New_First_Name");
             }
             else {
-                command.Parameters[16].Value = ((string)(Original_Middle_Name));
+                command.Parameters[0].Value = ((string)(New_First_Name));
             }
-            if ((Original_Last_Name == null)) {
-                command.Parameters[17].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[17].Value = ((string)(Original_Last_Name));
-            }
-            if ((Original_Mustang_Number == null)) {
-                command.Parameters[18].Value = global::System.DBNull.Value;
+            if ((New_Middle_Name == null)) {
+                throw new global::System.ArgumentNullException("New_Middle_Name");
             }
             else {
-                command.Parameters[18].Value = ((string)(Original_Mustang_Number));
+                command.Parameters[1].Value = ((string)(New_Middle_Name));
             }
-            if ((APT == null)) {
-                throw new global::System.ArgumentNullException("APT");
+            if ((New_Last_Name == null)) {
+                throw new global::System.ArgumentNullException("New_Last_Name");
             }
             else {
-                command.Parameters[19].Value = ((string)(APT));
+                command.Parameters[2].Value = ((string)(New_Last_Name));
+            }
+            if ((New_New_Street_Address == null)) {
+                throw new global::System.ArgumentNullException("New_New_Street_Address");
+            }
+            else {
+                command.Parameters[3].Value = ((string)(New_New_Street_Address));
+            }
+            if ((New_New_City == null)) {
+                throw new global::System.ArgumentNullException("New_New_City");
+            }
+            else {
+                command.Parameters[4].Value = ((string)(New_New_City));
+            }
+            if ((New_New_State == null)) {
+                throw new global::System.ArgumentNullException("New_New_State");
+            }
+            else {
+                command.Parameters[5].Value = ((string)(New_New_State));
+            }
+            if ((New_New_Zip == null)) {
+                throw new global::System.ArgumentNullException("New_New_Zip");
+            }
+            else {
+                command.Parameters[6].Value = ((string)(New_New_Zip));
+            }
+            if ((New_Email == null)) {
+                throw new global::System.ArgumentNullException("New_Email");
+            }
+            else {
+                command.Parameters[7].Value = ((string)(New_Email));
+            }
+            if ((New_MSU_Address == null)) {
+                throw new global::System.ArgumentNullException("New_MSU_Address");
+            }
+            else {
+                command.Parameters[8].Value = ((string)(New_MSU_Address));
+            }
+            if ((New_MSU_State == null)) {
+                throw new global::System.ArgumentNullException("New_MSU_State");
+            }
+            else {
+                command.Parameters[9].Value = ((string)(New_MSU_State));
+            }
+            if ((New_MSU_Zip == null)) {
+                throw new global::System.ArgumentNullException("New_MSU_Zip");
+            }
+            else {
+                command.Parameters[10].Value = ((string)(New_MSU_Zip));
+            }
+            command.Parameters[11].Value = ((System.DateTime)(New_Date_Added));
+            if ((New_Mustang_Number == null)) {
+                throw new global::System.ArgumentNullException("New_Mustang_Number");
+            }
+            else {
+                command.Parameters[12].Value = ((string)(New_Mustang_Number));
+            }
+            if ((New_New_Country == null)) {
+                throw new global::System.ArgumentNullException("New_New_Country");
+            }
+            else {
+                command.Parameters[13].Value = ((string)(New_New_Country));
+            }
+            if ((New_MSU_City == null)) {
+                throw new global::System.ArgumentNullException("New_MSU_City");
+            }
+            else {
+                command.Parameters[14].Value = ((string)(New_MSU_City));
+            }
+            if ((New_AptMBNo == null)) {
+                throw new global::System.ArgumentNullException("New_AptMBNo");
+            }
+            else {
+                command.Parameters[15].Value = ((string)(New_AptMBNo));
+            }
+            if ((Old_First_Name == null)) {
+                throw new global::System.ArgumentNullException("Old_First_Name");
+            }
+            else {
+                command.Parameters[16].Value = ((string)(Old_First_Name));
+            }
+            if ((Old_Last_Name == null)) {
+                throw new global::System.ArgumentNullException("Old_Last_Name");
+            }
+            else {
+                command.Parameters[17].Value = ((string)(Old_Last_Name));
+            }
+            if ((Old_New_Street_Address == null)) {
+                throw new global::System.ArgumentNullException("Old_New_Street_Address");
+            }
+            else {
+                command.Parameters[18].Value = ((string)(Old_New_Street_Address));
+            }
+            if ((Old_New_City == null)) {
+                throw new global::System.ArgumentNullException("Old_New_City");
+            }
+            else {
+                command.Parameters[19].Value = ((string)(Old_New_City));
+            }
+            if ((Old_New_Country == null)) {
+                throw new global::System.ArgumentNullException("Old_New_Country");
+            }
+            else {
+                command.Parameters[20].Value = ((string)(Old_New_Country));
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 

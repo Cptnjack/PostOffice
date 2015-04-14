@@ -101,11 +101,10 @@ namespace PO
                     + " re-enter them.", "Password match error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-        private void adminTableBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        private void AddUser_Load_1(object sender, EventArgs e)
         {
-            this.Validate();
-            this.adminTableBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.pODBDataSet);
+            // TODO: This line of code loads data into the 'pODBDataSet.AdminTable' table. You can move, or remove it, as needed.
+            this.adminTableTableAdapter.Fill(this.pODBDataSet.AdminTable);
 
         }
     }

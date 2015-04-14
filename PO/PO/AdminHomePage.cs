@@ -30,7 +30,7 @@ namespace PO
             this.Close();
             StudentSearch search = new StudentSearch(loggedin);
             search.Show();
-           
+
             //should change "Admin Login" button to "Log Out"..also in the menustrip..add a "Home" option under Admin?
         }
 
@@ -75,7 +75,7 @@ namespace PO
             RemoveUser remove = new RemoveUser(loggedin);
             remove.Show();
             this.Close();
-            
+
         }
 
         private void addstudentButton_Click(object sender, EventArgs e)
@@ -83,6 +83,6 @@ namespace PO
             this.Hide();
             Form f = new AddStudentAddress(loggedin, this);
             f.Show();
-        } 
+        }
     }
 }

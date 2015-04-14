@@ -82,16 +82,16 @@ namespace PO
 
         private void radiobuttons_CheckedChanged(object sender, EventArgs e)
         {
-            if(sundanceRadioButton.Checked == true)
+            if (sundanceRadioButton.Checked == true)
             {
                 msuaddressTextBox.Text = "2602 Midwestern Pkwy";
             }
 
-            else if(SunwatcherRadioButton.Checked == true)
+            else if (SunwatcherRadioButton.Checked == true)
             {
                 msuaddressTextBox.Text = "3704 Louis J. Rodriguez";
             }
-            else if(poboxRadioButton.Checked == true || otherRadioButton.Checked == true)
+            else if (poboxRadioButton.Checked == true || otherRadioButton.Checked == true)
             {
                 msuaddressTextBox.Text = "";
             }

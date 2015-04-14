@@ -42,7 +42,7 @@ namespace PO
                     from = "MSUPOHELP@gmail.com";
                     sub = "PO Application Forgotten Password!";
                     password = adminDataGridView.Rows[adminDataGridView.Rows[0].Index].Cells[4].Value.ToString();
-                    msg = "It seems you have forgotten your password, so here it is:" +'\n';
+                    msg = "It seems you have forgotten your password, so here it is:" + '\n';
                     msg += password;
 
                     SmtpClient smtpClient = new SmtpClient("smtp.gmail.com", 587);
@@ -93,6 +93,8 @@ namespace PO
 
         private void ForgotPassword_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'pODBDataSet.AdminTable' table. You can move, or remove it, as needed.
+            this.adminTableTableAdapter.Fill(this.pODBDataSet.AdminTable);
             // TODO: This line of code loads data into the 'pODBDataSet.AdminTable' table. You can move, or remove it, as needed.
             //this.adminTableTableAdapter.Fill(this.pODBDataSet.AdminTable);
 

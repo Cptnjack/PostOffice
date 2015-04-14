@@ -57,13 +57,13 @@ namespace PO
             this.adminTableTableAdapter.FillByUsernameAll(this.pODBDataSet.AdminTable);
             LoadComboBox();
         }
-        
+
         private void LoadComboBox()
         {
             List<String> L = new List<String>();
             for (int j = 0; j < adminTableDataGridView.Rows.Count-1; j++)
             {
-                L.Add(adminTableDataGridView.Rows[j].Cells[5].Value.ToString());
+                L.Add(adminTableDataGridView.Rows[j].Cells[4].Value.ToString());
             }
 
             foreach (String user in L)
