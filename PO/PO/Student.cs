@@ -24,8 +24,9 @@ namespace PO
         private String nZip;
         private String nCountry;
         private DateTime dateAdded;
+        private int iD;
 
-        public Student(String mnum, String fn, String ln, String mn, String em, String mAdd, String mC, String mSt, String mZ, String nAdd, String nC, String nSt, String nZ, String nCountry, DateTime now, String amb)
+        public Student(String mnum, String fn, String ln, String mn, String em, String mAdd, String mC, String mSt, String mZ, String nAdd, String nC, String nSt, String nZ, String nCountry, DateTime now, String amb, int id)
         {
             mNum = mnum;
             fName = fn;
@@ -43,6 +44,7 @@ namespace PO
             this.nCountry = nCountry;
             dateAdded = now;
             aptmb = amb;
+            iD = id;
         }
 
         public override string ToString()
@@ -268,6 +270,18 @@ namespace PO
             set
             {
                 aptmb = value;
+            }
+        }
+        public int ID
+        {
+            get
+            {
+                return iD;
+            }
+
+            set
+            {
+                iD = value;
             }
         }
     }

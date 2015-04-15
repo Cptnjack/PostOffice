@@ -31,7 +31,7 @@ namespace PO
             init();
         }
 
-        public StudentSearch(bool i, Student oldP, Student newP)
+        public StudentSearch(bool i, Student newP)
         {
             InitializeComponent();
 
@@ -41,13 +41,11 @@ namespace PO
 
             this.studentTableTableAdapter.UpdateQuery(newP.FName, newP.MidName, newP.LName, newP.NStAddress, newP.NCity,
                 newP.NState, newP.NZip, newP.Email, newP.MStAddress, newP.MState, newP.MZip, newP.DateAdded,
-                newP.MNum, newP.NCountry, newP.MCity, newP.Aptmb, oldP.FName, oldP.LName, oldP.NStAddress, oldP.NCity, oldP.NCountry);
+                newP.MNum, newP.NCountry, newP.MCity, newP.Aptmb, newP.ID);
         }
 
         private void StudentSearch_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'pODBDataSet1.StudentTable' table. You can move, or remove it, as needed.
-            //this.studentTableTableAdapter.Fill(this.pODBDataSet1.StudentTable);
             // TODO: This line of code loads data into the 'rosterDataSet.Rosters' table. You can move, or remove it, as needed.
             this.studentTableTableAdapter.Fill(this.pODBDataSet.StudentTable);
 
@@ -64,7 +62,6 @@ namespace PO
                 updateButton.Visible = false;
                 addressToolStripMenuItem.Visible = false;
                 homePictureBox.Visible = false;
-                deleteButton.Visible = false;
             }
 
             else
@@ -73,13 +70,6 @@ namespace PO
                 AdminLogin login = new AdminLogin(this);
                 login.Show();
             }
-        }
-
-        private void PrintBtn_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            Print Pform = new Print(loggedin);
-            Pform.Show();
         }
 
         private void printPreviewToolStripMenuItem_Click(object sender, EventArgs e)
@@ -160,12 +150,13 @@ namespace PO
             {
                 int selectedRowIndex = ResultList.SelectedCells[0].RowIndex;
                 DataGridViewRow selectedRow = ResultList.Rows[selectedRowIndex];
+                int id;
                 String fn, ln, midn, em, madd, mc, mst, mz, nadd, nc, nst, nz, ncountry, dateadded, mnum, amb;
                 DateTime date;
                 int day, month, year;
                 char[] delim = { '/', ' ' };
                 String[] info;
-
+                id = Convert.ToInt32(selectedRow.Cells[0].Value);
                 fn = Convert.ToString(selectedRow.Cells[1].Value);
                 midn = Convert.ToString(selectedRow.Cells[2].Value);
                 ln = Convert.ToString(selectedRow.Cells[3].Value);
@@ -189,7 +180,7 @@ namespace PO
                 year = Convert.ToInt32(info[2]);
                 date = new DateTime(year, month, day);
 
-                s = new Student(mnum, fn, ln, midn, em, madd, mc, mst, mz, nadd, nc, nst, nz, ncountry, date, amb);
+                s = new Student(mnum, fn, ln, midn, em, madd, mc, mst, mz, nadd, nc, nst, nz, ncountry, date, amb, id);
                 this.Hide();
                 Form next = new UpdateStudentAddress(s, this);
                 next.Show();
@@ -224,7 +215,6 @@ namespace PO
                 updateButton.Visible = true;
                 addressToolStripMenuItem.Visible = true;
                 homePictureBox.Visible = true;
-                deleteButton.Visible = true;
             }
 
             else if (!loggedin)
@@ -235,7 +225,6 @@ namespace PO
                 updateButton.Visible = false;
                 addressToolStripMenuItem.Visible = false;
                 homePictureBox.Visible = false;
-                deleteButton.Visible = false;
             }
         }
 
@@ -246,45 +235,38 @@ namespace PO
             f.Show();
         }
 
-        private void deleteButton_Click(object sender, EventArgs e)
-        {
-            int selectedRowCount = ResultList.Rows.GetRowCount(DataGridViewElementStates.Selected);
+        //private void deleteButton_Click(object sender, EventArgs e)
+        //{
+        //    int selectedRowCount = ResultList.Rows.GetRowCount(DataGridViewElementStates.Selected);
 
-            //if there is only one row selected
-            //do stuff
-            if (selectedRowCount == 1)
-            {
-                int selectedRowIndex = ResultList.SelectedCells[0].RowIndex;
-                DataGridViewRow selectedRow = ResultList.Rows[selectedRowIndex];
-                String fn, ln, midn, nadd, nc, nst, ncountry, amb;
+        //    //if there is only one row selected
+        //    //do stuff
+        //    if (selectedRowCount == 1)
+        //    {
+        //        int selectedRowIndex = ResultList.SelectedCells[0].RowIndex;
+        //        DataGridViewRow selectedRow = ResultList.Rows[selectedRowIndex];
+        //        String fn, ln, midn, nadd, nc, nst, ncountry, amb;
 
-                fn = Convert.ToString(selectedRow.Cells[1].Value);
-                midn = Convert.ToString(selectedRow.Cells[2].Value);
-                ln = Convert.ToString(selectedRow.Cells[3].Value);
-                nadd = Convert.ToString(selectedRow.Cells[4].Value);
-                nc = Convert.ToString(selectedRow.Cells[5].Value);
-                nst = Convert.ToString(selectedRow.Cells[6].Value);
-                ncountry = Convert.ToString(selectedRow.Cells[14].Value);
-                amb = Convert.ToString(selectedRow.Cells[16].Value);
-                if (midn == "")
-                    this.studentTableTableAdapter.DeleteQueryNoM(fn, ln, nadd, nc, ncountry, amb);
-                else
-                    this.studentTableTableAdapter.DeleteQueryMN(fn, midn, ln, nadd, nc, ncountry, amb);
-                this.studentTableTableAdapter.Fill(this.pODBDataSet.StudentTable);
+        //        fn = Convert.ToString(selectedRow.Cells[1].Value);
+        //        midn = Convert.ToString(selectedRow.Cells[2].Value);
+        //        ln = Convert.ToString(selectedRow.Cells[3].Value);
+        //        nadd = Convert.ToString(selectedRow.Cells[4].Value);
+        //        nc = Convert.ToString(selectedRow.Cells[5].Value);
+        //        nst = Convert.ToString(selectedRow.Cells[6].Value);
+        //        ncountry = Convert.ToString(selectedRow.Cells[14].Value);
+        //        amb = Convert.ToString(selectedRow.Cells[16].Value);
+        //        if (midn == "")
+        //            this.studentTableTableAdapter.DeleteQueryNoM(fn, ln, nadd, nc, ncountry, amb);
+        //        else
+        //            this.studentTableTableAdapter.DeleteQueryMN(fn, midn, ln, nadd, nc, ncountry, amb);
+        //        this.studentTableTableAdapter.Fill(this.pODBDataSet.StudentTable);
 
-            }
+        //    }
 
-            else
-            {
-                MessageBox.Show("Please select a student to remove.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void StudentSearch_Load_1(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'pODBDataSet.StudentTable' table. You can move, or remove it, as needed.
-            this.studentTableTableAdapter.Fill(this.pODBDataSet.StudentTable);
-
-        }
+        //    else
+        //    {
+        //        MessageBox.Show("Please select a student to remove.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //    }
+        //}
     }
 }

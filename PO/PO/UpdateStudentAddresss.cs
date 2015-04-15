@@ -13,7 +13,6 @@ namespace PO
     public partial class UpdateStudentAddress : Form
     {
         private Student newP;
-        private Student oldP;
         private Form last;
         private bool loggedin = true;
 
@@ -25,7 +24,7 @@ namespace PO
         public UpdateStudentAddress(Student s)
         {
             InitializeComponent();
-            oldP = newP = s;
+            newP = s;
             init(s);
         }
 
@@ -33,7 +32,7 @@ namespace PO
         {
             InitializeComponent();
             //save the information passed in
-            oldP = newP = s;
+            newP = s;
             last = f;
             init(s);
         }
@@ -59,8 +58,10 @@ namespace PO
                 newP.NState = newstateTextBox.Text;
                 newP.NZip = newzipTextBox.Text;
                 newP.NCountry = newcountryTextBox.Text;
+                
+                last.Close();
 
-                last = new StudentSearch(loggedin, oldP, newP);
+                last = new StudentSearch(loggedin, newP);
                 last.Show();
                 this.Close();
             }

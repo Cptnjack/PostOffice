@@ -38,10 +38,10 @@ namespace PO
             {
                 try
                 {
-                    to = adminDataGridView.Rows[adminDataGridView.Rows[0].Index].Cells[3].Value.ToString();
+                    to = adminDataGridView.Rows[adminDataGridView.Rows[0].Index].Cells[2].Value.ToString();
                     from = "MSUPOHELP@gmail.com";
                     sub = "PO Application Forgotten Password!";
-                    password = adminDataGridView.Rows[adminDataGridView.Rows[0].Index].Cells[4].Value.ToString();
+                    password = adminDataGridView.Rows[adminDataGridView.Rows[0].Index].Cells[3].Value.ToString();
                     msg = "It seems you have forgotten your password, so here it is:" + '\n';
                     msg += password;
 
@@ -57,8 +57,7 @@ namespace PO
                     tos = this.to.Split();
                     for (int i = 0; i < tos.Length; i++)
                     {
-                        MailMessage ml = new MailMessage(this.from, tos[i].ToString(), this.sub,
-                                                            this.msg);
+                        MailMessage ml = new MailMessage(this.from, tos[i].ToString(), this.sub, this.msg);
                         ml.IsBodyHtml = true;
                         smtpClient.Send(ml);
                     }
