@@ -30,6 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             this.adminTableDataGridView = new System.Windows.Forms.DataGridView();
+            this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adminTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pODBDataSet = new PO.PODBDataSet();
             this.emaillbl = new System.Windows.Forms.Label();
             this.HomePic = new System.Windows.Forms.PictureBox();
             this.SearchMenuStrip = new System.Windows.Forms.MenuStrip();
@@ -39,10 +46,7 @@
             this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.searchStudentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addRemoveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.printPreviewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.forcePrintToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.adduserbtn = new System.Windows.Forms.Button();
             this.lasttxt = new System.Windows.Forms.TextBox();
             this.lastlbl = new System.Windows.Forms.Label();
@@ -55,19 +59,12 @@
             this.usernametxt = new System.Windows.Forms.TextBox();
             this.usernamelbl = new System.Windows.Forms.Label();
             this.pwdlbl = new System.Windows.Forms.Label();
-            this.pODBDataSet = new PO.PODBDataSet();
-            this.adminTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.adminTableTableAdapter = new PO.PODBDataSetTableAdapters.AdminTableTableAdapter();
-            this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.usernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.adminTableDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.adminTableBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pODBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HomePic)).BeginInit();
             this.SearchMenuStrip.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pODBDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.adminTableBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // adminTableDataGridView
@@ -86,6 +83,46 @@
             this.adminTableDataGridView.Size = new System.Drawing.Size(651, 220);
             this.adminTableDataGridView.TabIndex = 67;
             this.adminTableDataGridView.Visible = false;
+            // 
+            // firstNameDataGridViewTextBoxColumn
+            // 
+            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "First Name";
+            this.firstNameDataGridViewTextBoxColumn.HeaderText = "First Name";
+            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
+            // 
+            // lastNameDataGridViewTextBoxColumn
+            // 
+            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "Last Name";
+            this.lastNameDataGridViewTextBoxColumn.HeaderText = "Last Name";
+            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
+            // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            // 
+            // passwordDataGridViewTextBoxColumn
+            // 
+            this.passwordDataGridViewTextBoxColumn.DataPropertyName = "Password";
+            this.passwordDataGridViewTextBoxColumn.HeaderText = "Password";
+            this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
+            // 
+            // usernameDataGridViewTextBoxColumn
+            // 
+            this.usernameDataGridViewTextBoxColumn.DataPropertyName = "Username";
+            this.usernameDataGridViewTextBoxColumn.HeaderText = "Username";
+            this.usernameDataGridViewTextBoxColumn.Name = "usernameDataGridViewTextBoxColumn";
+            // 
+            // adminTableBindingSource
+            // 
+            this.adminTableBindingSource.DataMember = "AdminTable";
+            this.adminTableBindingSource.DataSource = this.pODBDataSet;
+            // 
+            // pODBDataSet
+            // 
+            this.pODBDataSet.DataSetName = "PODBDataSet";
+            this.pODBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // emaillbl
             // 
@@ -116,8 +153,7 @@
             // 
             this.SearchMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.adminToolStripMenuItem,
-            this.searchStudentToolStripMenuItem,
-            this.printToolStripMenuItem});
+            this.searchStudentToolStripMenuItem});
             this.SearchMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.SearchMenuStrip.Name = "SearchMenuStrip";
             this.SearchMenuStrip.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
@@ -160,7 +196,7 @@
             // 
             this.searchStudentToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.searchToolStripMenuItem,
-            this.addRemoveToolStripMenuItem});
+            this.addToolStripMenuItem});
             this.searchStudentToolStripMenuItem.Name = "searchStudentToolStripMenuItem";
             this.searchStudentToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.searchStudentToolStripMenuItem.Text = "Address";
@@ -168,38 +204,16 @@
             // searchToolStripMenuItem
             // 
             this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
-            this.searchToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
+            this.searchToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.searchToolStripMenuItem.Text = "Search";
             this.searchToolStripMenuItem.Click += new System.EventHandler(this.searchToolStripMenuItem_Click);
             // 
-            // addRemoveToolStripMenuItem
+            // addToolStripMenuItem
             // 
-            this.addRemoveToolStripMenuItem.Name = "addRemoveToolStripMenuItem";
-            this.addRemoveToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
-            this.addRemoveToolStripMenuItem.Text = "Add";
-            // 
-            // printToolStripMenuItem
-            // 
-            this.printToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.printPreviewToolStripMenuItem,
-            this.forcePrintToolStripMenuItem});
-            this.printToolStripMenuItem.Name = "printToolStripMenuItem";
-            this.printToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.printToolStripMenuItem.Text = "Print";
-            // 
-            // printPreviewToolStripMenuItem
-            // 
-            this.printPreviewToolStripMenuItem.Name = "printPreviewToolStripMenuItem";
-            this.printPreviewToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
-            this.printPreviewToolStripMenuItem.Text = "Print Preview";
-            this.printPreviewToolStripMenuItem.Click += new System.EventHandler(this.printPreviewToolStripMenuItem_Click);
-            // 
-            // forcePrintToolStripMenuItem
-            // 
-            this.forcePrintToolStripMenuItem.Name = "forcePrintToolStripMenuItem";
-            this.forcePrintToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
-            this.forcePrintToolStripMenuItem.Text = "Force Print";
-            this.forcePrintToolStripMenuItem.Click += new System.EventHandler(this.forcePrintToolStripMenuItem_Click);
+            this.addToolStripMenuItem.Name = "addToolStripMenuItem";
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.addToolStripMenuItem.Text = "Add";
+            this.addToolStripMenuItem.Click += new System.EventHandler(this.addToolStripMenuItem_Click);
             // 
             // adduserbtn
             // 
@@ -332,49 +346,9 @@
             this.pwdlbl.TabIndex = 54;
             this.pwdlbl.Text = "Password:";
             // 
-            // pODBDataSet
-            // 
-            this.pODBDataSet.DataSetName = "PODBDataSet";
-            this.pODBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // adminTableBindingSource
-            // 
-            this.adminTableBindingSource.DataMember = "AdminTable";
-            this.adminTableBindingSource.DataSource = this.pODBDataSet;
-            // 
             // adminTableTableAdapter
             // 
             this.adminTableTableAdapter.ClearBeforeFill = true;
-            // 
-            // firstNameDataGridViewTextBoxColumn
-            // 
-            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "First Name";
-            this.firstNameDataGridViewTextBoxColumn.HeaderText = "First Name";
-            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
-            // 
-            // lastNameDataGridViewTextBoxColumn
-            // 
-            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "Last Name";
-            this.lastNameDataGridViewTextBoxColumn.HeaderText = "Last Name";
-            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
-            // 
-            // emailDataGridViewTextBoxColumn
-            // 
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-            // 
-            // passwordDataGridViewTextBoxColumn
-            // 
-            this.passwordDataGridViewTextBoxColumn.DataPropertyName = "Password";
-            this.passwordDataGridViewTextBoxColumn.HeaderText = "Password";
-            this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
-            // 
-            // usernameDataGridViewTextBoxColumn
-            // 
-            this.usernameDataGridViewTextBoxColumn.DataPropertyName = "Username";
-            this.usernameDataGridViewTextBoxColumn.HeaderText = "Username";
-            this.usernameDataGridViewTextBoxColumn.Name = "usernameDataGridViewTextBoxColumn";
             // 
             // AddUser
             // 
@@ -401,11 +375,11 @@
             this.Text = "AddUser";
             this.Load += new System.EventHandler(this.AddUser_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.adminTableDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.adminTableBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pODBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.HomePic)).EndInit();
             this.SearchMenuStrip.ResumeLayout(false);
             this.SearchMenuStrip.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pODBDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.adminTableBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -423,10 +397,7 @@
         private System.Windows.Forms.ToolStripMenuItem logOutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem searchStudentToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem searchToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem addRemoveToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem printToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem printPreviewToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem forcePrintToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
         private System.Windows.Forms.Button adduserbtn;
         private System.Windows.Forms.TextBox lasttxt;
         private System.Windows.Forms.Label lastlbl;

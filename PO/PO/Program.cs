@@ -16,7 +16,7 @@ namespace PO
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new StudentSearch(false));
+            Application.Run(new StudentSearch(new User()));
         }
     }
 }

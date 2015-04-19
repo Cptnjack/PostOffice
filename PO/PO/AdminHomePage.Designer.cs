@@ -33,16 +33,13 @@
             this.removeuserbtn = new System.Windows.Forms.Button();
             this.adminChangePswrd = new System.Windows.Forms.Button();
             this.adminSearchStudent = new System.Windows.Forms.Button();
-            this.forcePrintToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.printPreviewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addRemoveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.searchStudentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ChangePwdToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removeUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.hhToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.adminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.adminLogOut = new System.Windows.Forms.Button();
             this.SearchMenuStrip = new System.Windows.Forms.MenuStrip();
@@ -124,29 +121,6 @@
             this.adminSearchStudent.UseVisualStyleBackColor = false;
             this.adminSearchStudent.Click += new System.EventHandler(this.adminSearchStudent_Click);
             // 
-            // forcePrintToolStripMenuItem
-            // 
-            this.forcePrintToolStripMenuItem.Name = "forcePrintToolStripMenuItem";
-            this.forcePrintToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.forcePrintToolStripMenuItem.Text = "Force Print";
-            this.forcePrintToolStripMenuItem.Click += new System.EventHandler(this.forcePrintToolStripMenuItem_Click);
-            // 
-            // printPreviewToolStripMenuItem
-            // 
-            this.printPreviewToolStripMenuItem.Name = "printPreviewToolStripMenuItem";
-            this.printPreviewToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.printPreviewToolStripMenuItem.Text = "Print Preview";
-            this.printPreviewToolStripMenuItem.Click += new System.EventHandler(this.printPreviewToolStripMenuItem_Click);
-            // 
-            // printToolStripMenuItem
-            // 
-            this.printToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.printPreviewToolStripMenuItem,
-            this.forcePrintToolStripMenuItem});
-            this.printToolStripMenuItem.Name = "printToolStripMenuItem";
-            this.printToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.printToolStripMenuItem.Text = "Print";
-            // 
             // addRemoveToolStripMenuItem
             // 
             this.addRemoveToolStripMenuItem.Name = "addRemoveToolStripMenuItem";
@@ -191,17 +165,17 @@
             this.removeUserToolStripMenuItem.Text = "Remove User";
             this.removeUserToolStripMenuItem.Click += new System.EventHandler(this.removeuserbtn_Click);
             // 
-            // hhToolStripMenuItem
+            // addUserToolStripMenuItem
             // 
-            this.hhToolStripMenuItem.Name = "hhToolStripMenuItem";
-            this.hhToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.hhToolStripMenuItem.Text = "Add User";
-            this.hhToolStripMenuItem.Click += new System.EventHandler(this.adduserbtn_Click);
+            this.addUserToolStripMenuItem.Name = "addUserToolStripMenuItem";
+            this.addUserToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.addUserToolStripMenuItem.Text = "Add User";
+            this.addUserToolStripMenuItem.Click += new System.EventHandler(this.adduserbtn_Click);
             // 
             // adminToolStripMenuItem
             // 
             this.adminToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.hhToolStripMenuItem,
+            this.addUserToolStripMenuItem,
             this.removeUserToolStripMenuItem,
             this.ChangePwdToolStripMenuItem,
             this.logOutToolStripMenuItem});
@@ -228,8 +202,7 @@
             // 
             this.SearchMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.adminToolStripMenuItem,
-            this.searchStudentToolStripMenuItem,
-            this.printToolStripMenuItem});
+            this.searchStudentToolStripMenuItem});
             this.SearchMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.SearchMenuStrip.Name = "SearchMenuStrip";
             this.SearchMenuStrip.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
@@ -267,16 +240,13 @@
         private System.Windows.Forms.Button removeuserbtn;
         private System.Windows.Forms.Button adminChangePswrd;
         private System.Windows.Forms.Button adminSearchStudent;
-        private System.Windows.Forms.ToolStripMenuItem forcePrintToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem printPreviewToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem printToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addRemoveToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem searchToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem searchStudentToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logOutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ChangePwdToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem removeUserToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem hhToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addUserToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem adminToolStripMenuItem;
         private System.Windows.Forms.Button adminLogOut;
         private System.Windows.Forms.MenuStrip SearchMenuStrip;

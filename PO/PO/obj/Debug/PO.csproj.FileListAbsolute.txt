@@ -36,10 +36,10 @@ C:\Users\Michael\Documents\GitHub\PostOffice\PO\PO\obj\Debug\PO.RemoveUser.resou
 C:\Users\Michael\Documents\GitHub\PostOffice\PO\PO\obj\Debug\PO.StudentSearch.resources
 C:\Users\Michael\Documents\GitHub\PostOffice\PO\PO\obj\Debug\PO.UpdateStudentAddress.resources
 C:\Users\Michael\Documents\GitHub\PostOffice\PO\PO\obj\Debug\PO.csproj.GenerateResource.Cache
+C:\Users\Michael\PO\PO\bin\Debug\PODB.accdb
 C:\Users\Michael\PO\PO\bin\Debug\PO.exe.config
-C:\Users\Michael\PO\PO\obj\Debug\PO.exe
-C:\Users\Michael\PO\PO\obj\Debug\PO.pdb
-C:\Users\Michael\PO\PO\obj\Debug\PO.csprojResolveAssemblyReference.cache
+C:\Users\Michael\PO\PO\bin\Debug\PO.exe
+C:\Users\Michael\PO\PO\bin\Debug\PO.pdb
 C:\Users\Michael\PO\PO\obj\Debug\PO.AddStudentAddress.resources
 C:\Users\Michael\PO\PO\obj\Debug\PO.AddUser.resources
 C:\Users\Michael\PO\PO\obj\Debug\PO.AdminHomePage.resources
@@ -52,6 +52,5 @@ C:\Users\Michael\PO\PO\obj\Debug\PO.RemoveUser.resources
 C:\Users\Michael\PO\PO\obj\Debug\PO.StudentSearch.resources
 C:\Users\Michael\PO\PO\obj\Debug\PO.UpdateStudentAddress.resources
 C:\Users\Michael\PO\PO\obj\Debug\PO.csproj.GenerateResource.Cache
-C:\Users\Michael\PO\PO\bin\Debug\PODB.accdb
-C:\Users\Michael\PO\PO\bin\Debug\PO.exe
-C:\Users\Michael\PO\PO\bin\Debug\PO.pdb
+C:\Users\Michael\PO\PO\obj\Debug\PO.exe
+C:\Users\Michael\PO\PO\obj\Debug\PO.pdb

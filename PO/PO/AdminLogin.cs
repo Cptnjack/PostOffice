@@ -15,10 +15,12 @@ namespace PO
         private String username;
         private String pwd;
         private Form f;
+
         public AdminLogin()
         {
             InitializeComponent();
         }
+
         public AdminLogin(Form temp)
         {
             InitializeComponent();
@@ -29,7 +31,7 @@ namespace PO
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             this.Close();
-            f = new StudentSearch(false);
+            f = new StudentSearch(new User());
             f.Show();
         }
 
@@ -61,12 +63,22 @@ namespace PO
                 //handle them
 
                 adminTableTableAdapter.FillByUsernamePwd(this.pODBDataSet.AdminTable, username, pwd);
-                if (dataGridView1.Rows.Count > 1)
+                dataGridView1.Invalidate();
+                dataGridView1.Refresh();
+                
+                if (dataGridView1.Rows.Count-1 == 1)
                 {
                     //success
                     //go to the adminHomePage form
                     //MessageBox.Show("Login Successful! Click OK to continue", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    f = new AdminHomePage(true);
+                    dataGridView1.Rows[0].Selected = true;
+                    int selected = dataGridView1.SelectedCells[0].RowIndex;
+                    DataGridViewRow d = dataGridView1.Rows[selected];
+
+                    String fn = Convert.ToString(d.Cells[0].Value);
+                    String ln = Convert.ToString(d.Cells[1].Value);
+                    String un = Convert.ToString(d.Cells[4].Value);
+                    f = new AdminHomePage(new Admin(fn, ln, un));
                     f.Show();
                     this.Close();
                 }

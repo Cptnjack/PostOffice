@@ -14,7 +14,7 @@ namespace PO
     {
         private Student newP;
         private Form last;
-        private bool loggedin = true;
+        private User u;
 
         public UpdateStudentAddress()
         {
@@ -34,6 +34,16 @@ namespace PO
             //save the information passed in
             newP = s;
             last = f;
+            init(s);
+        }
+
+        public UpdateStudentAddress(Student s, Form f, User a)
+        {
+            InitializeComponent();
+            //save the information passed in
+            newP = s;
+            last = f;
+            u = a;
             init(s);
         }
 
@@ -61,7 +71,7 @@ namespace PO
                 
                 last.Close();
 
-                last = new StudentSearch(loggedin, newP);
+                last = new StudentSearch(u, newP);
                 last.Show();
                 this.Close();
             }
@@ -69,7 +79,7 @@ namespace PO
 
         private void HomePic_Click(object sender, EventArgs e)
         {
-            last = new AdminHomePage(loggedin);
+            last = new AdminHomePage(u);
             last.Show();
             this.Close();
 
@@ -92,7 +102,12 @@ namespace PO
             {
                 msuaddressTextBox.Text = "3704 Louis J. Rodriguez";
             }
-            else if (poboxRadioButton.Checked == true || otherRadioButton.Checked == true)
+
+            else if(poboxRadioButton.Checked == true)
+            {
+                msuaddressTextBox.Text = "3410 Taft Blvd";
+            }
+            else if (otherRadioButton.Checked == true)
             {
                 msuaddressTextBox.Text = "";
             }
@@ -133,5 +148,46 @@ namespace PO
             newcountryTextBox.Text = s.NCountry;
         }
 
+        private void addUserToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form n = new AddUser(u);
+            n.Show();
+            this.Close();
+        }
+
+        private void removeUserToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form n = new RemoveUser(u);
+            n.Show();
+            this.Close();
+        }
+
+        private void changepwdToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form n = new ChangePassword(u);
+            n.Show();
+            this.Close();
+        }
+
+        private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form n = new StudentSearch(new User());
+            n.Show();
+            this.Close();
+        }
+
+        private void searchToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form n = new StudentSearch(u);
+            n.Show();
+            this.Close();
+        }
+
+        private void addToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form n = new AddStudentAddress(u, this);
+            n.Show();
+            this.Hide();
+        }
     }
 }

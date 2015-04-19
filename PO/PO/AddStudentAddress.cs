@@ -13,7 +13,9 @@ namespace PO
     public partial class AddStudentAddress : Form
     {
         private bool loggedin;
+        private User u;
         private Form last;
+
         public AddStudentAddress()
         {
             InitializeComponent();
@@ -27,21 +29,30 @@ namespace PO
             last = f;
         }
 
+        public AddStudentAddress(User a, Form f)
+        {
+            InitializeComponent();
+            u = a;
+            last = f;
+        }
+
         private void radioButtons_CheckedChanged(object sender, EventArgs e)
         {
             if (sundanceRadioButton.Checked == true)
             {
                 msuaddressTextBox.Text = "2602 Midwestern Pkwy";
-                aptmailTextBox.Text = "";
             }
 
             else if (SunwatcherRadioButton.Checked == true)
             {
                 msuaddressTextBox.Text = "3704 Louis J. Rodriguez";
-                aptmailTextBox.Text = "";
+            }
+            else if(poboxRadioButton.Checked == true)
+            {
+                msuaddressTextBox.Text = "3410 Taft Blvd";
             }
 
-            else if (poboxRadioButton.Checked == true || otherRadioButton.Checked == true)
+            else if (otherRadioButton.Checked == true)
             {
                 msuaddressTextBox.Text = "";
                 aptmailTextBox.Text = "";
@@ -80,6 +91,48 @@ namespace PO
             // TODO: This line of code loads data into the 'pODBDataSet.StudentTable' table. You can move, or remove it, as needed.
             this.studentTableTableAdapter.Fill(this.pODBDataSet.StudentTable);
 
+        }
+
+        private void addUserToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form n = new AddUser(u);
+            n.Show();
+            this.Close();
+        }
+
+        private void removeUserToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form n = new RemoveUser(u);
+            n.Show();
+            this.Close();
+        }
+
+        private void changepwdToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form n = new ChangePassword(u);
+            n.Show();
+            this.Close();
+        }
+
+        private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form n = new StudentSearch(new User());
+            n.Show();
+            this.Close();
+        }
+
+        private void searchToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form n = new StudentSearch(u);
+            n.Show();
+            this.Close();
+        }
+
+        private void addToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form n = new AddStudentAddress(u, this);
+            n.Show();
+            this.Hide();
         }
 
     }

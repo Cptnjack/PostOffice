@@ -30,10 +30,7 @@
         {
             this.searchStudentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.printPreviewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.forcePrintToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.middlelbl = new System.Windows.Forms.Label();
             this.emailTextBox = new System.Windows.Forms.TextBox();
             this.mnameTextBox = new System.Windows.Forms.TextBox();
@@ -85,7 +82,7 @@
             // 
             this.searchStudentToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.searchToolStripMenuItem,
-            this.removeToolStripMenuItem});
+            this.addToolStripMenuItem});
             this.searchStudentToolStripMenuItem.Name = "searchStudentToolStripMenuItem";
             this.searchStudentToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.searchStudentToolStripMenuItem.Text = "Address";
@@ -95,33 +92,14 @@
             this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
             this.searchToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.searchToolStripMenuItem.Text = "Search";
+            this.searchToolStripMenuItem.Click += new System.EventHandler(this.searchToolStripMenuItem_Click);
             // 
-            // removeToolStripMenuItem
+            // addToolStripMenuItem
             // 
-            this.removeToolStripMenuItem.Name = "removeToolStripMenuItem";
-            this.removeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.removeToolStripMenuItem.Text = "Add";
-            // 
-            // printToolStripMenuItem
-            // 
-            this.printToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.printPreviewToolStripMenuItem,
-            this.forcePrintToolStripMenuItem});
-            this.printToolStripMenuItem.Name = "printToolStripMenuItem";
-            this.printToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.printToolStripMenuItem.Text = "Print";
-            // 
-            // printPreviewToolStripMenuItem
-            // 
-            this.printPreviewToolStripMenuItem.Name = "printPreviewToolStripMenuItem";
-            this.printPreviewToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.printPreviewToolStripMenuItem.Text = "Print Preview";
-            // 
-            // forcePrintToolStripMenuItem
-            // 
-            this.forcePrintToolStripMenuItem.Name = "forcePrintToolStripMenuItem";
-            this.forcePrintToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.forcePrintToolStripMenuItem.Text = "Force Print";
+            this.addToolStripMenuItem.Name = "addToolStripMenuItem";
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.addToolStripMenuItem.Text = "Add";
+            this.addToolStripMenuItem.Click += new System.EventHandler(this.addToolStripMenuItem_Click);
             // 
             // middlelbl
             // 
@@ -386,6 +364,7 @@
             this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
             this.logOutToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.logOutToolStripMenuItem.Text = "Log Out";
+            this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
             // 
             // newzipTextBox
             // 
@@ -532,8 +511,7 @@
             // 
             this.SearchMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.adminToolStripMenuItem,
-            this.searchStudentToolStripMenuItem,
-            this.printToolStripMenuItem});
+            this.searchStudentToolStripMenuItem});
             this.SearchMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.SearchMenuStrip.Name = "SearchMenuStrip";
             this.SearchMenuStrip.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
@@ -557,18 +535,21 @@
             this.addUserToolStripMenuItem.Name = "addUserToolStripMenuItem";
             this.addUserToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.addUserToolStripMenuItem.Text = "Add User";
+            this.addUserToolStripMenuItem.Click += new System.EventHandler(this.addUserToolStripMenuItem_Click);
             // 
             // removeUserToolStripMenuItem
             // 
             this.removeUserToolStripMenuItem.Name = "removeUserToolStripMenuItem";
             this.removeUserToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.removeUserToolStripMenuItem.Text = "Remove User";
+            this.removeUserToolStripMenuItem.Click += new System.EventHandler(this.removeUserToolStripMenuItem_Click);
             // 
             // changepwdToolStripMenuItem
             // 
             this.changepwdToolStripMenuItem.Name = "changepwdToolStripMenuItem";
             this.changepwdToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.changepwdToolStripMenuItem.Text = "Change Password";
+            this.changepwdToolStripMenuItem.Click += new System.EventHandler(this.changepwdToolStripMenuItem_Click);
             // 
             // updateButton
             // 
@@ -619,10 +600,7 @@
 
         private System.Windows.Forms.ToolStripMenuItem searchStudentToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem searchToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem removeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem printToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem printPreviewToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem forcePrintToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
         private System.Windows.Forms.Label middlelbl;
         private System.Windows.Forms.TextBox emailTextBox;
         private System.Windows.Forms.TextBox mnameTextBox;

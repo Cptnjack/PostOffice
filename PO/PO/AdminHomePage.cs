@@ -13,6 +13,7 @@ namespace PO
     public partial class AdminHomePage : Form
     {
         private bool loggedin;
+        private User u;
         public AdminHomePage()
         {
             InitializeComponent();
@@ -25,10 +26,20 @@ namespace PO
             loggedin = i;
         }
 
+        public AdminHomePage(User a)
+        {
+            InitializeComponent();
+            u = a;
+            if (u.isAdmin())
+                this.Text = "Logged in as: " + u.Username;
+            else
+                this.Text = "How did you get here?";
+        }
+
         private void adminSearchStudent_Click(object sender, EventArgs e)
         {
             this.Close();
-            StudentSearch search = new StudentSearch(loggedin);
+            StudentSearch search = new StudentSearch(u);
             search.Show();
 
             //should change "Admin Login" button to "Log Out"..also in the menustrip..add a "Home" option under Admin?
@@ -37,7 +48,7 @@ namespace PO
         private void adminLogOut_Click(object sender, EventArgs e)
         {
             this.Close();
-            StudentSearch search = new StudentSearch(false);
+            StudentSearch search = new StudentSearch(new User());
             search.Show();
         }
 
@@ -45,14 +56,14 @@ namespace PO
         private void adduserbtn_Click(object sender, EventArgs e)
         {
             this.Close();
-            AddUser addform = new AddUser(loggedin);
+            AddUser addform = new AddUser(u);
             addform.Show();
         }
 
         private void adminChangePswrd_Click(object sender, EventArgs e)
         {
             this.Close();
-            ChangePassword changepwd = new ChangePassword(loggedin);
+            ChangePassword changepwd = new ChangePassword(u);
             changepwd.Show();
         }
 
@@ -60,7 +71,7 @@ namespace PO
         private void printPreviewToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
-            Print Pform = new Print();
+            Print Pform = new Print(u);
             Pform.Show();
         }
 
@@ -72,7 +83,7 @@ namespace PO
 
         private void removeuserbtn_Click(object sender, EventArgs e)
         {
-            RemoveUser remove = new RemoveUser(loggedin);
+            RemoveUser remove = new RemoveUser(u);
             remove.Show();
             this.Close();
 
@@ -81,7 +92,7 @@ namespace PO
         private void addstudentButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form f = new AddStudentAddress(loggedin, this);
+            Form f = new AddStudentAddress(u, this);
             f.Show();
         }
     }

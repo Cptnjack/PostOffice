@@ -13,6 +13,8 @@ namespace PO
     public partial class ChangePassword : Form
     {
         private bool loggedin;
+        private User u;
+
         public ChangePassword()
         {
             InitializeComponent();
@@ -24,16 +26,22 @@ namespace PO
             loggedin = i;
         }
 
+        public ChangePassword(User a)
+        {
+            InitializeComponent();
+            u = a;
+        }
+
         private void HomePic_Click(object sender, EventArgs e)
         {
             this.Close();
-            AdminHomePage adminhome = new AdminHomePage(loggedin);
+            AdminHomePage adminhome = new AdminHomePage(u);
             adminhome.Show();
         }
 
         private void changepwdbtn_Click(object sender, EventArgs e)
         {
-            if (usernametxt.Text == "" || currentpwdtxt.Text == "" || newpwdtxt.Text == "" || confirmpwdtxt.Text == "")
+            if (currentpwdtxt.Text == "" || newpwdtxt.Text == "" || confirmpwdtxt.Text == "")
             {
                 MessageBox.Show("Please do not leave any fields blank.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -43,7 +51,7 @@ namespace PO
                 MessageBox.Show("The passwords entered don't match. Please re-enter them.", "Password Match Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            this.adminTableTableAdapter.FillByUsernamePwd(this.pODBDataSet.AdminTable, usernametxt.Text, currentpwdtxt.Text);
+            this.adminTableTableAdapter.FillByUsernamePwd(this.pODBDataSet.AdminTable, u.Username, currentpwdtxt.Text);
 
             if (adminTableDataGridView.Rows.Count - 1 != 1)
             {
@@ -52,7 +60,7 @@ namespace PO
 
             else
             {
-                this.adminTableTableAdapter.UpdateQuery( newpwdtxt.Text, usernametxt.Text);
+                this.adminTableTableAdapter.UpdateQuery(newpwdtxt.Text, u.Username);
             }
 
         }
@@ -69,6 +77,41 @@ namespace PO
             // TODO: This line of code loads data into the 'pODBDataSet.AdminTable' table. You can move, or remove it, as needed.
             this.adminTableTableAdapter.Fill(this.pODBDataSet.AdminTable);
 
+        }
+
+        private void addUserToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form n = new AddUser(u);
+            n.Show();
+            this.Close();
+        }
+
+        private void removeUserToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form n = new RemoveUser(u);
+            n.Show();
+            this.Close();
+        }
+
+        private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form n = new StudentSearch(new User());
+            n.Show();
+            this.Close();
+        }
+
+        private void searchToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form n = new StudentSearch(u);
+            n.Show();
+            this.Close();
+        }
+
+        private void addToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form n = new AddStudentAddress(u, this);
+            n.Show();
+            this.Hide();
         }
     }
 }

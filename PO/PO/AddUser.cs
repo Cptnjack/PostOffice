@@ -13,6 +13,8 @@ namespace PO
     public partial class AddUser : Form
     {
         private bool loggedin;
+        private User u;
+
         public AddUser()
         {
             InitializeComponent();
@@ -25,38 +27,44 @@ namespace PO
             loggedin = i;
         }
 
+        public AddUser(User a)
+        {
+            InitializeComponent();
+            u = a;
+        }
+
         private void HomePic_Click(object sender, EventArgs e)
         {
             this.Close();
-            AdminHomePage adminhome = new AdminHomePage(loggedin);
+            AdminHomePage adminhome = new AdminHomePage(u);
             adminhome.Show();
         }
 
         private void changepwdToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
-            ChangePassword changepwd = new ChangePassword(loggedin);
+            ChangePassword changepwd = new ChangePassword(u);
             changepwd.Show();
         }
 
         private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
-            StudentSearch search = new StudentSearch(false);
+            StudentSearch search = new StudentSearch(new User());
             search.Show();
         }
 
         private void searchToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
-            StudentSearch search = new StudentSearch(loggedin);
+            StudentSearch search = new StudentSearch(u);
             search.Show();
         }
 
         private void printPreviewToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
-            Print Pform = new Print(loggedin);
+            Print Pform = new Print(u);
             Pform.Show();
         }
 
@@ -68,7 +76,7 @@ namespace PO
         private void removeUserToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
-            RemoveUser removeuser = new RemoveUser(loggedin);
+            RemoveUser removeuser = new RemoveUser(u);
             removeuser.Show();
         }
 
@@ -87,7 +95,7 @@ namespace PO
                     this.adminTableTableAdapter.InsertQuery(firsttxt.Text, lasttxt.Text, emailtxt.Text, pwdtxt.Text, usernametxt.Text);
                     MessageBox.Show("Success!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     this.Close();
-                    Form f = new AdminHomePage(loggedin);
+                    Form f = new AdminHomePage(u);
                 }
                 catch (System.Data.OleDb.OleDbException ex)
                 {
@@ -106,6 +114,13 @@ namespace PO
             // TODO: This line of code loads data into the 'pODBDataSet.AdminTable' table. You can move, or remove it, as needed.
             this.adminTableTableAdapter.Fill(this.pODBDataSet.AdminTable);
 
+        }
+
+        private void addToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form n = new AddStudentAddress(u, this);
+            n.Show();
+            this.Hide();
         }
     }
 }

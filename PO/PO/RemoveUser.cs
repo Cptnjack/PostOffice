@@ -13,6 +13,8 @@ namespace PO
     public partial class RemoveUser : Form
     {
         private bool loggedin;
+        private User u;
+
         public RemoveUser()
         {
             InitializeComponent();
@@ -24,31 +26,37 @@ namespace PO
             loggedin = i;
         }
 
-        private void removeUserToolStripMenuItem_Click(object sender, EventArgs e)
+        public RemoveUser(User a)
+        {
+            InitializeComponent();
+            u = a;
+        }
+
+        private void addUserToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
-            AddUser add = new AddUser(loggedin);
+            AddUser add = new AddUser(u);
             add.Show();
         }
 
         private void changepwdToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
-            ChangePassword changepwd = new ChangePassword(loggedin);
+            ChangePassword changepwd = new ChangePassword(u);
             changepwd.Show();
         }
 
         private void searchToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
-            StudentSearch search = new StudentSearch(loggedin);
+            StudentSearch search = new StudentSearch(u);
             search.Show();
         }
 
         private void HomePic_Click(object sender, EventArgs e)
         {
             this.Close();
-            AdminHomePage adminhome = new AdminHomePage(loggedin);
+            AdminHomePage adminhome = new AdminHomePage(u);
             adminhome.Show();
         }
 
@@ -67,13 +75,23 @@ namespace PO
             }
 
             foreach (String user in L)
-                comboBox1.Items.Add(user);
+            {
+                if(u.Username != user)
+                    comboBox1.Items.Add(user);
+            }
         }
 
         private void removeuserbtn_Click(object sender, EventArgs e)
         {
             String s = comboBox1.Text;
             this.adminTableTableAdapter.DeleteQueryByUsername(s);
+        }
+
+        private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form n = new StudentSearch(new User());
+            n.Show();
+            this.Close();
         }
     }
 }

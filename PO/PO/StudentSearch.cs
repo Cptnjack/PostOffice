@@ -14,6 +14,7 @@ namespace PO
     public partial class StudentSearch : Form
     {
         private bool loggedin;
+        private User u;
         private Student s;
         public StudentSearch()
         {
@@ -44,6 +45,26 @@ namespace PO
                 newP.MNum, newP.NCountry, newP.MCity, newP.Aptmb, newP.ID);
         }
 
+        public StudentSearch(User a)
+        {
+            InitializeComponent();
+            u = a;
+            init();
+        }
+
+        public StudentSearch(User a, Student newP)
+        {
+            InitializeComponent();
+
+            u = a;
+
+            init();
+
+            this.studentTableTableAdapter.UpdateQuery(newP.FName, newP.MidName, newP.LName, newP.NStAddress, newP.NCity,
+                newP.NState, newP.NZip, newP.Email, newP.MStAddress, newP.MState, newP.MZip, newP.DateAdded,
+                newP.MNum, newP.NCountry, newP.MCity, newP.Aptmb, newP.ID);
+        }
+
         private void StudentSearch_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'rosterDataSet.Rosters' table. You can move, or remove it, as needed.
@@ -53,10 +74,11 @@ namespace PO
 
         private void AdminLogin_Click(object sender, EventArgs e)
         {
-            if (loggedin)
+            if (u.isAdmin())
             {
                 MessageBox.Show("You have successfully been logged out. Click OK to return.", "Logged out", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 loggedin = false;
+                u = new User();
                 AdminLogin.Text = "Admin Login";
                 logInToolStripMenuItem.Text = "Login";
                 updateButton.Visible = false;
@@ -75,7 +97,7 @@ namespace PO
         private void printPreviewToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
-            Print Pform = new Print(loggedin);
+            Print Pform = new Print(u);
             Pform.Show();
         }
 
@@ -131,10 +153,10 @@ namespace PO
 
         private void adminHomeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (loggedin)
+            if (u.isAdmin())
             {
                 this.Close();
-                AdminHomePage a = new AdminHomePage(loggedin);
+                AdminHomePage a = new AdminHomePage(u);
                 a.Show();
             }
         }
@@ -182,7 +204,7 @@ namespace PO
 
                 s = new Student(mnum, fn, ln, midn, em, madd, mc, mst, mz, nadd, nc, nst, nz, ncountry, date, amb, id);
                 this.Hide();
-                Form next = new UpdateStudentAddress(s, this);
+                Form next = new UpdateStudentAddress(s, this, u);
                 next.Show();
             }
 
@@ -207,7 +229,7 @@ namespace PO
             ResultList.Columns[9].DisplayIndex = 4;
             ResultList.Columns[16].DisplayIndex = 5;
 
-            if (loggedin)
+            if (u.isAdmin())
             {
                 AdminLogin.Text = "Logout";
                 logInToolStripMenuItem.Text = "Logout";
@@ -217,7 +239,7 @@ namespace PO
                 homePictureBox.Visible = true;
             }
 
-            else if (!loggedin)
+            else if (!u.isAdmin())
             {
                 AdminLogin.Text = "Admin Login";
                 adminToolStripMenuItem.Text = "Login";
@@ -231,10 +253,12 @@ namespace PO
         private void add_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form f = new AddStudentAddress(loggedin, this);
+            Form f = new AddStudentAddress(u, this);
             f.Show();
         }
 
+        //decided that a delete button was not necessary, but I left the code in here just in case
+        //that in the future it is wished to be implemented, it is already written
         //private void deleteButton_Click(object sender, EventArgs e)
         //{
         //    int selectedRowCount = ResultList.Rows.GetRowCount(DataGridViewElementStates.Selected);
