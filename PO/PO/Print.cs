@@ -18,7 +18,7 @@ namespace PO
             InitializeComponent();
         }
 
-        public Print(bool i)
+        public Print(bool i, LabelQueue lq)
         {
             InitializeComponent();
             loggedin = i;

@@ -74,8 +74,18 @@ namespace PO
 
         private void printPreviewToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            LabelQueue lq = new LabelQueue;
+            
+            foreach DataGridViewRow in QueueView
+            {
+
+
+
+
+            }
+
             this.Close();
-            Print Pform = new Print(loggedin);
+            Print Pform = new Print(loggedin, );
             Pform.Show();
         }
 
