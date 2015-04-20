@@ -239,18 +239,27 @@ namespace PO
         {
             int selectedRowIndex = ResultList.SelectedCells[0].RowIndex;
             DataGridViewRow selectedRow = ResultList.Rows[selectedRowIndex];
-            int rowIndex = this.QueueView.Rows.Add();
-            var row = this.QueueView.Rows[rowIndex];
-                
-            row.Cells[0].Value = selectedRow.Cells[3].Value; // Last Name
-            row.Cells[1].Value = selectedRow.Cells[1].Value; // First Name
-            row.Cells[2].Value = selectedRow.Cells[2].Value; // Middle Name
-            row.Cells[3].Value = selectedRow.Cells[4].Value; // New Street
-            row.Cells[4].Value = selectedRow.Cells[5].Value; // New City
-            row.Cells[5].Value = selectedRow.Cells[6].Value; // New State
-            row.Cells[6].Value = selectedRow.Cells[7].Value; // New Country
-            row.Cells[7].Value = selectedRow.Cells[14].Value;// New ZIP
-            row.Cells[8].Value = selectedRow.Cells[12].Value;// Date Added
+            int rowIndex;
+
+            int counter = Convert.ToInt32(numberofcopies.Text);
+
+            while (counter > 0)
+            {
+                rowIndex = this.QueueView.Rows.Add();
+                var row = this.QueueView.Rows[rowIndex];
+
+                row.Cells[0].Value = selectedRow.Cells[3].Value; // Last Name
+                row.Cells[1].Value = selectedRow.Cells[1].Value; // First Name
+                row.Cells[2].Value = selectedRow.Cells[2].Value; // Middle Name
+                row.Cells[3].Value = selectedRow.Cells[4].Value; // New Street
+                row.Cells[4].Value = selectedRow.Cells[5].Value; // New City
+                row.Cells[5].Value = selectedRow.Cells[6].Value; // New State
+                row.Cells[6].Value = selectedRow.Cells[7].Value; // New Country
+                row.Cells[7].Value = selectedRow.Cells[14].Value;// New ZIP
+                row.Cells[8].Value = selectedRow.Cells[12].Value;// Date Added
+
+                counter--;
+            }
         }
 
         private void RemoveQ_Click(object sender, EventArgs e)
