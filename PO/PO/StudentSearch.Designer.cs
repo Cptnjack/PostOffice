@@ -85,15 +85,14 @@
             this.AddQ = new System.Windows.Forms.Button();
             this.studentTableTableAdapter = new PO.PODBDataSetTableAdapters.StudentTableTableAdapter();
             this.QueueView = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Last = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.First = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Middle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NewStreet = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NewCity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NewState = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NewCountry = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NewZIP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NewCountry = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DateAdded = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -659,25 +658,19 @@
             // 
             this.QueueView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.QueueView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id,
             this.Last,
             this.First,
             this.Middle,
             this.NewStreet,
             this.NewCity,
             this.NewState,
-            this.NewCountry,
             this.NewZIP,
+            this.NewCountry,
             this.DateAdded});
             this.QueueView.Location = new System.Drawing.Point(13, 404);
             this.QueueView.Name = "QueueView";
             this.QueueView.Size = new System.Drawing.Size(737, 120);
             this.QueueView.TabIndex = 50;
-            // 
-            // id
-            // 
-            this.id.HeaderText = "ID";
-            this.id.Name = "id";
             // 
             // Last
             // 
@@ -709,15 +702,15 @@
             this.NewState.HeaderText = "New State";
             this.NewState.Name = "NewState";
             // 
-            // NewCountry
-            // 
-            this.NewCountry.HeaderText = "New Country";
-            this.NewCountry.Name = "NewCountry";
-            // 
             // NewZIP
             // 
             this.NewZIP.HeaderText = "New ZIP Code";
             this.NewZIP.Name = "NewZIP";
+            // 
+            // NewCountry
+            // 
+            this.NewCountry.HeaderText = "New Country";
+            this.NewCountry.Name = "NewCountry";
             // 
             // DateAdded
             // 
@@ -823,15 +816,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn mSUCityDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn aptMBNoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridView QueueView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Last;
         private System.Windows.Forms.DataGridViewTextBoxColumn First;
         private System.Windows.Forms.DataGridViewTextBoxColumn Middle;
         private System.Windows.Forms.DataGridViewTextBoxColumn NewStreet;
         private System.Windows.Forms.DataGridViewTextBoxColumn NewCity;
         private System.Windows.Forms.DataGridViewTextBoxColumn NewState;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NewCountry;
         private System.Windows.Forms.DataGridViewTextBoxColumn NewZIP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NewCountry;
         private System.Windows.Forms.DataGridViewTextBoxColumn DateAdded;
     }
 }
