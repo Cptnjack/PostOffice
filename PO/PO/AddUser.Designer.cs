@@ -204,14 +204,14 @@
             // searchToolStripMenuItem
             // 
             this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
-            this.searchToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.searchToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
             this.searchToolStripMenuItem.Text = "Search";
             this.searchToolStripMenuItem.Click += new System.EventHandler(this.searchToolStripMenuItem_Click);
             // 
             // addToolStripMenuItem
             // 
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
             this.addToolStripMenuItem.Text = "Add";
             this.addToolStripMenuItem.Click += new System.EventHandler(this.addToolStripMenuItem_Click);
             // 
@@ -373,7 +373,7 @@
             this.Controls.Add(this.pwdlbl);
             this.Name = "AddUser";
             this.Text = "AddUser";
-            this.Load += new System.EventHandler(this.AddUser_Load_1);
+            this.Load += new System.EventHandler(this.AddUser_Load);
             ((System.ComponentModel.ISupportInitialize)(this.adminTableDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.adminTableBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pODBDataSet)).EndInit();

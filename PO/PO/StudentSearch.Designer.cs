@@ -616,6 +616,37 @@
             // 
             this.numberofcopies.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.numberofcopies.FormattingEnabled = true;
+            this.numberofcopies.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30"});
             this.numberofcopies.Location = new System.Drawing.Point(464, 364);
             this.numberofcopies.Margin = new System.Windows.Forms.Padding(2);
             this.numberofcopies.Name = "numberofcopies";

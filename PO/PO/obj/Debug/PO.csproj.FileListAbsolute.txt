@@ -54,3 +54,4 @@ C:\Users\Michael\PO\PO\obj\Debug\PO.UpdateStudentAddress.resources
 C:\Users\Michael\PO\PO\obj\Debug\PO.csproj.GenerateResource.Cache
 C:\Users\Michael\PO\PO\obj\Debug\PO.exe
 C:\Users\Michael\PO\PO\obj\Debug\PO.pdb
+C:\Users\Michael\PO\PO\obj\Debug\PO.csprojResolveAssemblyReference.cache

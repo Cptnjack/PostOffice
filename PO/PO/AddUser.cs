@@ -88,32 +88,35 @@ namespace PO
 
         private void adduserbtn_Click(object sender, EventArgs e)
         {
-            if (pwdtxt.Text == confirmtxt.Text)
+            if(firsttxt.Text == "" || lasttxt.Text == "" || emailtxt.Text == "" || usernametxt.Text == "" || pwdtxt.Text == "" || confirmtxt.Text == "")
             {
-                try
-                {
-                    this.adminTableTableAdapter.InsertQuery(firsttxt.Text, lasttxt.Text, emailtxt.Text, pwdtxt.Text, usernametxt.Text);
-                    MessageBox.Show("Success!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    this.Close();
-                    Form f = new AdminHomePage(u);
-                }
-                catch (System.Data.OleDb.OleDbException ex)
-                {
-                    MessageBox.Show("There already exists a user with that username. Please choose another.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    usernametxt.Text = "";
-                }
+                MessageBox.Show("Don't leave any fields blank.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
             else
-                MessageBox.Show("The passwords entered are not the same" + System.Environment.NewLine + "Please"
-                    + " re-enter them.", "Password match error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        }
+            {
 
-        private void AddUser_Load_1(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'pODBDataSet.AdminTable' table. You can move, or remove it, as needed.
-            this.adminTableTableAdapter.Fill(this.pODBDataSet.AdminTable);
+                if (pwdtxt.Text == confirmtxt.Text)
+                {
+                    try
+                    {
+                        this.adminTableTableAdapter.InsertQuery(firsttxt.Text, lasttxt.Text, emailtxt.Text, pwdtxt.Text, usernametxt.Text);
+                        MessageBox.Show("Success!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        this.Close();
+                        Form f = new AdminHomePage(u);
+                    }
 
+                    catch (System.Data.OleDb.OleDbException ex)
+                    {
+                        MessageBox.Show("There already exists a user with that username. Please choose another.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        usernametxt.Text = "";
+                    }
+                }
+
+                else
+                    MessageBox.Show("The passwords entered are not the same" + System.Environment.NewLine + "Please"
+                        + " re-enter them.", "Password match error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void addToolStripMenuItem_Click(object sender, EventArgs e)
