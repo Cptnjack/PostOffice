@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PO
 {
-    class Label
+    public class Label
     {
         string LastName;
         string FirstName;
@@ -34,78 +34,84 @@ namespace PO
             DateAdded = date;
         }
         
-        string GetLastName()
+        public string GetLastName()
         { return LastName; }
 
-        string GetFirstName()
+        public string GetFirstName()
         { return FirstName; }
 
-        string GetMiddleName()
+        public string GetMiddleName()
         { return MiddleName; }
 
-        string GetNewStreet()
+        public string GetNewStreet()
         { return NewStreet; }
 
-        string GetNewCity()
+        public string GetNewCity()
         { return NewCity; }
 
-        string GetNewState()
+        public string GetNewState()
         { return NewState; }
 
-        string GetNewZIP()
+        public string GetNewZIP()
         { return NewZIP; }
 
-        string GetNewCountry()
+        public string GetNewCountry()
         { return NewCountry; }
 
         DateTime GetDateAdded()
         { return DateAdded; }
 
-        void setLastName(string ln)
+        public void setLastName(string ln)
         {
             LastName = ln;
             return;
         }
 
-        void setFirstName(string fn)
+        public void setFirstName(string fn)
         {
             FirstName = fn;
             return;
         }
 
-        void setMiddleName(string mn)
+        public void setMiddleName(string mn)
         {
             MiddleName = mn;
             return;
         }
 
-        void setNewStreet(string ns)
+        public void setNewStreet(string ns)
         {
             NewStreet = ns;
             return;
         }
 
-        void setNewCity(string nc)
+        public void setNewCity(string nc)
         {
             NewCity = nc;
             return;
         }
 
-        void setNewState(string nstate)
+        public void setNewState(string nstate)
         {
             NewState = nstate;
             return;
         }
 
-        void setNewZIP(string nz)
+        public void setNewZIP(string nz)
         {
             NewZIP = nz;
             return;
         }
 
-        void setNewCountry(string ncountry)
+        public void setNewCountry(string ncountry)
         {
             NewCountry = ncountry;
+            return;
+        }
+
+        public void setDateTime(DateTime dt)
+        {
+            DateAdded = dt;
             return;
         }
     }

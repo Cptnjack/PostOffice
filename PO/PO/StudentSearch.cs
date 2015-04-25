@@ -74,18 +74,41 @@ namespace PO
 
         private void printPreviewToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            LabelQueue lq = new LabelQueue;
+            int init = Convert.ToInt32(QueueView.RowCount);
+            Label[] label = new Label[init];
+
+            for (int c = 0; c < init; c++)
+                label[c] = new Label();
+
+            int count = Convert.ToInt32(QueueView.RowCount);
             
-            foreach DataGridViewRow in QueueView
+            for (int c = 0; c < count; c++)
             {
-
-
-
-
+                string fn, mn, ln, ns, nc, nstate, ncountry, nz;
+                
+                // Gets information and converts to strings
+                fn = Convert.ToString(QueueView.Rows[c].Cells[2].Value);
+                mn = Convert.ToString(QueueView.Rows[c].Cells[3].Value);
+                ln = Convert.ToString(QueueView.Rows[c].Cells[1].Value);
+                ns = Convert.ToString(QueueView.Rows[c].Cells[4].Value);
+                nc = Convert.ToString(QueueView.Rows[c].Cells[5].Value);
+                nstate = Convert.ToString(QueueView.Rows[c].Cells[6].Value);
+                nz = Convert.ToString(QueueView.Rows[c].Cells[7].Value);
+                ncountry = Convert.ToString(QueueView.Rows[c].Cells[8].Value);
+                
+                // Stores label information
+                label[c].setLastName(ln);
+                label[c].setFirstName(fn);
+                label[c].setMiddleName(mn);
+                label[c].setNewStreet(ns);
+                label[c].setNewCity(nc);
+                label[c].setNewState(nstate);
+                label[c].setNewZIP(nz);
+                label[c].setNewCountry(ncountry);
             }
-
-            this.Close();
-            Print Pform = new Print(loggedin, );
+            
+            LabelQueue lq = new LabelQueue(label);
+            Print Pform = new Print(lq);
             Pform.Show();
         }
 
@@ -252,23 +275,35 @@ namespace PO
             int rowIndex;
 
             int counter = Convert.ToInt32(numberofcopies.Text);
+            int total = Convert.ToInt32(QueueView.RowCount) + counter;
 
-            while (counter > 0)
+            // The empty row is the 31st row, which means 31 rows amounts to 30 labels.
+            if (total > 31)
             {
-                rowIndex = this.QueueView.Rows.Add();
-                var row = this.QueueView.Rows[rowIndex];
+                MessageBox.Show("This action will put you over 30 labels.  Please delete some or reduce the number of labels to be added.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                total = total - counter;
+            }
+            else
+            {
+                if (total == 31)
+                    MessageBox.Show("You now have 30 labels in the queue.", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                while (counter > 0)
+                {                   
+                    rowIndex = this.QueueView.Rows.Add();
+                    var row = this.QueueView.Rows[rowIndex];
 
-                row.Cells[0].Value = selectedRow.Cells[3].Value; // Last Name
-                row.Cells[1].Value = selectedRow.Cells[1].Value; // First Name
-                row.Cells[2].Value = selectedRow.Cells[2].Value; // Middle Name
-                row.Cells[3].Value = selectedRow.Cells[4].Value; // New Street
-                row.Cells[4].Value = selectedRow.Cells[5].Value; // New City
-                row.Cells[5].Value = selectedRow.Cells[6].Value; // New State
-                row.Cells[6].Value = selectedRow.Cells[7].Value; // New Country
-                row.Cells[7].Value = selectedRow.Cells[14].Value;// New ZIP
-                row.Cells[8].Value = selectedRow.Cells[12].Value;// Date Added
+                    row.Cells[0].Value = selectedRow.Cells[3].Value; // Last Name
+                    row.Cells[1].Value = selectedRow.Cells[1].Value; // First Name
+                    row.Cells[2].Value = selectedRow.Cells[2].Value; // Middle Name
+                    row.Cells[3].Value = selectedRow.Cells[4].Value; // New Street
+                    row.Cells[4].Value = selectedRow.Cells[5].Value; // New City
+                    row.Cells[5].Value = selectedRow.Cells[6].Value; // New State
+                    row.Cells[6].Value = selectedRow.Cells[7].Value; // New Country
+                    row.Cells[7].Value = selectedRow.Cells[14].Value;// New ZIP
+                    row.Cells[8].Value = selectedRow.Cells[12].Value;// Date Added
 
-                counter--;
+                    counter--;
+                }
             }
         }
 
@@ -279,39 +314,5 @@ namespace PO
                 QueueView.Rows.RemoveAt(this.QueueView.SelectedRows[0].Index);
             }
         }
-
-        //private void deleteButton_Click(object sender, EventArgs e)
-        //{
-        //    int selectedRowCount = ResultList.Rows.GetRowCount(DataGridViewElementStates.Selected);
-
-        //    //if there is only one row selected
-        //    //do stuff
-        //    if (selectedRowCount == 1)
-        //    {
-        //        int selectedRowIndex = ResultList.SelectedCells[0].RowIndex;
-        //        DataGridViewRow selectedRow = ResultList.Rows[selectedRowIndex];
-        //        String fn, ln, midn, nadd, nc, nst, ncountry, amb;
-
-        //        fn = Convert.ToString(selectedRow.Cells[1].Value);
-        //        midn = Convert.ToString(selectedRow.Cells[2].Value);
-        //        ln = Convert.ToString(selectedRow.Cells[3].Value);
-        //        nadd = Convert.ToString(selectedRow.Cells[4].Value);
-        //        nc = Convert.ToString(selectedRow.Cells[5].Value);
-        //        nst = Convert.ToString(selectedRow.Cells[6].Value);
-        //        ncountry = Convert.ToString(selectedRow.Cells[14].Value);
-        //        amb = Convert.ToString(selectedRow.Cells[16].Value);
-        //        if (midn == "")
-        //            this.studentTableTableAdapter.DeleteQueryNoM(fn, ln, nadd, nc, ncountry, amb);
-        //        else
-        //            this.studentTableTableAdapter.DeleteQueryMN(fn, midn, ln, nadd, nc, ncountry, amb);
-        //        this.studentTableTableAdapter.Fill(this.pODBDataSet.StudentTable);
-
-        //    }
-
-        //    else
-        //    {
-        //        MessageBox.Show("Please select a student to remove.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //    }
-        //}
     }
 }

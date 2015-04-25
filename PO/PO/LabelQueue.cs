@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace PO
 {
-    class LabelQueue
+    public class LabelQueue
     {
        
         private const int MAXSIZE = 30;
-        private Label [] labels;
+        public Label [] labels;
         public LabelQueue()
         {
             labels = new Label[MAXSIZE];
