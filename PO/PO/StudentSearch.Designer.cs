@@ -77,7 +77,6 @@
             this.studentTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pODBDataSet = new PO.PODBDataSet();
             this.SearchBox = new System.Windows.Forms.GroupBox();
-            this.PrintQ = new System.Windows.Forms.DataGridView();
             this.AdminLogin = new System.Windows.Forms.Button();
             this.RemoveQ = new System.Windows.Forms.Button();
             this.lblResult = new System.Windows.Forms.Label();
@@ -85,6 +84,16 @@
             this.label3 = new System.Windows.Forms.Label();
             this.AddQ = new System.Windows.Forms.Button();
             this.studentTableTableAdapter = new PO.PODBDataSetTableAdapters.StudentTableTableAdapter();
+            this.QueueView = new System.Windows.Forms.DataGridView();
+            this.Last = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.First = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Middle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NewStreet = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NewCity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NewState = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NewZIP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NewCountry = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DateAdded = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.homePictureBox)).BeginInit();
@@ -93,7 +102,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.studentTableBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pODBDataSet)).BeginInit();
             this.SearchBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PrintQ)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.QueueView)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -561,16 +570,6 @@
             this.SearchBox.TabStop = false;
             this.SearchBox.Text = "Search By: ";
             // 
-            // PrintQ
-            // 
-            this.PrintQ.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.PrintQ.Location = new System.Drawing.Point(11, 403);
-            this.PrintQ.Margin = new System.Windows.Forms.Padding(2);
-            this.PrintQ.Name = "PrintQ";
-            this.PrintQ.RowTemplate.Height = 24;
-            this.PrintQ.Size = new System.Drawing.Size(744, 122);
-            this.PrintQ.TabIndex = 43;
-            // 
             // AdminLogin
             // 
             this.AdminLogin.BackColor = System.Drawing.Color.DarkRed;
@@ -599,6 +598,7 @@
             this.RemoveQ.TabIndex = 42;
             this.RemoveQ.Text = "Remove";
             this.RemoveQ.UseVisualStyleBackColor = false;
+            this.RemoveQ.Click += new System.EventHandler(this.RemoveQ_Click);
             // 
             // lblResult
             // 
@@ -679,23 +679,87 @@
             this.AddQ.TabIndex = 37;
             this.AddQ.Text = "Add To Queue";
             this.AddQ.UseVisualStyleBackColor = false;
+            this.AddQ.Click += new System.EventHandler(this.AddQ_Click);
             // 
             // studentTableTableAdapter
             // 
             this.studentTableTableAdapter.ClearBeforeFill = true;
             // 
+            // QueueView
+            // 
+            this.QueueView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.QueueView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Last,
+            this.First,
+            this.Middle,
+            this.NewStreet,
+            this.NewCity,
+            this.NewState,
+            this.NewZIP,
+            this.NewCountry,
+            this.DateAdded});
+            this.QueueView.Location = new System.Drawing.Point(13, 404);
+            this.QueueView.Name = "QueueView";
+            this.QueueView.Size = new System.Drawing.Size(737, 120);
+            this.QueueView.TabIndex = 50;
+            // 
+            // Last
+            // 
+            this.Last.HeaderText = "Last Name";
+            this.Last.Name = "Last";
+            // 
+            // First
+            // 
+            this.First.HeaderText = "First Name";
+            this.First.Name = "First";
+            // 
+            // Middle
+            // 
+            this.Middle.HeaderText = "Middle Name";
+            this.Middle.Name = "Middle";
+            // 
+            // NewStreet
+            // 
+            this.NewStreet.HeaderText = "New Street Address";
+            this.NewStreet.Name = "NewStreet";
+            // 
+            // NewCity
+            // 
+            this.NewCity.HeaderText = "New City";
+            this.NewCity.Name = "NewCity";
+            // 
+            // NewState
+            // 
+            this.NewState.HeaderText = "New State";
+            this.NewState.Name = "NewState";
+            // 
+            // NewZIP
+            // 
+            this.NewZIP.HeaderText = "New ZIP Code";
+            this.NewZIP.Name = "NewZIP";
+            // 
+            // NewCountry
+            // 
+            this.NewCountry.HeaderText = "New Country";
+            this.NewCountry.Name = "NewCountry";
+            // 
+            // DateAdded
+            // 
+            this.DateAdded.HeaderText = "Date Added";
+            this.DateAdded.Name = "DateAdded";
+            // 
             // StudentSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(764, 602);
+            this.ClientSize = new System.Drawing.Size(764, 603);
+            this.Controls.Add(this.QueueView);
             this.Controls.Add(this.homePictureBox);
             this.Controls.Add(this.updateButton);
             this.Controls.Add(this.SearchMenuStrip);
             this.Controls.Add(this.PrintBtn);
             this.Controls.Add(this.ResultList);
             this.Controls.Add(this.SearchBox);
-            this.Controls.Add(this.PrintQ);
             this.Controls.Add(this.AdminLogin);
             this.Controls.Add(this.RemoveQ);
             this.Controls.Add(this.lblResult);
@@ -719,7 +783,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pODBDataSet)).EndInit();
             this.SearchBox.ResumeLayout(false);
             this.SearchBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PrintQ)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.QueueView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -756,7 +820,6 @@
         private System.Windows.Forms.Button PrintBtn;
         private System.Windows.Forms.DataGridView ResultList;
         private System.Windows.Forms.GroupBox SearchBox;
-        private System.Windows.Forms.DataGridView PrintQ;
         private System.Windows.Forms.Button AdminLogin;
         private System.Windows.Forms.Button RemoveQ;
         private System.Windows.Forms.Label lblResult;
@@ -783,5 +846,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn newCountryDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn mSUCityDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn aptMBNoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridView QueueView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Last;
+        private System.Windows.Forms.DataGridViewTextBoxColumn First;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Middle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NewStreet;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NewCity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NewState;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NewZIP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NewCountry;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DateAdded;
     }
 }

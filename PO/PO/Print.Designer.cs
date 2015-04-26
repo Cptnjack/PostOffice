@@ -74,7 +74,6 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::PO.Properties.Resources.label;
             this.pictureBox1.Location = new System.Drawing.Point(23, 80);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
@@ -155,7 +154,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(764, 602);
+            this.ClientSize = new System.Drawing.Size(764, 603);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.PrintButton);
             this.Controls.Add(this.pictureBox1);
