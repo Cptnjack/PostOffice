@@ -45,7 +45,6 @@ namespace PO
                 }
             }
 
-            // Prints each label at its position in the bitmap
             while (c < lq.labels.Length)
             {
                 string firstLine, secondLine, thirdLine;
@@ -55,8 +54,8 @@ namespace PO
                 thirdLine = lq.labels[c].GetNewCity() + ", " + lq.labels[c].GetNewState() + lq.labels[c].GetNewZIP() + lq.labels[c].GetNewCountry();
 
                 PrintPreview.DrawString(firstLine, new Font("Times New Roman",8), Brushes.Black, rectf[c,0]);
-                PrintPreview.DrawString(secondLine, new Font("Times New Roman",8), Brushes.Black, rectf[c,1]);
-                PrintPreview.DrawString(thirdLine, new Font("Times New Roman",8), Brushes.Black, rectf[c,2]);
+                PrintPreview.DrawString(secondLine, new Font("Times New Roman",8), Brushes.Black, rectf[c,0]);
+                PrintPreview.DrawString(thirdLine, new Font("Times New Roman",8), Brushes.Black, rectf[c,0]);
 
                 c++;
             }
