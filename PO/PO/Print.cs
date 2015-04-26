@@ -13,9 +13,7 @@ namespace PO
     public partial class Print : Form
     {
         private bool loggedin;
-<<<<<<< HEAD
         private User u;
-=======
         private LabelQueue lq;
         public Print(LabelQueue queue)
         {
@@ -65,7 +63,6 @@ namespace PO
             pictureBox1.Image = bmp;
         }
 
->>>>>>> origin/master
         public Print()
         {
             InitializeComponent();

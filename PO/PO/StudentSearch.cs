@@ -97,10 +97,8 @@ namespace PO
 
         private void printPreviewToolStripMenuItem_Click(object sender, EventArgs e)
         {
-<<<<<<< HEAD
             this.Close();
             Print Pform = new Print(u);
-=======
             int init = Convert.ToInt32(QueueView.RowCount);
             Label[] label = new Label[init];
 
@@ -135,8 +133,7 @@ namespace PO
             }
             
             LabelQueue lq = new LabelQueue(label);
-            Print Pform = new Print(lq);
->>>>>>> origin/master
+           // Print Pform = new Print(lq);
             Pform.Show();
         }
 
@@ -308,7 +305,6 @@ namespace PO
             f.Show();
         }
 
-<<<<<<< HEAD
         //decided that a delete button was not necessary, but I left the code in here just in case
         //that in the future it is wished to be implemented, it is already written
         //private void deleteButton_Click(object sender, EventArgs e)
@@ -344,7 +340,6 @@ namespace PO
         //        MessageBox.Show("Please select a student to remove.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         //    }
         //}
-=======
         private void AddQ_Click(object sender, EventArgs e)
         {
             int selectedRowIndex = ResultList.SelectedCells[0].RowIndex;
@@ -391,6 +386,5 @@ namespace PO
                 QueueView.Rows.RemoveAt(this.QueueView.SelectedRows[0].Index);
             }
         }
->>>>>>> origin/master
     }
 }
